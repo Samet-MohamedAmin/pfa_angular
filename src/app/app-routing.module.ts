@@ -13,7 +13,7 @@ import { SignInSelectionComponent } from './login/sign-in/sign-in-selection/sign
 import { SignUpAdminComponent } from './login/sign-up/sign-up-admin/sign-up-admin.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'sign-in', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'sign-up', component: SignUpSelectionComponent, pathMatch: 'full'},
   {path: 'sign-up', component: SignUpComponent,
