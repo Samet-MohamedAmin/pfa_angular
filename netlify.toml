@@ -1,0 +1,3 @@
+[build]
+    publish = "dist/pfa"
+    command = "npm run build"
