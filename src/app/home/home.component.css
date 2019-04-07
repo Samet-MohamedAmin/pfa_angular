@@ -1,0 +1,12 @@
+.features {
+    --icon-w-f: 200px;
+}
+.features mat-icon{
+    font-size: var(--icon-w-f);
+    width: var(--icon-w-f);
+    height: var(--icon-w-f);
+}
+
+.branch-item {
+    width: 250px;
+}

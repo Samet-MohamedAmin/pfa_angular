@@ -1,0 +1,43 @@
+<div class="slider h-400 bg-main text-center text-white flex-center flex-column">
+  <h1>Bienvenue au e4cape</h1>
+  <h3>Centre de Carrière <br> et de Certification des Compétences</h3>
+</div>
+
+<div class="h-300 bg-main-2">
+  <div class="container h-100 flex-center justify-content-between">
+      <p class="w-50 h6">
+          Améliorez votre employabilité,
+          Obtenez de l'accompagnement et arrivez à toucher l'environnement socio-professionnel.
+      </p>
+
+      <mat-form-field class="example-form-field w-25">
+          <input matInput type="text" placeholder="Voulez-vous savoir plus?" [(ngModel)]="searchValue">
+          <button mat-button matSuffix mat-icon-button aria-label="Search">
+              <mat-icon>search</mat-icon>
+          </button>
+      </mat-form-field>
+  </div>
+</div>
+
+<app-branch-list></app-branch-list>
+
+<div class="h-300 features bg-grey-1">
+  <div class="container h-100 flex-center">
+      <mat-icon class="pr-5 pl-0 order-1">access_time</mat-icon>
+      <p class="spacer text-justify h3 order-2"> {{dummyText}}</p>
+  </div>
+</div>
+
+<div class="h-300 features bg-white">
+  <div class="container h-100 flex-center">
+      <mat-icon class="pr-0 pl-5 order-2">share</mat-icon>
+      <p class="spacer text-justify h3 order-1"> {{dummyText}}</p>
+  </div>
+</div>
+
+<div class="h-300 features bg-grey-1">
+  <div class="container h-100 flex-center">
+      <mat-icon class="spacer px-0 toolbar-icon order-1 text-right">subdirectory_arrow_right</mat-icon>
+      <p class="spacer h2 order-2">S'inscrire pour bénificier des formations!</p>
+  </div>
+</div>

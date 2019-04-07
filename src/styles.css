@@ -1,1 +1,63 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/*------------------developement-only------------*/
+.h-200 { height: 200px }
+.h-300 { height: 300px }
+.h-400 { height: 400px }
+.h-500 { height: 500px }
+.h-600 { height: 600px }
+
+.w-200 { width: 200px }
+.w-300 { width: 300px }
+.w-400 { width: 400px }
+.w-500 { width: 500px }
+.w-600 { width: 600px }
+
+/*------------------css-variables----------------*/
+:root {
+    --main-color: #3f51b5;
+    --main-color-2: #C5CAE9;
+    --grey-1: #EEE;
+    --grey-2: #DDD;
+    --grey-3: #AAA;
+}
+
+.bg-white { background-color: white }
+.bg-main { background-color: var(--main-color) }
+.bg-main-2 { background-color: var(--main-color-2) }
+.bg-grey-1 { background-color: var(--grey-1) }
+.bg-grey-2 { background-color: var(--grey-2) }
+.bg-grey-3 { background-color: var(--grey-3) }
+
+
+/*------------------general-classes--------------*/
+.text-white { color: white }
+
+.spacer { flex: 1 1 auto }
+
+.cursor-pointer { cursor: pointer }
+
+.toolbar-icon { padding: 0 14px }
+
+/*----------------flex-classes------------------*/
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.order-1 { order: 1 }
+.order-2 { order: 2 }
+.order-3 { order: 3 }
+.order-4 { order: 4 }
+
+
