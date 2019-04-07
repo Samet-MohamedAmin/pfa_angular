@@ -1,15 +1,28 @@
 <footer class="text-white bg-main">
-  <mat-grid-list class="container" cols="3" rowHeight="200px">
+  <mat-grid-list class="" cols="3" rowHeight="200px">
     <mat-grid-tile>
-        <div class="spacer text-center">1</div>
+        <div class="flex-grow-1 px-5 align-self-start">
+          <h4 class="mt-5">Useful Links</h4>
+          <!-- <ul class="pl-4 list-style-none">
+            <li *ngFor="let link of linkList" class="cursor-pointer">{{ link }}</li>
+          </ul> -->
+          <mat-list class="pl-4 pt-0">
+            <mat-list-item *ngFor="let link of linkList"
+                            class="h-auto pb-2 cursor-pointer text-white">{{ link }}</mat-list-item>
+          </mat-list>
+        </div>
         <mat-divider class="h-75" [vertical]="true"></mat-divider>
     </mat-grid-tile>
     <mat-grid-tile>
-        <div class="spacer text-center">2</div>
+        <div class="flex-grow-1 px-5 align-self-start">
+          <h4 class="mt-5">About e4cape</h4>
+          <p class="pl-4 text-justify">{{dummyText}}</p>
+        </div>
         <mat-divider class="h-75" [vertical]="true"></mat-divider>
     </mat-grid-tile>
+
     <mat-grid-tile>
-        <div>3</div>
+        <img src="assets/icons/4c_icon_grey.svg">
     </mat-grid-tile>
   </mat-grid-list>
 </footer>

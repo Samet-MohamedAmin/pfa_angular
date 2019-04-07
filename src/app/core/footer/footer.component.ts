@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  linkList = [
+    'www.4c.tn',
+    'www.mes.tn',
+    'www.insat.rnu.tn'
+  ];
+
+  dummyText = `Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia 
+                curabitur arcu duis quis purus, vel velit nunc aptent lobortis accumsan.`;
+
   constructor() { }
 
   ngOnInit() {

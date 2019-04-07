@@ -1,0 +1,8 @@
+
+/*just fixing topnav position:
+topnav position is absolute and it is over main content*/
+mat-sidenav-content {
+    margin-top: var(--nav-bar-h);
+    height: calc(100vh - var(--nav-bar-h));
+}
+
