@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ROLES } from '../../login-service.service';
 
 @Component({
   selector: 'app-sign-in-selection',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sign-in-selection.component.css']
 })
 export class SignInSelectionComponent implements OnInit {
+  roles = ROLES;
+  roleList = Object.keys(ROLES);
 
   constructor() { }
 

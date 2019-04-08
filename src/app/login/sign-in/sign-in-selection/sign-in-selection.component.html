@@ -1,21 +1,23 @@
 
 <div class="d-flex h-100 w-100">
   <div class="flex-center
-              flex-grow-1
+              w-50
+              px-4
               cursor-pointer
               text-center
               text-black
               bg-main-3"
-        routerLink="student">
-    <h1>S'inscrire en tant qu'un etudiant</h1>
+        [routerLink]="roleList[0]">
+    <h1>Login en tant qu' un <br><span class="text-capitalize">{{roles[roleList[0]]}}</span></h1>
   </div>
   <div class="flex-center
-              flex-grow-1
+              w-50
+              px-4
               cursor-pointer
               text-center
               text-white
               bg-main-4"
-        routerLink="teacher">
-    <h1>S'inscrire en tant qu' un enseignant</h1>
+        [routerLink]="roleList[1]">
+    <h1>Login en tant qu' un <br><span class="text-capitalize">{{roles[roleList[1]]}}</span></h1>
   </div>
 </div>

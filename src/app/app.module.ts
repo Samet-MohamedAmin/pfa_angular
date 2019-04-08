@@ -15,14 +15,10 @@ import { BranchListComponent } from './home/branch-list/branch-list.component';
 import { BranchItemComponent } from './home/branch-item/branch-item.component';
 import { SignInComponent } from './login/sign-in/sign-in.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
-import { SignInStudentComponent } from './login/sign-in/sign-in-student/sign-in-student.component';
-import { SignInTeacherComponent } from './login/sign-in/sign-in-teacher/sign-in-teacher.component';
-import { SignInAdminComponent } from './login/sign-in/sign-in-admin/sign-in-admin.component';
 import { SignUpSelectionComponent } from './login/sign-up/sign-up-selection/sign-up-selection.component';
-import { SignUpStudentComponent } from './login/sign-up/sign-up-student/sign-up-student.component';
-import { SignUpTeacherComponent } from './login/sign-up/sign-up-teacher/sign-up-teacher.component';
 import { SignInSelectionComponent } from './login/sign-in/sign-in-selection/sign-in-selection.component';
-import { SignUpAdminComponent } from './login/sign-up/sign-up-admin/sign-up-admin.component';
+import { ErrorComponent } from './error/error.component';
+import { LoginService } from './login/login-service.service';
 
 
 @NgModule({
@@ -35,14 +31,9 @@ import { SignUpAdminComponent } from './login/sign-up/sign-up-admin/sign-up-admi
       BranchItemComponent,
       SignInComponent,
       SignInSelectionComponent,
-      SignInStudentComponent,
-      SignInTeacherComponent,
-      SignInAdminComponent,
       SignUpComponent,
       SignUpSelectionComponent,
-      SignUpStudentComponent,
-      SignUpTeacherComponent,
-      SignUpAdminComponent
+      ErrorComponent
    ],
    imports: [
       BrowserModule,
@@ -63,7 +54,9 @@ import { SignUpAdminComponent } from './login/sign-up/sign-up-admin/sign-up-admi
       MatMenuModule,
       MatListModule
    ],
-   providers: [],
+   providers: [
+      LoginService
+   ],
    bootstrap: [
       AppComponent
    ]
