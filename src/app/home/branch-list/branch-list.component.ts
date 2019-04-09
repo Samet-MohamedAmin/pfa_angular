@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BranchItemInterface } from '../branch-item/branch-item.model';
+import { BranchItemInterface } from '../branch-item/branch-item.interface';
 
 @Component({
   selector: 'app-branch-list',

@@ -8,7 +8,7 @@ import { SignInSelectionComponent } from './login/sign-in/sign-in-selection/sign
 import { ErrorComponent } from './error/error.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/sign-in/student', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'sign-up', component: SignUpSelectionComponent},
   {path: 'sign-up/:role', component: SignUpComponent},

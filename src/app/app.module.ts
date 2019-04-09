@@ -19,6 +19,8 @@ import { SignUpSelectionComponent } from './login/sign-up/sign-up-selection/sign
 import { SignInSelectionComponent } from './login/sign-in/sign-in-selection/sign-in-selection.component';
 import { ErrorComponent } from './error/error.component';
 import { LoginService } from './login/login-service.service';
+import { AuthenticationService } from './auth/authentication.service';
+import { AuthGuardService } from './auth/auth-guard.service';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { LoginService } from './login/login-service.service';
       MatListModule
    ],
    providers: [
-      LoginService
+      LoginService,
+      AuthGuardService,
+      AuthenticationService,
    ],
    bootstrap: [
       AppComponent

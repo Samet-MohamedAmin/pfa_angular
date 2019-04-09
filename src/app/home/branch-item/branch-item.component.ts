@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { BranchItemInterface } from './branch-item.model';
+import { BranchItemInterface } from './branch-item.interface';
 
 @Component({
   selector: 'app-branch-item',

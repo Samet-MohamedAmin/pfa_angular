@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROLES } from '../../login-service.service';
+import { ROLES, ROLE_LIST } from '../../login-service.service';
 
 @Component({
   selector: 'app-sign-up-selection',
@@ -8,7 +8,7 @@ import { ROLES } from '../../login-service.service';
 })
 export class SignUpSelectionComponent implements OnInit {
   roles = ROLES;
-  roleList = Object.keys(ROLES);
+  roleList = ROLE_LIST;
   
   constructor() { }
 

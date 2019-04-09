@@ -1,5 +1,3 @@
-
-
 export interface BranchItemInterface {
     name: string;
     image: string;
