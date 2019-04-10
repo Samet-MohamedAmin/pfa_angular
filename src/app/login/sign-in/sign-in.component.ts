@@ -15,6 +15,7 @@ export class SignInComponent implements OnInit {
   roleList = ROLE_LIST;
   role: string;
   credentials: CredentialsSignInInterface = { email: '', password: '', type: '' };
+  formFieldAppearance = 'outline';
 
   constructor(private router: Router,
               private route: ActivatedRoute,

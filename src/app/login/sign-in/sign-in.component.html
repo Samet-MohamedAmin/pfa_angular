@@ -1,17 +1,19 @@
-<div class="container main-content-h-fix flex-center">
+<div class="container py-5 main-content-h-fix flex-center">
   <mat-card class="w-400 p-5">
     <mat-card-content>
       <mat-card-header>
         <mat-card-title>Login <span class="text-capitalize">{{roleList[role]}}</span></mat-card-title>
       </mat-card-header>
       <form class="w-75">
-        <mat-form-field class="w-75">
-          <input matInput placeholder="email"  [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}">
+        <mat-form-field class="w-75" [appearance]="formFieldAppearance">
+          <mat-label>email</mat-label>
+          <input matInput type="email" placeholder="email" [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
-        <mat-form-field class="w-75">
-          <input matInput placeholder="mot de passe" [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}">
+        <mat-form-field class="w-75" [appearance]="formFieldAppearance">
+          <mat-label>password</mat-label>
+          <input matInput type="password" placeholder="mot de passe" [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
-        <mat-form-field *ngIf="role == roleList[1]" class="w-75">
+        <mat-form-field  *ngIf="role == roleList[1]" [appearance]="formFieldAppearance" class="w-75">
           <mat-label>Vous êtes:</mat-label>
           <mat-select (selectionChange)="partenaireRoleSelectionChanged($event)">
             <mat-option value="teacher">Enseignant</mat-option>

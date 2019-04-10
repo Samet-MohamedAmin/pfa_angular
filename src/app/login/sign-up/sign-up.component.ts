@@ -18,6 +18,8 @@ export class SignUpComponent implements OnInit {
   formFieldAppearance = "outline";
   branches = BRANCHES;
   yearOfStudy = [1, 2, 3, 4, 5];
+  pathList = ['theorique', 'pratique', 'soft-skills'];
+
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -30,7 +32,7 @@ export class SignUpComponent implements OnInit {
         if(this.roleList.includes(roleParam)) {
           this.role = roleParam;
           if(this.role == this.roleList[0]){
-            this.credentials=new Student()
+            this.credentials=new Student();
             this.credentials.type = this.role;
           }
         }
@@ -42,13 +44,14 @@ export class SignUpComponent implements OnInit {
   }
 
   partenaireRoleSelectionChanged(eventData: MatSelectChange){
+    // TODO: credentials constructor problem
     console.log(eventData.value);
     if(eventData.value=="teacher"){
-      this.credentials=new Teacher()
+      this.credentials=new Teacher();
       this.credentials.type = eventData.value
 
     }else if(eventData.value="partner"){
-      this.credentials=new Partner()
+      this.credentials=new Partner();
       this.credentials.type = eventData.value
     }
   }
@@ -66,6 +69,10 @@ export class SignUpComponent implements OnInit {
     this.credentials.department = eventData.value;
   }
 
+  requestedPathSelected(eventData: MatSelectChange){
+    console.log(eventData.value);
+    this.credentials.requestedPath = eventData.value;
+  }
   
   register() {
     if(this.credentials.type=="student"){

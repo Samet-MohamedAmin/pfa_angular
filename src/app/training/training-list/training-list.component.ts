@@ -60,7 +60,7 @@ export class TrainingListComponent implements OnInit {
         imageAlt: randomTraining.imageSrc,
         instructor: randomTraining.instructor,
         level: this.sharedService.getRandomNumber(0, 3),
-        rating: 4,
+        rating: this.sharedService.getRandomNumber(0, 10),
         date: trainingDate
       };
 
