@@ -8,6 +8,8 @@ import { BRANCHES, BRANCH_LIST } from '../training.service';
 })
 export class TrainingSearchComponent implements OnInit {
 
+  searchValue = '';
+
   parameters = {
     levels: ['debutant', 'intermediare', 'expert'],
     types: ['theorique', 'technique', 'soft-skill'],
