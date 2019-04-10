@@ -2,7 +2,10 @@
     width: 200px;
     /* overflow: hidden; */
 }
-.card-image { min-height: 200px }
+.card-image {
+    height: 220px;
+    object-fit: cover;
+}
 
 .level-border .card-image,
 .level-border .training-date { border-bottom-style: solid }

@@ -25,6 +25,7 @@ import { TrainingSearchComponent } from './training/training-search/training-sea
 import { HttpClientModule } from '@angular/common/http';
 import { TrainingListComponent } from './training/training-list/training-list.component';
 import { TrainingItemComponent } from './training/training-item/training-item.component';
+import { SharedService } from './shared/shared.service';
 
 
 @NgModule({
@@ -70,6 +71,7 @@ import { TrainingItemComponent } from './training/training-item/training-item.co
    ],
    providers: [
       LoginService,
+      SharedService,
       AuthGuardService,
       AuthenticationService,
    ],
