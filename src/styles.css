@@ -17,8 +17,8 @@ after adding margin-top to main content, the main content height is over 100%*/
 .main-content-h-fix { min-height: calc(100% - var(--footer-h)) }
 
 .button-outline-icon-fix-pos {
-    display:block;
-    margin-bottom: -8px
+    display: block !important;
+    margin-bottom: -8px !important;
 }
 
 
