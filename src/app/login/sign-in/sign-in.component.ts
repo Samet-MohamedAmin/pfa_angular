@@ -14,8 +14,7 @@ export class SignInComponent implements OnInit {
   roles = ROLES;
   roleList = ROLE_LIST;
   role: string;
-  // credentials: CredentialsSignInInterface = { email: '', password: '', type: '' };
-  // credentials = { email: '', password: '', type: '' };
+  credentials: CredentialsSignInInterface = { email: '', password: '', type: '' };
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -41,12 +40,18 @@ export class SignInComponent implements OnInit {
     console.log(eventData.value);
   }
 
-  // login() {
-  //   this.auth.login(this.credentials).subscribe((data) => {
-  //     this.router.navigateByUrl('/');
-  //   }, (err) => {
-  //     console.error(err);
-  //   }); 
-  // }
+ 
+
+   login() { 
+     console.log('login')
+     this.credentials.type='student'
+     this.auth.login(this.credentials).subscribe((data) => {
+      this.router.navigateByUrl('/');
+    }, (err) => {
+      console.error(err);
+   }); 
+  }
+
+
 
 }
