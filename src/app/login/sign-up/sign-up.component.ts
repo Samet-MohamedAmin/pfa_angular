@@ -3,7 +3,7 @@ import { ROLES, ROLE_LIST, BRANCHES } from '../login-service.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MatSelectChange } from '@angular/material';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
-import { CredentialsSignUpInterface } from './credentials-sign-up';
+import { Student,Teacher,Partner } from './credentials-sign-up';
 
 @Component({
   selector: 'app-sign-up',
@@ -14,14 +14,14 @@ export class SignUpComponent implements OnInit {
   roles = ROLES;
   roleList = ROLE_LIST;
   role: string;
-  credentials: CredentialsSignUpInterface = { email: '', password: '', type: '' };
+  credentials:any={} ;
   formFieldAppearance = "outline";
   branches = BRANCHES;
   yearOfStudy = [1, 2, 3, 4, 5];
 
   constructor(private router: Router,
-              private route: ActivatedRoute,){}
-              // private auth: AuthenticationService,) { }
+              private route: ActivatedRoute,
+               private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.role = this.route.snapshot.params['role'];
@@ -30,6 +30,7 @@ export class SignUpComponent implements OnInit {
         if(this.roleList.includes(roleParam)) {
           this.role = roleParam;
           if(this.role == this.roleList[0]){
+            this.credentials=new Student()
             this.credentials.type = this.role;
           }
         }
@@ -42,15 +43,39 @@ export class SignUpComponent implements OnInit {
 
   partenaireRoleSelectionChanged(eventData: MatSelectChange){
     console.log(eventData.value);
-    this.credentials.type = eventData.value;
+    if(eventData.value=="teacher"){
+      this.credentials=new Teacher()
+      this.credentials.type = eventData.value
+
+    }else if(eventData.value="partner"){
+      this.credentials=new Partner()
+      this.credentials.type = eventData.value
+    }
+  }
+  branchSelected(eventData: MatSelectChange){
+    console.log(eventData.value);
+    this.credentials.branch = eventData.value;
   }
 
-  // register() {
-  //   this.auth.register(this.credentials).subscribe((data) => {
-  //     this.router.navigateByUrl('/');
-  //   }, (err) => {
-  //     console.error(err);
-  //   });
-  // }
+  yearOfStudySelected(eventData: MatSelectChange){
+    console.log(eventData.value);
+    this.credentials.yearOfStudy = eventData.value;
+  }
+  departmentSelected(eventData: MatSelectChange){
+    console.log(eventData.value);
+    this.credentials.department = eventData.value;
+  }
+
+  
+  register() {
+    if(this.credentials.type=="student"){
+      this.credentials.requestedPath="soft_skills"
+    }
+     this.auth.register(this.credentials).subscribe((data) => {
+       this.router.navigateByUrl('/');
+     }, (err) => {
+       console.error(err);
+     });
+   }
 
 }

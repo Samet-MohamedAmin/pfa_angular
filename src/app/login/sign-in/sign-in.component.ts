@@ -28,6 +28,8 @@ export class SignInComponent implements OnInit {
         const roleParam = params['role'].toLowerCase();
         if(this.roleList.includes(roleParam)) {
           this.role = roleParam;
+          //set the type 
+          if (this.role=="student") this.credentials.type=this.role
         }
         else {
           this.router.navigate(['/error'])
@@ -38,13 +40,13 @@ export class SignInComponent implements OnInit {
 
   partenaireRoleSelectionChanged(eventData: MatSelectChange){
     console.log(eventData.value);
+    this.credentials.type=eventData.value
   }
 
  
 
    login() { 
      console.log('login')
-     this.credentials.type='student'
      this.auth.login(this.credentials).subscribe((data) => {
       this.router.navigateByUrl('/');
     }, (err) => {
