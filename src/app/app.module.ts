@@ -8,7 +8,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { MatToolbarModule, MatIconModule, MatGridListModule, MatDividerModule,
   MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, MatSidenavModule,
-  MatOptionModule, MatSelectModule, MatMenuModule, MatListModule, MatCheckboxModule, MatRadioModule} from '@angular/material';
+  MatOptionModule, MatSelectModule, MatMenuModule, MatListModule, MatCheckboxModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { BranchListComponent } from './home/branch-list/branch-list.component';
@@ -64,7 +64,9 @@ import { TrainingItemComponent } from './training/training-item/training-item.co
       MatMenuModule,
       MatListModule,
       MatCheckboxModule,
-      MatRadioModule
+      MatRadioModule,
+      MatDatepickerModule,
+      MatNativeDateModule,
    ],
    providers: [
       LoginService,

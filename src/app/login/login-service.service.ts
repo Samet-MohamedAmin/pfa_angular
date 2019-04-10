@@ -18,3 +18,10 @@ export class LoginService {
 
 export const ROLES = {student:'étudiant', partner: 'partenaire', admin: 'admin'};
 export const ROLE_LIST = Object.keys(ROLES);
+
+export const BRANCHES = { GL: 'Génie Logiciel',
+                          RT: 'Réseau et Télécommunication',
+                          IIA: 'Informatique Industriel et Automatique',
+                          IMI: 'Instrumentation et Maintenance Industriel',
+                          CH: 'Chimie',
+                          BIO: 'Biologie'}

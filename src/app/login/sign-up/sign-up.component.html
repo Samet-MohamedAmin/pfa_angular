@@ -1,27 +1,114 @@
-<div class="container main-content-h-fix flex-center">
-        <mat-card class="w-400 p-5">
-          <mat-card-content>
-            <mat-card-header>
-              <mat-card-title>Inscription <span class="text-capitalize">{{roleList[role]}}</span></mat-card-title>
-            </mat-card-header>
-            <form class="w-75">
-              <mat-form-field class="w-75">
-                <input matInput placeholder="email">
-              </mat-form-field>
-              <mat-form-field class="w-75">
-                <input matInput placeholder="mot de passe">
-              </mat-form-field>
-              <mat-form-field *ngIf="role == roleList[1]" class="w-75">
-                <mat-label>Vous êtes:</mat-label>
-                <mat-select (selectionChange)="partenaireRoleSelectionChanged($event)">
-                  <mat-option value="teacher">Enseignant</mat-option>
-                  <mat-option value="partner">Parteniare Socio-Professionel</mat-option>
-                </mat-select>
-              </mat-form-field>
-            </form>
-          </mat-card-content>
-          <mat-card-actions class="d-flex justify-content-end">
-            <button mat-raised-button color="primary">submit</button>
-          </mat-card-actions>
-        </mat-card>
-      </div>
+<div class="container py-5 main-content-h-fix flex-center">
+  <mat-card class="w-500 p-5">
+    <mat-card-content>
+      <mat-card-header>
+        <mat-card-title>Inscription <span class="text-capitalize">{{roleList[role]}}</span></mat-card-title>
+      </mat-card-header>
+      <form class="w-100">
+        <!---------------------------common-credentials----------------------->
+        <div class="credentials-common">
+          <div class="d-flex justify-content-space-between">
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <input matInput placeholder="prenom">
+            </mat-form-field>
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <input matInput placeholder="nom">
+            </mat-form-field>
+          </div>
+          <div class="d-flex justify-content-space-between">
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <input matInput placeholder="cin">
+            </mat-form-field>
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <input matInput [matDatepicker]="picker" placeholder="Votre date de naissance">
+              <mat-datepicker-toggle class="button-outline-icon-fix-pos" matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="d-flex justify-content-space-between">
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <input type="email" matInput placeholder="email">
+            </mat-form-field>
+            <!-- TODO: this ugly fix must be removed -->
+            <mat-form-field [appearance]="formFieldAppearance" style="visibility: hidden" class="w-50 pl-3">
+              <input matInput placeholder="email">
+            </mat-form-field>
+          </div>
+          <div class="d-flex justify-content-space-between">
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <input type="password" matInput placeholder="password">
+            </mat-form-field>
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <input type="password" matInput placeholder=" repeat password">
+            </mat-form-field>
+          </div>
+        </div>
+        <!----------------------------student credentials---------------------->
+        <div *ngIf="role == roleList[0]" class="credentials-student">
+          <div class="d-flex justify-content-space-between">
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <input matInput placeholder="num inscription">
+            </mat-form-field>
+            <!-- TODO: this ugly fix must be removed -->
+            <mat-form-field style="visibility: hidden" [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <input matInput placeholder="nom">
+            </mat-form-field>
+          </div>
+          <div class="d-flex justify-content-space-between">
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <mat-label>Sélectionner votre branche</mat-label>
+              <mat-select >
+                <mat-option *ngFor="let branch of branches | keyvalue"
+                            [value]="branch.key">{{branch.value}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <mat-label>Sélectionner l'année d'étude</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let year of yearOfStudy"
+                              [value]="year">{{year}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+        <!-------------------------partner-credentials------------------>
+        <div *ngIf="role == roleList[1]">
+          <mat-form-field [appearance]="formFieldAppearance"  class="w-75">
+            <mat-label>Vous êtes:</mat-label>
+            <mat-select (selectionChange)="partenaireRoleSelectionChanged($event)">
+              <mat-option value="teacher">Enseignant</mat-option>
+              <mat-option value="partner">Parteniare Socio-Professionel</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <!-------------------------teacher-credentials---------------->
+          <div *ngIf="credentials.type == 'teacher'"
+                class="d-flex justify-content-space-between">
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <mat-label>Sélectionner votre département</mat-label>
+              <mat-select >
+                <mat-option *ngFor="let branch of branches | keyvalue"
+                            [value]="branch.key">{{branch.value}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <input matInput placeholder="specialité">
+            </mat-form-field>
+          </div>
+          <!---------------prtenaire-socio-professionel-credentials---------------->
+          <div *ngIf="credentials.type == 'partner'"
+                class="d-flex justify-content-space-between">
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <input matInput placeholder="entreprise">
+            </mat-form-field>
+            <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <input matInput placeholder="specialité">
+            </mat-form-field>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+    <mat-card-actions class="d-flex justify-content-end">
+      <button mat-raised-button color="primary">submit</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

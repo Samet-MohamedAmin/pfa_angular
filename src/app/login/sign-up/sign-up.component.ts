@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ROLES, ROLE_LIST } from '../login-service.service';
+import { ROLES, ROLE_LIST, BRANCHES } from '../login-service.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MatSelectChange } from '@angular/material';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
@@ -15,6 +15,9 @@ export class SignUpComponent implements OnInit {
   roleList = ROLE_LIST;
   role: string;
   credentials: CredentialsSignUpInterface = { email: '', password: '', type: '' };
+  formFieldAppearance = "outline";
+  branches = BRANCHES;
+  yearOfStudy = [1, 2, 3, 4, 5];
 
   constructor(private router: Router,
               private route: ActivatedRoute,){}
@@ -26,6 +29,9 @@ export class SignUpComponent implements OnInit {
         const roleParam = params['role'].toLowerCase();
         if(this.roleList.includes(roleParam)) {
           this.role = roleParam;
+          if(this.role == this.roleList[0]){
+            this.credentials.type = this.role;
+          }
         }
         else {
           this.router.navigate(['/error'])
@@ -36,6 +42,7 @@ export class SignUpComponent implements OnInit {
 
   partenaireRoleSelectionChanged(eventData: MatSelectChange){
     console.log(eventData.value);
+    this.credentials.type = eventData.value;
   }
 
   // register() {
