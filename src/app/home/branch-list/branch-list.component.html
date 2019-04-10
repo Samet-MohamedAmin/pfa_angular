@@ -3,7 +3,7 @@
       <h1 class="text-center">Explorer les Sections</h1>
       <mat-grid-list class="branch-list" rowHeight="400px" cols="3">
           <mat-grid-tile *ngFor="let branchItem of branchList" [colspan]="1" [rowspan]="1">
-            <app-branch-item [branch]="branchItem"></app-branch-item>
+            <app-branch-item class="cursor-pointer" [branch]="branchItem"></app-branch-item>
           </mat-grid-tile>
       </mat-grid-list>
   </div>

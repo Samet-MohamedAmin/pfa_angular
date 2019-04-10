@@ -18,13 +18,13 @@ export class SignInComponent implements OnInit {
   // credentials = { email: '', password: '', type: '' };
 
   constructor(private router: Router,
-              private route: ActivatedRoute,){}
-              //private auth: AuthenticationService) { }
+              private route: ActivatedRoute,
+              private auth: AuthenticationService) { }
 
 
   ngOnInit() {
     console.log('in sign-in component');
-    // this.role = this.route.snapshot.params['role'];
+    this.role = this.route.snapshot.params['role'];
     this.route.params.subscribe((params: Params) => {
         const roleParam = params['role'].toLowerCase();
         if(this.roleList.includes(roleParam)) {

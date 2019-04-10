@@ -18,12 +18,16 @@ after adding margin-top to main content, the main content height is over 100%*/
 
 
 /*------------------developement-only------------*/
+.h-100px { height: 100px }
+.h-150px { height: 150px }
 .h-200 { height: 200px }
 .h-300 { height: 300px }
 .h-400 { height: 400px }
 .h-500 { height: 500px }
 .h-600 { height: 600px }
 
+.w-150px { width: 150px }
+.w-100px { width: 100px }
 .w-200 { width: 200px }
 .w-300 { width: 300px }
 .w-400 { width: 400px }

@@ -1,0 +1,47 @@
+<div class="main-content-h-fix">
+  <div class="h-150px bg-main-2">
+    <div class="container pt-4 h-100 flex-column">
+      <h3 class="mt-0 mb-3">Filtrer les formations</h3>
+      <form class="d-flex justify-content-between">
+        <section class="">
+          <label class="d-block mb-2">Sélectionner votre niveau</label>
+          <mat-checkbox *ngFor="let level of parameters.levels;let i = index"
+                        [value]="i"
+                        class="mr-3">{{level}}</mat-checkbox>
+        </section>
+        <section class="">
+          <label class="d-block mb-2">Sélectionner le type</label>
+          <mat-radio-group>
+            <mat-radio-button *ngFor="let type of parameters.types; let i = index"
+                              class="radio-type-selction mr-3"
+                              value="{{i}}">{{type}}</mat-radio-button>
+          </mat-radio-group>
+        </section>
+        <mat-form-field class="w-25" appearance="outline">
+          <mat-label>Sélectionner la branche</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let branch of parameters.branches | keyvalue"
+                        value="branch.key">{{branch.value}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </form>
+    </div>
+  </div>
+  <div class="h-150px bg-grey-1 flex-center flex-column">
+    <div class="container w-100 h-100 flex-center justify-content-between">
+      <h3 class="w-50 text-black">Chercher une formation</h3>
+      <mat-form-field appearance="outline" class="w-50 training-search">
+        <input matInput class="bg-white"
+                type="text"
+                placeholder="Chercher une formation?"
+                [(ngModel)]="searchValue">
+        <button [ngStyle]="{marginBottom: '-8px'}" mat-button matSuffix mat-icon-button>
+          <mat-icon matSuffix>search</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <app-training-list></app-training-list>
+
+</div>

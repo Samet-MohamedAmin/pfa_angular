@@ -8,7 +8,7 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { MatToolbarModule, MatIconModule, MatGridListModule, MatDividerModule,
   MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, MatSidenavModule,
-  MatOptionModule, MatSelectModule, MatMenuModule, MatListModule} from '@angular/material';
+  MatOptionModule, MatSelectModule, MatMenuModule, MatListModule, MatCheckboxModule, MatRadioModule} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { BranchListComponent } from './home/branch-list/branch-list.component';
@@ -21,6 +21,10 @@ import { ErrorComponent } from './error/error.component';
 import { LoginService } from './login/login-service.service';
 import { AuthenticationService } from './auth/authentication.service';
 import { AuthGuardService } from './auth/auth-guard.service';
+import { TrainingSearchComponent } from './training/training-search/training-search.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TrainingListComponent } from './training/training-list/training-list.component';
+import { TrainingItemComponent } from './training/training-item/training-item.component';
 
 
 @NgModule({
@@ -35,13 +39,17 @@ import { AuthGuardService } from './auth/auth-guard.service';
       SignInSelectionComponent,
       SignUpComponent,
       SignUpSelectionComponent,
-      ErrorComponent
+      TrainingSearchComponent,
+      TrainingListComponent,
+      TrainingItemComponent,
+      ErrorComponent,
    ],
    imports: [
       BrowserModule,
       AppRoutingModule,
       BrowserAnimationsModule,
       FormsModule,
+      HttpClientModule,
       MatToolbarModule,
       MatIconModule,
       MatGridListModule,
@@ -54,7 +62,9 @@ import { AuthGuardService } from './auth/auth-guard.service';
       MatOptionModule,
       MatSelectModule,
       MatMenuModule,
-      MatListModule
+      MatListModule,
+      MatCheckboxModule,
+      MatRadioModule
    ],
    providers: [
       LoginService,
