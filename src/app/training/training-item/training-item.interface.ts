@@ -5,4 +5,6 @@ export interface TrainingItemInterface {
     imageAlt: string;
     instructor: string;
     level: number;
+    rating: number;
+    date: Date;
 }

@@ -1,0 +1,21 @@
+.training-item {
+    width: 200px
+}
+
+.level-border .card-image {
+    border-bottom-style: solid;
+    border-bottom-width: 10px;
+}
+
+.level-color-0 .card-image {
+    border-bottom-color: green;    
+}
+
+.level-color-1 .card-image{
+    border-bottom-color: violet;
+}
+
+.level-color-2 .card-image{
+    border-bottom-color: red;
+}
+

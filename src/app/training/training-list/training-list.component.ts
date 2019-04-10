@@ -22,6 +22,8 @@ export class TrainingListComponent implements OnInit {
         imageAlt: 'Training Image',
         instructor: 'John Doe',
         level: 0,
+        rating: 4,
+        date: new Date(Date.now())
       };
 
       this.trainingList.push(trainingItem);

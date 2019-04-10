@@ -1,6 +1,6 @@
 <div class="bg-white py-5 d-flex flex-column align-items-center">
     <div class="container">
-        <mat-grid-list class="training-list" rowHeight="400px" cols="3">
+        <mat-grid-list class="training-list" rowHeight="450px" cols="4">
             <mat-grid-tile *ngFor="let trainingItem of trainingList" [colspan]="1" [rowspan]="1">
               <app-training-item class="cursor-pointer" [training]="trainingItem"></app-training-item>
             </mat-grid-tile>
