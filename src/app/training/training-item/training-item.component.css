@@ -1,21 +1,26 @@
 .training-item {
-    width: 200px
+    width: 200px;
+    /* overflow: hidden; */
 }
+.card-image { min-height: 200px }
 
-.level-border .card-image {
-    border-bottom-style: solid;
-    border-bottom-width: 10px;
+.level-border .card-image,
+.level-border .training-date { border-bottom-style: solid }
+
+.level-border .card-image { border-bottom-width: 10px }
+.level-border .training-date { border-bottom-width: 4px }
+
+.level-color-0 .card-image,
+.level-color-0 .training-date { border-bottom-color: #60CC5A }
+.level-color-1 .card-image,
+.level-color-1 .training-date{ border-bottom-color: #C2BB3A }
+.level-color-2 .card-image,
+.level-color-2 .training-date { border-bottom-color: #CC2A17 }
+
+
+.training-date {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-size: 14px;
 }
-
-.level-color-0 .card-image {
-    border-bottom-color: green;    
-}
-
-.level-color-1 .card-image{
-    border-bottom-color: violet;
-}
-
-.level-color-2 .card-image{
-    border-bottom-color: red;
-}
-

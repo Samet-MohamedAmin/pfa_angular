@@ -21,7 +21,7 @@ export class TrainingListComponent implements OnInit {
         imageSrc: 'assets/images/computer_01.jpg',
         imageAlt: 'Training Image',
         instructor: 'John Doe',
-        level: 0,
+        level: Math.floor(Math.random()*3),
         rating: 4,
         date: new Date(Date.now())
       };

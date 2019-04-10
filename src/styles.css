@@ -61,6 +61,7 @@ after adding margin-top to main content, the main content height is over 100%*/
 /*------------------general-classes--------------*/
 .text-white { color: white!important}
 .text-black { color: black!important}
+.text-grey { color: rgba(0,0,0,.54)}
 
 .spacer { flex: 1 1 auto }
 

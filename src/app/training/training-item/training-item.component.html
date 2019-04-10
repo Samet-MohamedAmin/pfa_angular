@@ -1,5 +1,8 @@
-<mat-card [ngClass]="{'training-item h-100 level-border': true, 'level-color-0': training.level == 0}">
-    <img class="card-image"
+<mat-card [ngClass]="{'training-item h-100 level-border cursor-pointer': true,
+                        'level-color-0': training.level == 0,
+                        'level-color-1': training.level == 1,
+                        'level-color-2': training.level == 2}">
+    <img class="card-image d-block"
             mat-card-image  [alt]="training.imageAlt" [src]="training.imageSrc">
     <mat-card-content>
         <mat-card-header>
@@ -8,7 +11,7 @@
         </mat-card-header>
     </mat-card-content>
     <!-- TODO: mat-card-action must contain only an action-->
-    <mat-card-actions>
-        <p class="text-right mr-4">{{ training.date | date: 'dd/MM/yy' }}</p>
-    </mat-card-actions>
+    <p class="training-date pb-3 pr-3 text-right text-grey position-absolute">
+        {{ training.date | date: 'dd/MM/yy' }}
+    </p>
 </mat-card>
