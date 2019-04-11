@@ -61,8 +61,7 @@ export class TrainingListComponent implements OnInit {
         instructor: randomTraining.instructor,
         level: SharedService.getRandomNumber(0, 3),
         rating: SharedService.getRandomNumber(0, 10),
-        date: trainingDate,
-        type: SharedService.getRandomNumber(0, 3)
+        date: trainingDate
       };
 
       this.trainingList.push(trainingItem);
