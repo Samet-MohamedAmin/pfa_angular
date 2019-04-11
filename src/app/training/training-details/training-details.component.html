@@ -6,7 +6,9 @@
       </h3>
       <h1 class="mt-5">Formation Test Logiciel</h1>
       <p class="h5 font-weight-normal">{{dummyText|slice:0:198}}.</p>
-      <button class="btn-start-training position-absolute" mat-raised-button>Commencer</button>
+      <button class="btn-start-training position-absolute"
+              [routerLink]="['/training', 'search']"
+              mat-raised-button>Commencer</button>
     </div>
   </div>
   <div class="h-150px bg-main-2">

@@ -7,4 +7,5 @@ export interface TrainingItemInterface {
     level: number;
     rating: number;
     date: Date;
+    type: number;
 }

@@ -29,7 +29,7 @@ export class TrainingDetailsComponent implements OnInit {
 
   generateStars(){
     this.rating = SharedService.getRandomNumber(4, 11);
-    console.log(this.rating);
+    console.log(`rating: ${this.rating}`);
     let starFull = 'star';
     let starHalf = 'star_half';
     let starEmpty = 'star_border';
@@ -38,7 +38,8 @@ export class TrainingDetailsComponent implements OnInit {
       this.starList.push(starFull);
     }
     if(this.rating%2) this.starList.push(starHalf);
-    for(let i=0; i<5-this.starList.length; i++){
+    let starEmptyNumber = 5 - this.starList.length;
+    for(let i=0; i<starEmptyNumber; i++){
       this.starList.push(starEmpty);
     }
 
