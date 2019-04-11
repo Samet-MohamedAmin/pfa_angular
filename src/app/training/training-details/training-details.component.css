@@ -1,0 +1,18 @@
+.btn-start-training{
+    top: 42px;
+    right: 50px;
+}
+
+.description-item { --icon-w-f: 66px }
+.description-item > mat-icon {
+    width: var(--icon-w-f);
+    height: var(--icon-w-f);
+    font-size: var(--icon-w-f);
+}
+
+.description-item { --icon-star-w: 20px }
+.description-item mat-icon.icon-star {
+    width: var(--icon-star-w);
+    height: var(--icon-star-w);
+    font-size: var(--icon-star-w);
+}

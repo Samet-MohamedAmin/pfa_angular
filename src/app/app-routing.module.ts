@@ -7,9 +7,10 @@ import { SignUpSelectionComponent } from './login/sign-up/sign-up-selection/sign
 import { SignInSelectionComponent } from './login/sign-in/sign-in-selection/sign-in-selection.component';
 import { ErrorComponent } from './error/error.component';
 import { TrainingSearchComponent } from './training/training-search/training-search.component';
+import { TrainingDetailsComponent } from './training/training-details/training-details.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'training', pathMatch: 'full'},
+  {path: '', redirectTo: 'training/details', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'sign-up', component: SignUpSelectionComponent},
   {path: 'sign-up/:role', component: SignUpComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'sign-in/:role', component: SignInComponent},
   {path: 'training' ,children: [
     {path: '', redirectTo: 'search', pathMatch: 'full'},
-    {path: 'search', component: TrainingSearchComponent}
+    {path: 'search', component: TrainingSearchComponent},
+    {path: 'details', component: TrainingDetailsComponent}
   ]},
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: 'error'},

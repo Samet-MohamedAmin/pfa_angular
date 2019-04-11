@@ -11,7 +11,7 @@ export class TrainingSearchComponent implements OnInit {
   searchValue = '';
 
   parameters = {
-    levels: ['debutant', 'intermediare', 'expert'],
+    levels: ['debutant', 'intermediare', 'avancé'],
     types: ['theorique', 'technique', 'soft-skill'],
     branches: BRANCHES,
     branchList: BRANCH_LIST,

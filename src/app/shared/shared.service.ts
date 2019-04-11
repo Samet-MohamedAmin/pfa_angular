@@ -7,11 +7,11 @@ export class SharedService {
 
   constructor() { }
 
-  getRandomNumber(min:number, max: number):number{
+  static getRandomNumber(min:number, max: number):number{
     return Math.floor(Math.random()*(max - min))+min;
   }
 
-  getRandomObject(list: any[]){
+  static getRandomObject(list: any[]){
     return list[this.getRandomNumber(0, list.length)]
   }
 

@@ -2,7 +2,9 @@
     <div class="container">
         <mat-grid-list class="training-list" rowHeight="450px" cols="4">
             <mat-grid-tile *ngFor="let trainingItem of trainingList" [colspan]="1" [rowspan]="1">
-              <app-training-item class="" [training]="trainingItem"></app-training-item>
+              <app-training-item class=""
+                                  [routerLink]="['/training', 'details']"
+                                  [training]="trainingItem"></app-training-item>
             </mat-grid-tile>
         </mat-grid-list>
     </div>

@@ -1,0 +1,65 @@
+<div class="main-content-h-fix">
+  <div class="h-300 bg-main text-white">
+    <div class="container h-100 pt-5 position-relative">
+      <h3 class="mt-0">
+        <span *ngFor="let branchTreeItem of dummyBranchTreeList">{{branchTreeItem}} > </span>
+      </h3>
+      <h1 class="mt-5">Formation Test Logiciel</h1>
+      <p class="h5 font-weight-normal">{{dummyText|slice:0:198}}.</p>
+      <button class="btn-start-training position-absolute" mat-raised-button>Commencer</button>
+    </div>
+  </div>
+  <div class="h-150px bg-main-2">
+    <div class="container h-100 d-flex align-items-center">
+      <div class="description-item d-flex mr-5">
+        <mat-icon class="mr-2">sort</mat-icon>
+        <div class="pt-2">
+          <h2 class="mt-0 mb-1">Intermidiare</h2>
+          <p class="mt-0">niveau</p>
+        </div>
+      </div>
+      <div class="description-item d-flex mr-5">
+        <mat-icon class="mr-2">access_time</mat-icon>
+        <div class="pt-2">
+          <h2 class="mt-0 mb-1">6-12h</h2>
+          <p class="mt-0">par semaine pour 6 semaines</p>
+        </div>
+      </div>
+      <div class="description-item d-flex">
+        <mat-icon class="mr-2">tag_faces</mat-icon>
+        <div class="pt-2">
+          <h2 class="mt-0 mb-1">Rating</h2>
+          <div>
+            <mat-icon class="icon-star" *ngFor="let starType of starList">{{starType}}</mat-icon>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main-content py-5">
+    <div class="container">
+      <div class="pre">
+        <h1>Avant de commencer</h1>
+        <h3>prérequis</h3>
+        <ul>
+          <li *ngFor="let pre of preList">{{pre}}</li>
+        </ul>
+      </div>
+      <div class="goals">
+        <h1>Qu’est ce que vous allez obtenir</h1>
+        <h3>buts</h3>
+        <ul>
+          <li *ngFor="let pre of preList">{{pre}}</li>
+        </ul>
+      </div>
+      <div class="overview">
+        <h1>Description détaillé</h1>
+        <p class="text-justify">{{dummyText}}</p>
+      </div>
+      <div class="h-500 intructor">
+        <h1>Instructeur</h1>
+        &lt;Instructor Information&gt;
+      </div>
+    </div>
+  </div>
+</div>

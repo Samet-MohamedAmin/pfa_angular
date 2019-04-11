@@ -44,23 +44,23 @@ export class TrainingListComponent implements OnInit {
     },
   ];
 
-  constructor(private sharedService: SharedService) { }
+  constructor() { }
 
   ngOnInit() {
     let dateNow:Date = new Date(Date.now());
     for(let i=0; i<20; i++){
       let trainingDate: Date = new Date();
-      trainingDate.setMonth(dateNow.getMonth() + this.sharedService.getRandomNumber(-6, 6));
-      trainingDate.setDate(dateNow.getDate() + this.sharedService.getRandomNumber(-15, 15));
-      const randomTraining = this.sharedService.getRandomObject(this.dummyTrainingList);
+      trainingDate.setMonth(dateNow.getMonth() + SharedService.getRandomNumber(-6, 6));
+      trainingDate.setDate(dateNow.getDate() + SharedService.getRandomNumber(-15, 15));
+      const randomTraining = SharedService.getRandomObject(this.dummyTrainingList);
       const trainingItem:TrainingItemInterface = {
         title: randomTraining.title,
         description: this.dummyText,
         imageSrc: IMAGE_SRC_BASE + randomTraining.imageSrc,
         imageAlt: randomTraining.imageSrc,
         instructor: randomTraining.instructor,
-        level: this.sharedService.getRandomNumber(0, 3),
-        rating: this.sharedService.getRandomNumber(0, 10),
+        level: SharedService.getRandomNumber(0, 3),
+        rating: SharedService.getRandomNumber(0, 10),
         date: trainingDate
       };
 

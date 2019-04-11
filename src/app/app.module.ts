@@ -26,6 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TrainingListComponent } from './training/training-list/training-list.component';
 import { TrainingItemComponent } from './training/training-item/training-item.component';
 import { SharedService } from './shared/shared.service';
+import { TrainingDetailsComponent } from './training/training-details/training-details.component';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { SharedService } from './shared/shared.service';
       TrainingSearchComponent,
       TrainingListComponent,
       TrainingItemComponent,
+      TrainingDetailsComponent,
       ErrorComponent,
    ],
    imports: [
