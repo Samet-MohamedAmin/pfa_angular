@@ -12,13 +12,13 @@ userDetails;
   @Output() menuClicked = new EventEmitter();
 
   constructor(private auth :AuthenticationService) {
-    this.auth.updateUserState()
     this.auth.userEmitter
     .subscribe((userDetails)=>{
       console.log(userDetails)
     this.isLoggedIn=userDetails!= null ? true :false
     this.userDetails=userDetails
     })
+    this.auth.updateUserState()
    }
 
   ngOnInit() {
