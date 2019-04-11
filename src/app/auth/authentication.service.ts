@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class AuthenticationService {
   private token: string;
-  private url = 'http://localhost:8000/api';
+  private url = 'https://backend-4c.herokuapp.com/api';
 
   constructor(private http: HttpClient, private router: Router) {}
 

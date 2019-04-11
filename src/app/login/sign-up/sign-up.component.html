@@ -1,5 +1,5 @@
 <div class="container py-5 main-content-h-fix flex-center">
-  <mat-card class="w-500 p-5">
+  <mat-card class="w-600 p-5">
     <mat-card-content>
       <mat-card-header>
         <mat-card-title>Inscription <span class="text-capitalize">{{roleList[role]}}</span></mat-card-title>
@@ -9,17 +9,21 @@
         <div class="credentials-common">
           <div class="d-flex justify-content-space-between">
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <mat-label>prenom</mat-label>
               <input matInput placeholder="prenom" [(ngModel)]="credentials.lastName" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <mat-label>nom</mat-label>
               <input matInput placeholder="nom" [(ngModel)]="credentials.firstName" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           </div>
           <div class="d-flex justify-content-space-between">
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <mat-label>cin</mat-label>
               <input matInput placeholder="cin" [(ngModel)]="credentials.cin" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <mat-label>date de naissance</mat-label>
               <input matInput [matDatepicker]="picker" placeholder="Votre date de naissance" [(ngModel)]="credentials.birthday" [ngModelOptions]="{standalone: true}">
               <mat-datepicker-toggle class="button-outline-icon-fix-pos" matSuffix [for]="picker"></mat-datepicker-toggle>
               <mat-datepicker #picker></mat-datepicker>
@@ -27,6 +31,7 @@
           </div>
           <div class="d-flex justify-content-space-between">
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <mat-label>email</mat-label>
               <input type="email" matInput placeholder="email" [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
             <!-- TODO: this ugly fix must be removed -->
@@ -34,10 +39,12 @@
           </div>
           <div class="d-flex justify-content-space-between">
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
-              <input type="password" matInput placeholder="password" [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}">
+              <mat-label>mot de passe</mat-label>
+              <input type="password" matInput placeholder="mot de passe" [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
-              <input type="password" matInput placeholder=" repeat password">
+              <mat-label>répéter le mot de passe</mat-label>
+              <input type="password" matInput placeholder="répéter le mot de passe">
             </mat-form-field>
           </div>
         </div>
@@ -45,6 +52,7 @@
         <div *ngIf="role == roleList[0]" class="credentials-student">
           <div class="d-flex justify-content-space-between">
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <mat-label>num inscription</mat-label>
               <input matInput placeholder="num inscription" [(ngModel)]="credentials.numInscription" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
             <!-- TODO: this ugly fix must be removed -->
@@ -97,6 +105,7 @@
               </mat-select>
             </mat-form-field>
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <mat-label>spécialité</mat-label>
               <input matInput placeholder="specialité" [(ngModel)]="credentials.speciality" [ngModelOptions]="{standalone: true}" >
             </mat-form-field>
           </div>
@@ -104,9 +113,11 @@
           <div *ngIf="credentials.type == 'partner'"
                 class="d-flex justify-content-space-between">
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pr-3">
+              <mat-label>entreprise</mat-label>
               <input matInput placeholder="entreprise" [(ngModel)]="credentials.company" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
+              <mat-label>spécialité</mat-label>
               <input matInput placeholder="specialité" [(ngModel)]="credentials.speciality" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
           </div>

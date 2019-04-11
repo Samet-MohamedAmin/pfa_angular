@@ -10,7 +10,7 @@ import { TrainingSearchComponent } from './training/training-search/training-sea
 import { TrainingDetailsComponent } from './training/training-details/training-details.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'training/details', pathMatch: 'full'},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'sign-up', component: SignUpSelectionComponent},
   {path: 'sign-up/:role', component: SignUpComponent},
