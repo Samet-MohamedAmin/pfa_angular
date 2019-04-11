@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
@@ -13,9 +13,8 @@ import { environment } from 'src/environments/environment';
 export class AuthenticationService {
   private token: string;
   private url = environment.BACKEND_URL;
-
+  userEmitter =new EventEmitter<any>()
   constructor(private http: HttpClient, private router: Router) {
-    console.log('[BACKEND_URL] ---------> ' + this.url);
   }
 
   private saveToken(token: string): void {
@@ -81,5 +80,9 @@ export class AuthenticationService {
     this.token = '';
     window.localStorage.removeItem('mean-token');
     this.router.navigateByUrl('/');
+  }
+
+  updateUserState(){
+  this.userEmitter.emit(this.getUserDetails())
   }
 }

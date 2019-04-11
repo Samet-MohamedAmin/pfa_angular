@@ -7,8 +7,10 @@
       </button>
       <a mat-button routerLink="home">e4cape</a>
       <span class="spacer"></span>
-      <a mat-button routerLink="sign-in">Login</a>
-      <a mat-button routerLink="sign-up">S'inscrire</a>
+      <a *ngIf="!isLoggedIn" mat-button routerLink="sign-in">Login</a>
+      <a *ngIf="!isLoggedIn" mat-button routerLink="sign-up">S'inscrire</a>
+      <a *ngIf="isLoggedIn" mat-button >{{userDetails.user.firstName }} {{userDetails.user.lastName }}</a>
+      <a *ngIf="isLoggedIn" mat-button >Deconnexion</a>
     </mat-toolbar-row>
   </mat-toolbar>
 </nav>

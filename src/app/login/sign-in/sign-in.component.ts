@@ -49,7 +49,8 @@ export class SignInComponent implements OnInit {
    login() { 
      console.log('login')
      this.auth.login(this.credentials).subscribe((data) => {
-      this.router.navigateByUrl('/');
+      this.auth.updateUserState()
+      this.router.navigateByUrl('/')
     }, (err) => {
       console.error(err);
    }); 

@@ -76,7 +76,8 @@ export class SignUpComponent implements OnInit {
   
   register() {
      this.auth.register(this.credentials).subscribe((data) => {
-       this.router.navigateByUrl('/');
+      this.auth.updateUserState()
+      this.router.navigateByUrl('/');
      }, (err) => {
        console.error(err);
      });
