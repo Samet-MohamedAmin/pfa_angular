@@ -8,4 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   sideBarOpened = false;
 
+  sideNavItems = {
+    profile: 'profile',
+    recommandation: 'recommandation',
+    formation: '/training',
+    inscription: 'inscription',
+  }
+
+
 }
