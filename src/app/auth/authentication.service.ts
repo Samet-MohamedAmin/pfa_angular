@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 /* note:if you will send request that requires authentication : add this  { headers: { authorization: `Bearer ${this.getToken()}` }}
  */
@@ -11,9 +12,11 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class AuthenticationService {
   private token: string;
-  private url = 'https://backend-4c.herokuapp.com/api';
+  private url = environment.BACKEND_URL;
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) {
+    console.log('[BACKEND_URL] ---------> ' + this.url);
+  }
 
   private saveToken(token: string): void {
     localStorage.setItem('mean-token', token);
