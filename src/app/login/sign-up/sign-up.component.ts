@@ -75,9 +75,6 @@ export class SignUpComponent implements OnInit {
   }
   
   register() {
-    if(this.credentials.type=="student"){
-      this.credentials.requestedPath="soft_skills"
-    }
      this.auth.register(this.credentials).subscribe((data) => {
        this.router.navigateByUrl('/');
      }, (err) => {
