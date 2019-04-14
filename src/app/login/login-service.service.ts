@@ -16,7 +16,8 @@ export class LoginService {
 
 }
 
-export const ROLES = {student:'étudiant', partner: 'professional', admin: 'admin'};
+/* TODO: fix this poor design. role admin must not be here */
+export const ROLES = {student:'étudiant', professional: 'professionel', admin: 'admin'};
 export const ROLE_LIST = Object.keys(ROLES);
 
 export const BRANCHES = { GL: 'Génie Logiciel',

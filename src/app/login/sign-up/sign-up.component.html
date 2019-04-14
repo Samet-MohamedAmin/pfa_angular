@@ -1,8 +1,10 @@
 <div class="container py-5 main-content-h-fix flex-center">
+  <!-- TODO: fix inscription card position. It looks like it is near to the bottom -->
   <mat-card class="w-600 p-5">
     <mat-card-content>
       <mat-card-header>
-        <mat-card-title>Inscription <span class="text-capitalize">{{roleList[role]}}</span></mat-card-title>
+        <!-- roles[role] ===> to describe inscription type -->
+        <mat-card-title>Inscription <span class="text-capitalize">{{roles[role]}}</span></mat-card-title>
       </mat-card-header>
       <form class="w-100">
         <!---------------------------common-credentials----------------------->

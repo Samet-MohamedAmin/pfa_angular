@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ROLES, ROLE_LIST } from '../login-service.service';
 import { MatSelectChange } from '@angular/material';
@@ -18,43 +18,56 @@ export class SignInComponent implements OnInit {
   formFieldAppearance = 'outline';
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
-              private auth: AuthenticationService) { }
+    private route: ActivatedRoute,
+    private auth: AuthenticationService) { }
 
 
   ngOnInit() {
     console.log('in sign-in component');
-    this.role = this.route.snapshot.params['role'];
+    this.role = this.route.snapshot.params.role;
     this.route.params.subscribe((params: Params) => {
-        const roleParam = params['role'].toLowerCase();
-        if(this.roleList.includes(roleParam)) {
-          this.role = roleParam;
-          //set the type 
-          if (this.role=="student") this.credentials.type=this.role
-        }
-        else {
-          this.router.navigate(['/error'])
-        }
+      const roleParam = params.role.toLowerCase();
+      if (this.roleList.includes(roleParam)) {
+        this.role = roleParam;
+        //set the type 
+        if (this.role == 'student') this.credentials.type = this.role;
+        else if (this.role == 'admin') this.credentials.type = this.role;
       }
+      else {
+        this.router.navigate(['/error'])
+      }
+    }
     );
+
+    console.log(this.roles);
+    console.log(this.role);
+    console.log(this.roles[this.role]);
+
+    /*TODO: scroll to top page */
+    // window.scroll(0, 0);
   }
 
-  partenaireRoleSelectionChanged(eventData: MatSelectChange){
+
+  partenaireRoleSelectionChanged(eventData: MatSelectChange) {
     console.log(eventData.value);
-    this.credentials.type=eventData.value
+    this.credentials.type = eventData.value
   }
 
- 
 
-   login() { 
-     console.log('login')
-     this.auth.login(this.credentials).subscribe((data) => {
+
+  login() {
+    console.log('login')
+    this.auth.login(this.credentials).subscribe((data) => {
       this.auth.updateUserState()
       this.router.navigateByUrl('/')
     }, (err) => {
       console.error(err);
-   }); 
+    });
   }
+
+  
+
+
 
 
 

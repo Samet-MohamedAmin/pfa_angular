@@ -27,21 +27,25 @@ export class SignUpComponent implements OnInit {
                private auth: AuthenticationService) { }
 
   ngOnInit() {
-    this.role = this.route.snapshot.params['role'];
+    this.role = this.route.snapshot.params.role;
     this.route.params.subscribe((params: Params) => {
-        const roleParam = params['role'].toLowerCase();
+        const roleParam = params.role.toLowerCase();
         if(this.roleList.includes(roleParam)) {
           this.role = roleParam;
           if(this.role == this.roleList[0]){
             this.credentials=new Student();
             this.credentials.type = this.role;
           }
+          else if (this.role == this.roleList[2]) this.router.navigate(['/error']);
         }
         else {
           this.router.navigate(['/error'])
         }
       }
     );
+
+    /* TODO: scroll to top page */
+    // window.scroll(0, 0);
   }
 
   professionalRoleSelectionChanged(eventData: MatSelectChange){
