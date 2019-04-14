@@ -1,3 +1,47 @@
-<p>
-  training-create works!
-</p>
+<div class="py-5 main-content-h-fix flex-center">
+  <!-- TODO: fix login card position. It looks like it is near to the bottom -->
+  <mat-card class="training-create-card pt-5 py-5">
+    <mat-card-content>
+      <mat-card-header>
+        <mat-card-title>Créer une formation</mat-card-title>
+      </mat-card-header>
+      <mat-horizontal-stepper linear="linear" #stepperTrainingCreate>
+        <mat-step [stepControl]="formGroupGeneral">
+          <ng-template matStepLabel>Fill out your name</ng-template>
+          <app-training-create-general
+            [formGroupGeneral]="formGroupGeneral"
+            [formFieldAppearance]="formFieldAppearance"></app-training-create-general>
+          <div>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </mat-step>
+        <mat-step [stepControl]="specificationsFormGroup">
+          <form>
+            <ng-template matStepLabel>Spécifications de la formation</ng-template>
+            <app-training-create-specifications
+              [formGroupSpecifications]="formGroupSpecifications"
+              [formFieldAppearance]="formFieldAppearance"></app-training-create-specifications>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+              <button mat-button matStepperNext>Next</button>
+            </div>
+          </form>
+        </mat-step>
+        <mat-step [stepControl]="descriptionFormGroup">
+          <form>
+            <ng-template matStepLabel>Description de la formation</ng-template>
+            <app-training-create-description
+              [formGroupDescription]="formGroupDescription"
+              [formFieldAppearance]="formFieldAppearance"></app-training-create-description>
+            <div>
+              <button mat-button matStepperPrevious>Back</button>
+            </div>
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
+    </mat-card-content>
+    <!-- <mat-card-actions class="d-flex justify-content-end">
+      <button mat-raised-button color="primary">submit</button>
+    </mat-card-actions> -->
+  </mat-card>
+</div>

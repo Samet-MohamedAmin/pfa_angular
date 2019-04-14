@@ -14,7 +14,6 @@ export class NavbarComponent implements OnInit {
   constructor(private auth: AuthenticationService) {
     this.auth.userEmitter
       .subscribe((userDetails) => {
-        console.log(userDetails)
         this.isLoggedIn = userDetails != null ? true : false;
         this.userDetails = userDetails;
       })

@@ -1,4 +1,4 @@
-<div class="container py-5 main-content-h-fix flex-center">
+<div class="py-5 main-content-h-fix flex-center">
   <!-- TODO: fix inscription card position. It looks like it is near to the bottom -->
   <mat-card class="w-600 p-5">
     <mat-card-content>
@@ -26,9 +26,9 @@
             </mat-form-field>
             <mat-form-field [appearance]="formFieldAppearance" class="w-50 pl-3">
               <mat-label>date de naissance</mat-label>
-              <input matInput [matDatepicker]="picker" placeholder="Votre date de naissance" [(ngModel)]="credentials.birthday" [ngModelOptions]="{standalone: true}">
-              <mat-datepicker-toggle class="button-outline-icon-fix-pos" matSuffix [for]="picker"></mat-datepicker-toggle>
-              <mat-datepicker #picker></mat-datepicker>
+              <input matInput [matDatepicker]="datePickerBirthday" placeholder="Votre date de naissance" [(ngModel)]="credentials.birthday" [ngModelOptions]="{standalone: true}">
+              <mat-datepicker-toggle class="button-outline-icon-fix-pos" matSuffix [for]="datePickerBirthday"></mat-datepicker-toggle>
+              <mat-datepicker #datePickerBirthday></mat-datepicker>
             </mat-form-field>
           </div>
           <div class="d-flex justify-content-space-between">

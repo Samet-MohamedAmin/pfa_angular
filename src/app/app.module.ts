@@ -8,8 +8,8 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { MatToolbarModule, MatIconModule, MatGridListModule, MatDividerModule,
   MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, MatSidenavModule,
-  MatOptionModule, MatSelectModule, MatMenuModule, MatListModule, MatCheckboxModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule} from '@angular/material';
-import { FormsModule } from '@angular/forms';
+  MatOptionModule, MatSelectModule, MatMenuModule, MatListModule, MatCheckboxModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatStepperModule} from '@angular/material';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { BranchListComponent } from './home/branch-list/branch-list.component';
 import { BranchItemComponent } from './home/branch-item/branch-item.component';
@@ -27,6 +27,10 @@ import { TrainingListComponent } from './training/training-list/training-list.co
 import { TrainingItemComponent } from './training/training-item/training-item.component';
 import { SharedService } from './shared/shared.service';
 import { TrainingDetailsComponent } from './training/training-details/training-details.component';
+import { TrainingCreateComponent } from './training/training-create/training-create.component';
+import { TrainingCreateGeneralComponent } from './training/training-create/training-create-general/training-create-general.component';
+import { TrainingCreateSpecificationsComponent } from './training/training-create/training-create-specifications/training-create-specifications.component';
+import { TrainingCreateDescriptionComponent } from './training/training-create/training-create-description/training-create-description.component';
 
 
 @NgModule({
@@ -45,6 +49,10 @@ import { TrainingDetailsComponent } from './training/training-details/training-d
       TrainingListComponent,
       TrainingItemComponent,
       TrainingDetailsComponent,
+      TrainingCreateComponent,
+      TrainingCreateGeneralComponent,
+      TrainingCreateSpecificationsComponent,
+      TrainingCreateDescriptionComponent,
       ErrorComponent,
    ],
    imports: [
@@ -52,6 +60,7 @@ import { TrainingDetailsComponent } from './training/training-details/training-d
       AppRoutingModule,
       BrowserAnimationsModule,
       FormsModule,
+      ReactiveFormsModule,
       HttpClientModule,
       MatToolbarModule,
       MatIconModule,
@@ -70,6 +79,7 @@ import { TrainingDetailsComponent } from './training/training-details/training-d
       MatRadioModule,
       MatDatepickerModule,
       MatNativeDateModule,
+      MatStepperModule
    ],
    providers: [
       LoginService,

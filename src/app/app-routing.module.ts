@@ -8,9 +8,10 @@ import { SignInSelectionComponent } from './login/sign-in/sign-in-selection/sign
 import { ErrorComponent } from './error/error.component';
 import { TrainingSearchComponent } from './training/training-search/training-search.component';
 import { TrainingDetailsComponent } from './training/training-details/training-details.component';
+import { TrainingCreateComponent } from './training/training-create/training-create.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'training/create', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'sign-up', component: SignUpSelectionComponent},
   {path: 'sign-up/:role', component: SignUpComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: 'training' ,children: [
     {path: '', redirectTo: 'search', pathMatch: 'full'},
     {path: 'search', component: TrainingSearchComponent},
-    {path: 'details', component: TrainingDetailsComponent}
+    {path: 'details', component: TrainingDetailsComponent},
+    {path: 'create', component: TrainingCreateComponent}
   ]},
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: 'error'},
