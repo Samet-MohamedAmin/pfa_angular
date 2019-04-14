@@ -30,3 +30,5 @@ export interface TrainingItemInterface {
 
 export declare type TrainingType = 'soft-skills' | 'technique' | 'entrepreneurial';
 export const TRAINING_TYPE_LIST: TrainingType[] = ['soft-skills', 'technique', 'entrepreneurial'];
+
+export const TRAINING_LEVEL = ['debutant', 'intermediare', 'avancé'];

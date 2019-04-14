@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material';
+import { TRAINING_TYPE_LIST, TRAINING_LEVEL } from '../../training.interface';
+import { BRANCHES } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-training-create-specifications',
@@ -10,6 +12,9 @@ import { MatFormFieldAppearance } from '@angular/material';
 export class TrainingCreateSpecificationsComponent implements OnInit {
   @Input() formGroupSpecifications: FormGroup;
   @Input() formFieldAppearance: MatFormFieldAppearance;
+  trainingTypeList = TRAINING_TYPE_LIST;
+  branches = BRANCHES;
+  levels = TRAINING_LEVEL;
 
   constructor() { }
 

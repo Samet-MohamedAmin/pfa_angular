@@ -1,7 +1,27 @@
 <form class="w-100" [formGroup]="formGroupSpecifications">
-  <div>
-    <mat-form-field class="w-75" [appearance]="formFieldAppearance">
-      <input matInput placeholder="Titre de la formation">
-    </mat-form-field>
+  <mat-form-field class="w-75" [appearance]="formFieldAppearance">
+    <mat-label class="d-block mb-2">Niveaux</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let level of levels; let i = index" [value]="i">{{level}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="w-75" [appearance]="formFieldAppearance">
+    <mat-label>Requirements</mat-label>
+    <textarea matInput></textarea>
+  </mat-form-field>
+
+  <mat-form-field class="mt-4 w-75" [appearance]="formFieldAppearance">
+    <mat-label class="d-block mb-2">Sélectionner les Branches Concernées</mat-label>
+    <mat-select multiple>
+      <mat-option *ngFor="let branch of branches | keyvalue" [value]="branch.key">{{branch.value}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div class="mt-4">
+    <mat-label class="d-block mb-2">Sélectionner le Type de la Formation</mat-label>
+    <mat-radio-group>
+      <mat-radio-button *ngFor="let type of trainingTypeList; let i = index" class="radio-type-selction mr-3"
+        value="{{i}}">{{type}}</mat-radio-button>
+    </mat-radio-group>
   </div>
 </form>
