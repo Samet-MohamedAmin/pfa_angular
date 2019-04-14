@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { BRANCHES, BRANCH_LIST } from '../training.service';
-import { TRAINING_TYPE } from 'src/app/shared/shared.service';
+import { BRANCHES, BRANCH_LIST } from 'src/app/shared/shared.service';
+import { TRAINING_TYPE_LIST } from '../training.interface';
 
 @Component({
   selector: 'app-training-search',
@@ -13,7 +13,7 @@ export class TrainingSearchComponent implements OnInit {
 
   parameters = {
     levels: ['debutant', 'intermediare', 'avancé'],
-    types: TRAINING_TYPE,
+    types: TRAINING_TYPE_LIST,
     branches: BRANCHES,
     branchList: BRANCH_LIST,
   }

@@ -27,4 +27,12 @@ export const IMAGES = {
   network: 'network_01.jpg'
 };
 
-export const TRAINING_TYPE = ['soft-skills', 'technique', 'entrepreneurial'];
+export type BranchType = 'GL' | 'RT' | 'IIA' | 'IMI' | 'CH' | 'BIO';
+export const BRANCHES = {GL: 'Génie Logiciel',
+                          RT: 'Réseau et Télécommunication',
+                          IIA: 'Informatique Industriel et Automatique',
+                          IMI: 'Instrumentation et Maintenance Industriel',
+                          CH: 'Chimie',
+                          BIO: 'Biologie'}
+
+export const BRANCH_LIST: BranchType[] = ['GL', 'RT', 'IIA', 'IMI', 'CH', 'BIO'];

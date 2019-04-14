@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IMAGE_SRC_BASE, IMAGES, SharedService } from 'src/app/shared/shared.service';
-import { TrainingItemInterface } from '../training-item/training-item.interface';
+import { TrainingItemInterface, TRAINING_TYPE_LIST } from '../training.interface';
 
 @Component({
   selector: 'app-training-list',
@@ -56,12 +56,25 @@ export class TrainingListComponent implements OnInit {
       const trainingItem:TrainingItemInterface = {
         title: randomTraining.title,
         description: this.dummyText,
+        instructor: randomTraining.instructor,
+        startDate: trainingDate,
+        endDate: trainingDate,
+        totalHours: 10,
+        totalPlaces: 10,
+
+        level: SharedService.getRandomNumber(0, 3),
+        requirements: [],
+        type: SharedService.getRandomObject(TRAINING_TYPE_LIST),
+        concernedBranches: [],
+
+        goals: [],
+        briefDescription: this.dummyText,
+        detailedDescription: this.dummyText,
+
+
         imageSrc: IMAGE_SRC_BASE + randomTraining.imageSrc,
         imageAlt: randomTraining.imageSrc,
-        instructor: randomTraining.instructor,
-        level: SharedService.getRandomNumber(0, 3),
         rating: SharedService.getRandomNumber(0, 10),
-        date: trainingDate
       };
 
       this.trainingList.push(trainingItem);

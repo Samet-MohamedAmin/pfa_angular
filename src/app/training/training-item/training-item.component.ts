@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TrainingItemInterface } from './training-item.interface';
+import { TrainingItemInterface } from '../training.interface';
 
 @Component({
   selector: 'app-training-item',

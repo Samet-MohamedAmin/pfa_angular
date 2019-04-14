@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ROLES, ROLE_LIST, BRANCHES } from '../login-service.service';
+import { ROLES, ROLE_LIST } from '../login-service.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MatSelectChange } from '@angular/material';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
 import { Student,Teacher,Partner } from './credentials-sign-up';
-import { TRAINING_TYPE } from 'src/app/shared/shared.service';
+import { BRANCHES, BRANCH_LIST } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -19,7 +19,7 @@ export class SignUpComponent implements OnInit {
   formFieldAppearance = "outline";
   branches = BRANCHES;
   yearOfStudy = [1, 2, 3, 4, 5];
-  pathList = TRAINING_TYPE;
+  pathList = BRANCH_LIST;
 
 
   constructor(private router: Router,
