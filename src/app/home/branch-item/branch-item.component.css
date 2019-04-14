@@ -1,3 +1,4 @@
 .branch-item {
-    width: 250px;
+    width: 300px;
+    height: calc(550px - 33px);
 }
