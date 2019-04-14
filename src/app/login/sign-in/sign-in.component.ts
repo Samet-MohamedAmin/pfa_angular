@@ -39,11 +39,7 @@ export class SignInComponent implements OnInit {
     }
     );
 
-    console.log(this.roles);
-    console.log(this.role);
-    console.log(this.roles[this.role]);
-
-    /*TODO: scroll to top page */
+    // TODO: scroll to top page
     // window.scroll(0, 0);
   }
 

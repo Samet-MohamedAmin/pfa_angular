@@ -44,7 +44,7 @@ export class SignUpComponent implements OnInit {
       }
     );
 
-    /* TODO: scroll to top page */
+    // TODO: scroll to top page
     // window.scroll(0, 0);
   }
 

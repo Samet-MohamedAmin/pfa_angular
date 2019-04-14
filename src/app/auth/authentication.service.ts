@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-/* note:if you will send request that requires authentication : add this  { headers: { authorization: `Bearer ${this.getToken()}` }}
- */
+/* NOTE: if you will send request that requires authentication : add this  { headers: { authorization: `Bearer ${this.getToken()}` }}
+*/
 
 @Injectable()
 export class AuthenticationService {

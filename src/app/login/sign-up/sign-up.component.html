@@ -36,7 +36,6 @@
               <mat-label>email</mat-label>
               <input type="email" matInput placeholder="email" [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
-            <!-- TODO: this ugly fix must be removed -->
             <div class="w-50 pl-3"></div>
           </div>
           <div class="d-flex justify-content-space-between">
@@ -57,7 +56,6 @@
               <mat-label>num inscription</mat-label>
               <input matInput placeholder="num inscription" [(ngModel)]="credentials.numInscription" [ngModelOptions]="{standalone: true}">
             </mat-form-field>
-            <!-- TODO: this ugly fix must be removed -->
             <div class="w-50 pl-3"></div>
           </div>
           <div class="d-flex justify-content-space-between">
@@ -83,7 +81,6 @@
                 <mat-option *ngFor="let path of pathList" [value]="path">{{path}}</mat-option>
               </mat-select>
             </mat-form-field>
-            <!--TODO: This ugly fix must be changed-->
             <div class="w-50 pl-3"></div>
           </div>
         </div>

@@ -16,7 +16,7 @@ export class LoginService {
 
 }
 
-/* TODO: fix this poor design. role admin must not be here */
+// TODO: fix this poor design. role admin must not be here
 export const ROLES = {student:'étudiant', professional: 'professionel', admin: 'admin'};
 export const ROLE_LIST = Object.keys(ROLES);
 
