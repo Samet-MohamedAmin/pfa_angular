@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 export class AuthenticationService {
   private token: string;
   private url = environment.BACKEND_URL;
-  userEmitter =new EventEmitter<any>()
+  userEmitter = new EventEmitter<any>()
   constructor(private http: HttpClient, private router: Router) {
   }
 
@@ -50,13 +50,13 @@ export class AuthenticationService {
     }
   }
 
-  private request( type: 'login'|'register', credentials): Observable<any> {
+  private request(type: 'login' | 'register', credentials): Observable<any> {
 
-     let base = this.http.post(`${this.url}/${type}`, credentials);
+    let base = this.http.post(`${this.url}/${type}`, credentials);
 
 
     const request = base.pipe(
-      map((data:any) => {
+      map((data: any) => {
         if (data.token) {
           this.saveToken(data.token);
         }
@@ -82,7 +82,7 @@ export class AuthenticationService {
     this.router.navigateByUrl('/');
   }
 
-  updateUserState(){
-  this.userEmitter.emit(this.getUserDetails())
+  updateUserState() {
+    this.userEmitter.emit(this.getUserDetails())
   }
 }

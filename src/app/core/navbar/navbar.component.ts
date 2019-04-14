@@ -7,21 +7,26 @@ import { AuthenticationService } from 'src/app/auth/authentication.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-isLoggedIn:boolean;
-userDetails;
+  isLoggedIn: boolean;
+  userDetails;
   @Output() menuClicked = new EventEmitter();
 
-  constructor(private auth :AuthenticationService) {
+  constructor(private auth: AuthenticationService) {
     this.auth.userEmitter
-    .subscribe((userDetails)=>{
-      console.log(userDetails)
-    this.isLoggedIn=userDetails!= null ? true :false
-    this.userDetails=userDetails
-    })
-    this.auth.updateUserState()
-   }
+      .subscribe((userDetails) => {
+        console.log(userDetails)
+        this.isLoggedIn = userDetails != null ? true : false;
+        this.userDetails = userDetails;
+      })
+    this.auth.updateUserState();
+  }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.auth.logout();
+    location.reload();
   }
 
 }

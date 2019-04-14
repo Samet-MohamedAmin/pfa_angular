@@ -4,6 +4,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MatSelectChange } from '@angular/material';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
 import { Student,Teacher,Partner } from './credentials-sign-up';
+import { TRAINING_TYPE } from 'src/app/shared/shared.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -18,7 +19,7 @@ export class SignUpComponent implements OnInit {
   formFieldAppearance = "outline";
   branches = BRANCHES;
   yearOfStudy = [1, 2, 3, 4, 5];
-  pathList = ['theorique', 'pratique', 'soft-skills'];
+  pathList = TRAINING_TYPE;
 
 
   constructor(private router: Router,
@@ -43,7 +44,7 @@ export class SignUpComponent implements OnInit {
     );
   }
 
-  partenaireRoleSelectionChanged(eventData: MatSelectChange){
+  professionalRoleSelectionChanged(eventData: MatSelectChange){
     // TODO: credentials constructor problem
     console.log(eventData.value);
     if(eventData.value=="teacher"){

@@ -26,3 +26,5 @@ export const IMAGES = {
   microscope: 'microscope_01.jpg',
   network: 'network_01.jpg'
 };
+
+export const TRAINING_TYPE = ['soft-skills', 'technique', 'entrepreneurial'];
