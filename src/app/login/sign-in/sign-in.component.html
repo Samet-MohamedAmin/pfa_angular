@@ -9,11 +9,11 @@
       <form class="w-100">
         <mat-form-field class="w-75" [appearance]="formFieldAppearance">
           <mat-label>email</mat-label>
-          <input matInput type="email" placeholder="email" [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}">
+          <input matInput type="email" [(ngModel)]="credentials.email" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
         <mat-form-field class="w-75" [appearance]="formFieldAppearance">
           <mat-label>password</mat-label>
-          <input matInput type="password" placeholder="mot de passe" [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}">
+          <input matInput type="password" [(ngModel)]="credentials.password" [ngModelOptions]="{standalone: true}">
         </mat-form-field>
         <mat-form-field  *ngIf="role == roleList[1]" [appearance]="formFieldAppearance" class="w-75">
           <mat-label>Vous êtes:</mat-label>
