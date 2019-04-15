@@ -8,7 +8,7 @@
           <mat-checkbox *ngFor="let level of parameters.levels;let i = index"
                         [value]="i"
                         class="level-checkbox mr-3"
-                        (change)="levelAdded($event)">{{level}}</mat-checkbox>
+                        (change)="levelChange($event)">{{level}}</mat-checkbox>
         </section>
         <section class="">
           <label class="d-block mb-2">Sélectionner le type</label>
@@ -37,7 +37,7 @@
                 type="text"
                 placeholder="Chercher une formation?"
                 [(ngModel)]="searchValue"
-                (change)="filterTrainings()">
+                (input)="filterTrainings()">
         <button class="button-outline-icon-fix-pos" mat-button matSuffix mat-icon-button>
           <mat-icon matSuffix>search</mat-icon>
         </button>

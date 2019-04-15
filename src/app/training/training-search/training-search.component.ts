@@ -125,9 +125,14 @@ export class TrainingSearchComponent implements OnInit {
   }
 
 
-levelAdded(event){
+levelChange(event){
 console.log(event)
-this.levels.push(event.source.value)
+if (event.checked){
+  this.levels.push(event.source.value)
+}else if(!event.checked) {
+  let index=this.levels.indexOf(event.source.value)
+  if (index >-1) this.levels.splice(index,1)
+}
 console.log(this.levels)
 this.filterTrainings()
   }
