@@ -6,14 +6,6 @@ import { trigger, state, transition, animate, style } from '@angular/animations'
   selector: 'app-training-requests',
   templateUrl: './training-requests.component.html',
   styleUrls: ['./training-requests.component.css'],
-  animations: [
-    trigger('popOverState', [
-      state('show', style({ opacity: 1 })),
-      state('hide', style({ opacity: 0 })),
-      transition('show => hide', animate('600ms ease-out')),
-      transition('hide => show', animate('1000ms ease-in'))
-    ])
-  ]
 })
 export class TrainingRequestsComponent implements OnInit {
   dummyText = 'Lorem ipsum dolor sit amet consectetur adipiscing elit.'
@@ -35,7 +27,7 @@ export class TrainingRequestsComponent implements OnInit {
       studentLastName: 'Samet',
       studentOverview: this.dummyText,
       studentStudyYear: 4,
-      state: 'show'
+      hide: false
     }
 
     for(let i=0; i<15; i++){
@@ -47,18 +39,17 @@ export class TrainingRequestsComponent implements OnInit {
 
   removeRequest(requestId: number){
     console.log(`remove request ${requestId}`);
-    this.trainingRequestStudentList = this.trainingRequestStudentList.filter(
-      (trainingRequest: TrainingRequestStudentInterface)=> trainingRequest.requestId != requestId
-    );
+
+    let index:number= this.trainingRequestStudentList.findIndex((v)=> v.requestId == requestId);
+    this.trainingRequestStudentList[index].hide = true;
+    setTimeout(()=> this.trainingRequestStudentList.splice(index, 1), 500);
   }
 
   onRequestAccept(eventData){
-    console.log(eventData);
     this.removeRequest(eventData);
   }
 
   onRequestReject(eventData){
-    console.log(eventData);
     this.removeRequest(eventData);
   }
 

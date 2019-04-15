@@ -92,3 +92,13 @@ after adding margin-top to main content, the main content height is over 100%*/
 .order-4 { order: 4 }
 
 
+/*---------------animations---------------------*/
+/* TODO: use angular animations */
+@keyframes pop-over {
+    0%{opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.pop-over-animation {
+    animation: pop-over 500ms ease-out;
+}

@@ -1,4 +1,4 @@
-<mat-card class="training-request">
+<mat-card [ngClass]="{'training-request': true, 'pop-over-animation': trainingRequest.hide}">
   <mat-card-header>
     <div mat-card-avatar class="header-image"></div>
     <mat-card-title>{{trainingRequest.courseTitle}}</mat-card-title>
@@ -12,7 +12,13 @@
     <p>[{{trainingRequest.requestId}}] {{trainingRequest.studentOverview}}</p>
   </mat-card-content>
   <mat-card-actions class="position-absolute">
-    <button mat-flat-button (click)="rejectRequest()" class="mr-2"color="warn">REJECT</button>
-    <button mat-flat-button (click)="acceptRequest()" color="primary">ACCEPT</button>
+    <button mat-flat-button
+            (click)="rejectRequest()"
+            class="mr-2 text-uppercase"
+            color="warn">reject</button>
+    <button mat-flat-button
+            class="text-uppercase"
+            (click)="acceptRequest()"
+            color="primary">accept</button>
   </mat-card-actions>
 </mat-card>

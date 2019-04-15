@@ -7,5 +7,5 @@ export interface TrainingRequestStudentInterface {
     studentLastName: string;
     studentOverview: string;
     studentStudyYear: number;
-    state: 'show' | 'hide';
+    hide: boolean
 }

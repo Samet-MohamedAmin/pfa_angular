@@ -28,10 +28,9 @@ const routes: Routes = [
     {path: 'create', component: TrainingCreateComponent ,canActivate:[AdminGuardService]},
     {path:'recommendations' , component: TrainingRecommandationsComponent ,canActivate:[AuthGuardService]}
   ]},
-  {
-    path: 'admin', children: [
-      {path: '', redirectTo: 'training-requests', pathMatch: 'full'},
-      {path: 'training-requests', component: TrainingRequestsComponent ,canActivate:[AdminGuardService]}
+  {path: 'admin', children: [
+    {path: '', redirectTo: 'training-requests', pathMatch: 'full'},
+    {path: 'training-requests', component: TrainingRequestsComponent} //,canActivate:[AdminGuardService]}
   ]},
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: 'error'},
