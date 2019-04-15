@@ -1,14 +1,14 @@
 <form class="w-100" [formGroup]="formGroupDescription">
   <mat-form-field class="w-100" [appearance]="formFieldAppearance">
     <mat-label>Goals</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput formControlName="goals"></textarea>
   </mat-form-field>
   <mat-form-field class="w-100" [appearance]="formFieldAppearance">
     <mat-label>Description Briève</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput formControlName="descriptionShort"></textarea>
   </mat-form-field>
   <mat-form-field class="w-100" [appearance]="formFieldAppearance">
     <mat-label>Description Détaillée</mat-label>
-    <textarea matInput></textarea>
+    <textarea matInput formControlName="descriptionDetailed"></textarea>
   </mat-form-field>
 </form>

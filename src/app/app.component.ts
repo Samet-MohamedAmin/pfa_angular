@@ -12,6 +12,7 @@ export class AppComponent {
     profile: 'profile',
     recommandation: 'recommandation',
     formation: '/training',
+    create: '/training/create',
     inscription: 'inscription',
   }
 

@@ -5,14 +5,14 @@
       <mat-card-header>
         <mat-card-title>Créer une formation</mat-card-title>
       </mat-card-header>
-      <mat-horizontal-stepper linear="linear" #stepperTrainingCreate>
+      <mat-horizontal-stepper [linear]="isLinear" #stepperTrainingCreate>
         <mat-step [stepControl]="formGroupGeneral">
           <ng-template matStepLabel>Fill out your name</ng-template>
           <app-training-create-general
             [formGroupGeneral]="formGroupGeneral"
             [formFieldAppearance]="formFieldAppearance"></app-training-create-general>
           <div class="mt-5">
-            <button mat-button matStepperNext>Next</button>
+            <button (click)="testFirstStep()" mat-button matStepperNext>Next</button>
           </div>
         </mat-step>
         <mat-step [stepControl]="specificationsFormGroup">
@@ -33,8 +33,10 @@
             <app-training-create-description
               [formGroupDescription]="formGroupDescription"
               [formFieldAppearance]="formFieldAppearance"></app-training-create-description>
-            <div class="mt-5">
+            <div class="mt-5 d-flex">
               <button mat-button matStepperPrevious>Back</button>
+              <div class="spacer"></div>
+              <button mat-raised-button color="primary" (click)="submit()">Submit</button>
             </div>
           </form>
         </mat-step>
