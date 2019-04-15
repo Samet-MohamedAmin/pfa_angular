@@ -8,7 +8,8 @@ import { NavbarComponent } from './core/navbar/navbar.component';
 import { FooterComponent } from './core/footer/footer.component';
 import { MatToolbarModule, MatIconModule, MatGridListModule, MatDividerModule,
   MatInputModule, MatFormFieldModule, MatButtonModule, MatCardModule, MatSidenavModule,
-  MatOptionModule, MatSelectModule, MatMenuModule, MatListModule, MatCheckboxModule, MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatStepperModule} from '@angular/material';
+  MatOptionModule, MatSelectModule, MatMenuModule, MatListModule, MatCheckboxModule,
+  MatRadioModule, MatDatepickerModule, MatNativeDateModule, MatStepperModule} from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { BranchListComponent } from './home/branch-list/branch-list.component';
@@ -34,6 +35,7 @@ import { TrainingCreateDescriptionComponent } from './training/training-create/t
 import { TrainingRecommandationsComponent } from './training/training-recommandations/training-recommandations.component';
 import { TrainingRequestsComponent } from './admin/training-requests/training-requests.component';
 import { AdminGuardService } from './auth/admin-guard.service';
+import { TrainingRequestStudentComponent } from './admin/training-requests/training-request-student/training-request-student.component';
 
 
 @NgModule({
@@ -58,6 +60,7 @@ import { AdminGuardService } from './auth/admin-guard.service';
       TrainingCreateDescriptionComponent,
       TrainingRecommandationsComponent,
       TrainingRequestsComponent,
+      TrainingRequestStudentComponent,
       ErrorComponent,
    ],
    imports: [

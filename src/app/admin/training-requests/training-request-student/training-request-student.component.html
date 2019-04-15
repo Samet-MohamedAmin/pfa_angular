@@ -1,0 +1,18 @@
+<mat-card class="training-request">
+  <mat-card-header>
+    <div mat-card-avatar class="header-image"></div>
+    <mat-card-title>{{trainingRequest.courseTitle}}</mat-card-title>
+    <mat-card-subtitle>{{trainingRequest.courseDescriptionShort}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <h3>
+      [{{trainingRequest.studentBranch}}-{{trainingRequest.studentStudyYear}}]
+      {{trainingRequest.studentFirstName}} {{trainingRequest.studentLastName}}
+    </h3>
+    <p>[{{trainingRequest.requestId}}] {{trainingRequest.studentOverview}}</p>
+  </mat-card-content>
+  <mat-card-actions class="position-absolute">
+    <button mat-flat-button (click)="rejectRequest()" class="mr-2"color="warn">REJECT</button>
+    <button mat-flat-button (click)="acceptRequest()" color="primary">ACCEPT</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,13 @@
+.training-request {
+    height: calc(300px - 33px - 40px);
+}
+
+.header-image {
+    background-image: url('/assets/images/computer_01.jpg');
+    background-size: cover;
+}
+
+mat-card-actions {
+    bottom: 20px;
+    right: 20px;
+}

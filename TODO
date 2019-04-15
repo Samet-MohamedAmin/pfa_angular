@@ -1,4 +1,6 @@
-- forms validation
-- make private fields name like '_fieldName'
-- body margin fix
-- text capitalize
+[global changes]
+-forms validation
+-make private fields name like '_fieldName'
+-body margin fix
+-text capitalize
+-add animations

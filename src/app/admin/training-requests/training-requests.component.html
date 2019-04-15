@@ -3,7 +3,22 @@
     <h1 class="text-capitalize">Les Demandes des Formations</h1>
     <h3>Gérer les demandes des formations ici</h3>
   </div>
-  <div class="p-5">
-    
+  <div class="bg-white py-5 d-flex flex-column align-items-center">
+    <div class="container">
+      <h1 class="text-center text-capitalize">Les Demandes des étudiants</h1>
+      <mat-grid-list class="request-list" rowHeight="300px" cols="2">
+        <mat-grid-tile *ngFor="let trainingRequestItem of trainingRequestStudentList"
+                        [colspan]="1"
+                        [rowspan]="1">
+          <app-training-request-student
+            class="cursor-pointer"
+            (requestAccepted)="onRequestAccept($event)"
+            (requestRejected)="onRequestReject($event)"
+            [@popOverState]="hide"
+            [trainingRequest]="trainingRequestItem">
+          </app-training-request-student>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
   </div>
 </div>
