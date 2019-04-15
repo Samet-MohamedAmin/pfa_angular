@@ -25,7 +25,7 @@ const routes: Routes = [
     {path: '', redirectTo: 'search', pathMatch: 'full'},
     {path: 'search', component: TrainingSearchComponent},
     {path: 'details/:id', component: TrainingDetailsComponent},
-    {path: 'create', component: TrainingCreateComponent ,canActivate:[AdminGuardService]},
+    {path: 'create', component: TrainingCreateComponent}, //canActivate:[AdminGuardService]},
     {path:'recommendations' , component: TrainingRecommandationsComponent ,canActivate:[AuthGuardService]}
   ]},
   {path: 'admin', children: [

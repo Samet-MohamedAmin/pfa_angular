@@ -16,7 +16,7 @@ export class TrainingCreateComponent implements OnInit {
   formGroupSpecifications: FormGroup;
   formGroupDescription: FormGroup;
 
-  isLinear = false;
+  isLinear = true;
 
   constructor(private _formBuilder: FormBuilder,private trainingService:TrainingService ,private router:Router) { }
 

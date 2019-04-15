@@ -27,7 +27,7 @@ export class TrainingRequestsComponent implements OnInit {
       studentLastName: 'Samet',
       studentOverview: this.dummyText,
       studentStudyYear: 4,
-      hide: false
+      hide: false,
     }
 
     for(let i=0; i<15; i++){
@@ -42,7 +42,7 @@ export class TrainingRequestsComponent implements OnInit {
 
     let index:number= this.trainingRequestStudentList.findIndex((v)=> v.requestId == requestId);
     this.trainingRequestStudentList[index].hide = true;
-    setTimeout(()=> this.trainingRequestStudentList.splice(index, 1), 500);
+    setTimeout(()=> this.trainingRequestStudentList.splice(index, 1), 300);
   }
 
   onRequestAccept(eventData){
