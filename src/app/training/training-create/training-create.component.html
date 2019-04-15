@@ -16,29 +16,25 @@
           </div>
         </mat-step>
         <mat-step [stepControl]="specificationsFormGroup">
-          <form>
-            <ng-template matStepLabel>Spécifications de la formation</ng-template>
-            <app-training-create-specifications
-              [formGroupSpecifications]="formGroupSpecifications"
-              [formFieldAppearance]="formFieldAppearance"></app-training-create-specifications>
-            <div class="mt-5">
-              <button mat-button matStepperPrevious>Back</button>
-              <button mat-button matStepperNext>Next</button>
-            </div>
-          </form>
+          <ng-template matStepLabel>Spécifications de la formation</ng-template>
+          <app-training-create-specifications
+            [formGroupSpecifications]="formGroupSpecifications"
+            [formFieldAppearance]="formFieldAppearance"></app-training-create-specifications>
+          <div class="mt-5">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
         </mat-step>
         <mat-step [stepControl]="descriptionFormGroup">
-          <form>
-            <ng-template matStepLabel>Description de la formation</ng-template>
-            <app-training-create-description
-              [formGroupDescription]="formGroupDescription"
-              [formFieldAppearance]="formFieldAppearance"></app-training-create-description>
-            <div class="mt-5 d-flex">
-              <button mat-button matStepperPrevious>Back</button>
-              <div class="spacer"></div>
-              <button mat-raised-button color="primary" (click)="submit()">Submit</button>
-            </div>
-          </form>
+          <ng-template matStepLabel>Description de la formation</ng-template>
+          <app-training-create-description
+            [formGroupDescription]="formGroupDescription"
+            [formFieldAppearance]="formFieldAppearance"></app-training-create-description>
+          <div class="mt-5 d-flex">
+            <button mat-button matStepperPrevious>Back</button>
+            <div class="spacer"></div>
+            <button mat-raised-button color="primary" (click)="submit()">Submit</button>
+          </div>
         </mat-step>
       </mat-horizontal-stepper>
     </mat-card-content>
