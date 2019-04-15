@@ -2,3 +2,8 @@
     width: 300px;
     height: calc(550px - 33px);
 }
+
+.mat-card-image{
+    height: 300px;
+    object-fit: cover;
+}

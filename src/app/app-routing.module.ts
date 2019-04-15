@@ -9,6 +9,7 @@ import { ErrorComponent } from './error/error.component';
 import { TrainingSearchComponent } from './training/training-search/training-search.component';
 import { TrainingDetailsComponent } from './training/training-details/training-details.component';
 import { TrainingCreateComponent } from './training/training-create/training-create.component';
+import { TrainingRecommandationsComponent } from './training/training-recommandations/training-recommandations.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'training/create', pathMatch: 'full'},
@@ -21,7 +22,8 @@ const routes: Routes = [
     {path: '', redirectTo: 'search', pathMatch: 'full'},
     {path: 'search', component: TrainingSearchComponent},
     {path: 'details', component: TrainingDetailsComponent},
-    {path: 'create', component: TrainingCreateComponent}
+    {path: 'create', component: TrainingCreateComponent},
+    {path:'recommendations' , component: TrainingRecommandationsComponent}
   ]},
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: 'error'},

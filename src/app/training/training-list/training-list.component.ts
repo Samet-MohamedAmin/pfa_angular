@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { IMAGE_SRC_BASE, IMAGES, SharedService } from 'src/app/shared/shared.service';
 import { TrainingItemInterface, TRAINING_TYPE_LIST } from '../training.interface';
 
@@ -8,8 +8,11 @@ import { TrainingItemInterface, TRAINING_TYPE_LIST } from '../training.interface
   styleUrls: ['./training-list.component.css']
 })
 export class TrainingListComponent implements OnInit {
+  //this is the right variable to use as list of trainings
 
-  trainingList: TrainingItemInterface[] = [];
+  @Input()trainingsList:Array<any>
+  
+  @Input()trainingList: TrainingItemInterface[] = [];
   dummyText = 'Lorem ipsum dolor sit amet consectetur adipiscing';
   dummyTrainingList: TrainingItemBriefInterface[] = [
     {

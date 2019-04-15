@@ -10,7 +10,7 @@ export class AppComponent {
 
   sideNavItems = {
     profile: 'profile',
-    recommandation: 'recommandation',
+    recommandation: 'training/recommandations',
     formation: '/training',
     inscription: 'inscription',
   }

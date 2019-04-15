@@ -31,6 +31,7 @@ import { TrainingCreateComponent } from './training/training-create/training-cre
 import { TrainingCreateGeneralComponent } from './training/training-create/training-create-general/training-create-general.component';
 import { TrainingCreateSpecificationsComponent } from './training/training-create/training-create-specifications/training-create-specifications.component';
 import { TrainingCreateDescriptionComponent } from './training/training-create/training-create-description/training-create-description.component';
+import { TrainingRecommandationsComponent } from './training/training-recommandations/training-recommandations.component';
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import { TrainingCreateDescriptionComponent } from './training/training-create/t
       TrainingCreateGeneralComponent,
       TrainingCreateSpecificationsComponent,
       TrainingCreateDescriptionComponent,
+      TrainingRecommandationsComponent,
       ErrorComponent,
    ],
    imports: [
