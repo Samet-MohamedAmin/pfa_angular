@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BranchItemInterface } from '../branch-item/branch-item.interface';
-import {BranchType} from '../../shared/shared.service'
+import {BranchType, SharedService} from '../../shared/shared.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   templateUrl: './branch-list.component.html',
   styleUrls: ['./branch-list.component.css']
 })
-export class BranchListComponent  {
+export class BranchListComponent implements OnInit {
 
   branchList: BranchItemInterface[] = [{
     code:'GL',
@@ -54,10 +54,15 @@ export class BranchListComponent  {
   }];
 
   constructor(private router:Router) { }
+  
+  ngOnInit(){
+    this.branchList = SharedService.shuffleObject(this.branchList);
+  }
 
   goToBranchTrainings(branchCode){
-  this.router.navigate(['training/search'],{queryParams:{branchCode:branchCode}})
+    this.router.navigate(['training/search'], {queryParams: {branchCode:branchCode}});
   }
+
 
 
 }

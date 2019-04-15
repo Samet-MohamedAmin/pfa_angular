@@ -9,6 +9,7 @@ export class AppComponent {
   sideBarOpened = false;
 
   sideNavItems = {
+    home: '/home',
     profile: 'profile',
     recommandation: 'training/recommandations',
     formation: '/training',

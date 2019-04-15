@@ -7,6 +7,7 @@
         <mat-list>
             <mat-list-item *ngFor="let item of sideNavItems | keyvalue"
                             class="cursor-pointer"
+                            (click)="sidenav.close()"
                             [disableRipple]="false"
                             [routerLink]="item.value"> {{item.key}} </mat-list-item>
         </mat-list>

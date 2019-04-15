@@ -6,13 +6,34 @@ import { Injectable } from '@angular/core';
 export class SharedService {
 
   constructor() { }
-
+  /**
+   * returns a random integer value between `min` and `max`
+   * ie: returns random value where _value >= `min`_ and _value < `max`_
+   * @param min minimum random value
+   * @param max maximum random value
+   */
   static getRandomNumber(min:number, max: number):number{
     return Math.floor(Math.random()*(max - min))+min;
   }
 
+  /**
+   * returns a random object from `list`
+   * @param list input list
+   */
   static getRandomObject(list: any[]){
     return list[this.getRandomNumber(0, list.length)]
+  }
+
+  /**
+   * returns a shuffled object from `list`
+   * @param list list to shuffle
+   */
+  static shuffleObject(list: any[]){
+    let listCopy = [...list];
+    let newList = [];
+    for(let i=0; i<list.length; i++)
+      newList.push(...listCopy.splice(SharedService.getRandomNumber(0, list.length - i), 1));
+    return newList;
   }
 
 }
