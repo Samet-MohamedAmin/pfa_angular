@@ -1,3 +1,4 @@
 - forms validation
 - make private fields name like '_fieldName'
 - body margin fix
+- text capitalize

@@ -3,7 +3,6 @@ import { BranchType } from '../shared/shared.service';
 export interface TrainingItemInterface {
     /* general informations */
     title: string;
-    description: string;
     instructor: string;
     startDate: Date;
     endDate: Date;
@@ -19,13 +18,13 @@ export interface TrainingItemInterface {
     /* description */
     goals: string[];
     // TODO: change briefDescription => descriptionBrief & detailedDescription => descriptionDetailed
-    briefDescription: string;
-    detailedDescription: string;
+    descriptionShort: string;
+    descriptionDetailed: string;
 
     /* other */
-    // imageSrc: string;
-    // imageAlt: string;
-    // rating: number;
+    imageSrc: string;
+    imageAlt: string;
+    rating: number;
 }
 
 

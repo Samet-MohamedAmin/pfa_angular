@@ -56,7 +56,7 @@ export class TrainingListComponent implements OnInit {
       trainingDate.setMonth(dateNow.getMonth() + SharedService.getRandomNumber(-6, 6));
       trainingDate.setDate(dateNow.getDate() + SharedService.getRandomNumber(-15, 15));
       const randomTraining = SharedService.getRandomObject(this.dummyTrainingList);
-      const trainingItem:TrainingItemInterface = {
+      const trainingItem: TrainingItemInterface = {
         title: randomTraining.title,
         instructor: randomTraining.instructor,
         startDate: trainingDate,
@@ -70,8 +70,8 @@ export class TrainingListComponent implements OnInit {
         concernedBranches: [],
 
         goals: [],
-        briefDescription: this.dummyText,
-        detailedDescription: this.dummyText,
+        descriptionShort: this.dummyText,
+        descriptionDetailed: this.dummyText,
 
         imageSrc: IMAGE_SRC_BASE + randomTraining.imageSrc,
         imageAlt: randomTraining.imageSrc,
