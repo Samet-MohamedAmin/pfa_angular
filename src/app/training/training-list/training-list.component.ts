@@ -58,14 +58,13 @@ export class TrainingListComponent implements OnInit {
       const randomTraining = SharedService.getRandomObject(this.dummyTrainingList);
       const trainingItem:TrainingItemInterface = {
         title: randomTraining.title,
-        description: this.dummyText,
         instructor: randomTraining.instructor,
         startDate: trainingDate,
         endDate: trainingDate,
         totalHours: 10,
         totalPlaces: 10,
 
-        level: SharedService.getRandomNumber(0, 3),
+        levels: [SharedService.getRandomNumber(0, 3)],
         requirements: [],
         type: SharedService.getRandomObject(TRAINING_TYPE_LIST),
         concernedBranches: [],
@@ -73,7 +72,6 @@ export class TrainingListComponent implements OnInit {
         goals: [],
         briefDescription: this.dummyText,
         detailedDescription: this.dummyText,
-
 
         imageSrc: IMAGE_SRC_BASE + randomTraining.imageSrc,
         imageAlt: randomTraining.imageSrc,
