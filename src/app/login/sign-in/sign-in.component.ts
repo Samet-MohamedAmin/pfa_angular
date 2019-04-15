@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
         this.role = roleParam;
         //set the type 
         if (this.role == 'student') this.credentials.type = this.role;
-        else if (this.role == 'admin') this.credentials.type = this.role;
+        else if (this.role == 'admin') this.credentials.type = "personal";
       }
       else {
         this.router.navigate(['/error'])
@@ -53,9 +53,10 @@ export class SignInComponent implements OnInit {
 
   login() {
     console.log('login')
+    console.log(this.credentials)
     this.auth.login(this.credentials).subscribe((data) => {
       this.auth.updateUserState()
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl('/home')
     }, (err) => {
       console.error(err);
     });

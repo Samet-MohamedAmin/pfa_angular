@@ -1,5 +1,5 @@
 import { Injectable, EventEmitter } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Router } from '@angular/router';
 
 import { Observable } from 'rxjs';
@@ -51,8 +51,10 @@ export class AuthenticationService {
   }
 
   private request(type: 'login' | 'register', credentials): Observable<any> {
-
-    let base = this.http.post(`${this.url}/${type}`, credentials);
+     let headers =new HttpHeaders
+     headers.set('Content-Type', 'application/json')
+     let base = this.http.post(`${this.url}/${type}`, credentials,
+     {headers:headers});
 
 
     const request = base.pipe(

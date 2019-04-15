@@ -11,6 +11,8 @@ import { TrainingDetailsComponent } from './training/training-details/training-d
 import { TrainingCreateComponent } from './training/training-create/training-create.component';
 import { TrainingRecommandationsComponent } from './training/training-recommandations/training-recommandations.component';
 import { TrainingRequestsComponent } from './admin/training-requests/training-requests.component';
+import { AuthGuardService } from './auth/auth-guard.service';
+import { AdminGuardService } from './auth/admin-guard.service';
 
 const routes: Routes = [
   {path: '', redirectTo: 'admin', pathMatch: 'full'},
@@ -22,14 +24,14 @@ const routes: Routes = [
   {path: 'training' ,children: [
     {path: '', redirectTo: 'search', pathMatch: 'full'},
     {path: 'search', component: TrainingSearchComponent},
-    {path: 'details', component: TrainingDetailsComponent},
-    {path: 'create', component: TrainingCreateComponent},
-    {path:'recommendations' , component: TrainingRecommandationsComponent}
+    {path: 'details/:id', component: TrainingDetailsComponent},
+    {path: 'create', component: TrainingCreateComponent ,canActivate:[AdminGuardService]},
+    {path:'recommendations' , component: TrainingRecommandationsComponent ,canActivate:[AuthGuardService]}
   ]},
   {
     path: 'admin', children: [
       {path: '', redirectTo: 'training-requests', pathMatch: 'full'},
-      {path: 'training-requests', component: TrainingRequestsComponent}
+      {path: 'training-requests', component: TrainingRequestsComponent ,canActivate:[AdminGuardService]}
   ]},
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: 'error'},

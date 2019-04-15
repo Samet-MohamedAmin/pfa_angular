@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SharedService } from 'src/app/shared/shared.service';
+import { ActivatedRoute } from '@angular/router';
+import { TrainingService } from '../training.service';
 
 @Component({
   selector: 'app-training-details',
@@ -7,6 +9,10 @@ import { SharedService } from 'src/app/shared/shared.service';
   styleUrls: ['./training-details.component.css']
 })
 export class TrainingDetailsComponent implements OnInit {
+
+  //this is the real training object to use after
+  training;
+
   dummyBranchTreeList = ['Informatique', 'DevOps', 'Test Logiciel'];
 
   dummyText = `Lorem ipsum dolor sit amet consectetur adipiscing elit imperdiet pretium congue egestas, enim convallis libero montes senectus vestibulum nisl dis habitant. Conubia nibh vestibulum id sagittis augue felis dictum rhoncus, condimentum eros eget sem ut lobortis enim, est porttitor porta himenaeos rutrum cum neque. Per sociosqu maecenas orci rutrum velit molestie aenean, quam interdum magnis aliquet senectus leo nibh sed, pellentesque scelerisque fermentum cursus netus magna. Eget primis neque euismod est molestie rutrum blandit venenatis rhoncus, aptent volutpat elementum lacus cum facilisis platea cubilia, consequat sapien egestas ante risus imperdiet nec magna.
@@ -21,7 +27,16 @@ export class TrainingDetailsComponent implements OnInit {
   rating:number;
   starList = [];
 
-  constructor() { }
+  constructor(private route:ActivatedRoute , private trainingService:TrainingService) {
+    this.route.params
+    .subscribe(params=>{
+      this.trainingService.getTrainingDetail(params.id)
+      .subscribe((training)=>{
+        console.log(training)
+      this.training=training
+      })
+    })
+   }
 
   ngOnInit() {
     this.generateStars();

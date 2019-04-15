@@ -33,6 +33,7 @@ import { TrainingCreateSpecificationsComponent } from './training/training-creat
 import { TrainingCreateDescriptionComponent } from './training/training-create/training-create-description/training-create-description.component';
 import { TrainingRecommandationsComponent } from './training/training-recommandations/training-recommandations.component';
 import { TrainingRequestsComponent } from './admin/training-requests/training-requests.component';
+import { AdminGuardService } from './auth/admin-guard.service';
 
 
 @NgModule({
@@ -90,6 +91,7 @@ import { TrainingRequestsComponent } from './admin/training-requests/training-re
       SharedService,
       AuthGuardService,
       AuthenticationService,
+      AdminGuardService
    ],
    bootstrap: [
       AppComponent

@@ -9,7 +9,7 @@ import { AuthenticationService } from '../auth/authentication.service';
 export class TrainingService {
   private url = environment.BACKEND_URL;
 
-constructor(private http:HttpClient , private authservice:AuthenticationService) { }
+constructor(private http:HttpClient , private authService:AuthenticationService) { }
 
 getAllTrainings(){
   return this.http.get(`${this.url}/course`)
@@ -21,26 +21,23 @@ getTrainingDetail(trainingId){
 
 getRecommendations(userType,userId){
   return this.http.get(`${this.url}/course/recommandations/${userType}/${userId}`,
-    { headers: { authorization: `Bearer ${this.authservice.getToken()}` }} )
+    { headers: new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)})
   }
 
 getUserRequests(userId){
   return this.http.get(`${this.url}/course/request/${userId}`,
-  { headers: { authorization: `Bearer ${this.authservice.getToken()}` }} )
+  { headers: new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)})
 }
 
 
-requestRegistration(userId,courseId){
+requestRegistration(userType,userId,courseId){
   let body={
+    userType,
     userId,
     courseId
   }
-  let headers =new HttpHeaders()
-  headers.set('authorization', `Bearer ${this.authservice.getToken()}`)
-  headers.set('Content-Type', 'application/json')
-  
   return this.http.post(`${this.url}/course/request/all`,body,
-  { headers: headers} )
+  { headers: new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)}) 
 }
 
 rateCourse(userType,userId,courseId,rating){
@@ -51,7 +48,7 @@ rateCourse(userType,userId,courseId,rating){
     rating
   }
   let headers =new HttpHeaders()
-  headers.set('authorization', `Bearer ${this.authservice.getToken()}`)
+  headers.set('authorization', `Bearer ${this.authService.getToken()}`)
   headers.set('Content-Type', 'application/json')
   
   return this.http.post(`${this.url}/course/rate`,body,
@@ -62,7 +59,7 @@ rateCourse(userType,userId,courseId,rating){
 
 getAllUserRequests(){
   return this.http.get(`${this.url}/course/request/all`,
-  { headers: { authorization: `Bearer ${this.authservice.getToken()}` }} )
+  { headers: new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)}) 
 }
 
 validRegistration(userType,userId,courseId){
@@ -71,52 +68,37 @@ validRegistration(userType,userId,courseId){
     userId,
     courseId
   }
-  let headers =new HttpHeaders()
-  headers.set('authorization', `Bearer ${this.authservice.getToken()}`)
-  headers.set('Content-Type', 'application/json')
   
   return this.http.post(`${this.url}/course/registration/valid`,body,
-  { headers: headers} )
+  { headers:new HttpHeaders().set('Content-Type', 'application/json').set('authorization', `Bearer ${this.authService.getToken()}`)})
 }
 
-rejectRegistartion(userId,courseId){
+rejectRegistration(userId,courseId){
   let body={
     userId,
     courseId
   }
-  let headers =new HttpHeaders()
-  headers.set('authorization', `Bearer ${this.authservice.getToken()}`)
-  headers.set('Content-Type', 'application/json')
   
   return this.http.post(`${this.url}/course/registration/reject`,body,
-  { headers: headers} )
+  { headers: new HttpHeaders().set('Content-Type', 'application/json').set('authorization', `Bearer ${this.authService.getToken()}`)})
 }
 
 addTraining(course){
+ 
+  return this.http.post(`${this.url}/course`,course,
+  { headers :new HttpHeaders().set('Content-Type', 'application/json').set('authorization', `Bearer ${this.authService.getToken()}`)})
 
-  let headers =new HttpHeaders()
-  headers.set('authorization', `Bearer ${this.authservice.getToken()}`)
-  headers.set('Content-Type', 'application/json')
-  
-  return this.http.post(`${this.url}/course/request/all`,course,
-  { headers: headers} )
-}
+  }
 
 updateTraining(courseId,course){
   
-  let headers =new HttpHeaders()
-  headers.set('authorization', `Bearer ${this.authservice.getToken()}`)
-  headers.set('Content-Type', 'application/json')
-  
   return this.http.put(`${this.url}/course/${courseId}`,course,
-  { headers: headers} )
+  { headers: new HttpHeaders().set('Content-Type', 'application/json').set('authorization', `Bearer ${this.authService.getToken()}`)})
 }
 
-deleteTraining(courseId){
-  let headers =new HttpHeaders()
-  headers.set('authorization', `Bearer ${this.authservice.getToken()}`)  
+deleteTraining(courseId){ 
   return this.http.delete(`${this.url}/course/${courseId}`,
-  { headers: headers} )
+  { headers:new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)}) 
 }
 
 }

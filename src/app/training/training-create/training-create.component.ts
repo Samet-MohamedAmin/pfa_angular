@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material';
 import { TrainingType, TrainingItemInterface } from '../training.interface';
+import { TrainingService } from '../training.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-training-create',
@@ -16,7 +18,7 @@ export class TrainingCreateComponent implements OnInit {
 
   isLinear = false;
 
-  constructor(private _formBuilder: FormBuilder) { }
+  constructor(private _formBuilder: FormBuilder,private trainingService:TrainingService ,private router:Router) { }
 
   training: TrainingItemInterface;
 
@@ -55,6 +57,13 @@ export class TrainingCreateComponent implements OnInit {
   submit(){
     this.prepareData();
     console.log(this.training);
+    this.trainingService.addTraining(this.training)
+    .subscribe((course:any)=>{
+      console.log(course)
+      if(course._id){
+        this.router.navigate(['training/details/',course._id])
+      }
+    })
   }
 
   testFirstStep(){
