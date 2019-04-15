@@ -10,7 +10,7 @@ export interface TrainingItemInterface {
     totalPlaces: number;
 
     /* specifications  */
-    levels: number[];
+    level: number;
     requirements: string[];
     type: TrainingType;
     concernedBranches: BranchType[];

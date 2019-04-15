@@ -1,7 +1,7 @@
 <form class="w-100" [formGroup]="formGroupSpecifications">
   <mat-form-field class="w-75" [appearance]="formFieldAppearance">
     <mat-label class="d-block mb-2">Niveaux</mat-label>
-    <mat-select multiple formControlName="levels">
+    <mat-select formControlName="level">
       <mat-option *ngFor="let level of levels; let i = index" [value]="i">{{level}}</mat-option>
     </mat-select>
   </mat-form-field>
