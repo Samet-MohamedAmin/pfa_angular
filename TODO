@@ -1,6 +1,6 @@
-[global changes]
--forms validation
--make private fields name like '_fieldName'
--body margin fix
--text capitalize
--add animations
+
+(A) 2019-04-14 forms validation @forms
+(E) 2019-04-14 make private fields name like '_fieldName' @optional
+(B) 2019-04-09 body margin fix @style
+(D) 2019-04-15 text capitalize @optional
+(B) 2019-04-15 add animations +fadeIn +fadeOut @style
