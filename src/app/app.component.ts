@@ -8,14 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   sideBarOpened = false;
 
-  sideNavItems = {
-    home: '/home',
-    profile: 'profile',
-    recommandation: 'training/recommandations',
-    formation: '/training',
-    create: '/training/create',
-    inscription: 'inscription',
-  }
+  sideNavItems = [
+    {name: 'home', path: '/home'},
+    {name: 'profile', path: 'profile'},
+    {name: 'recommandation', path: 'training/recommandations'},
+    {name: 'formation', path: '/training'},
+    {name: 'create', path: '/training/create'},
+    {name: 'inscription', path: 'inscription'},
+  ]
 
 
 }

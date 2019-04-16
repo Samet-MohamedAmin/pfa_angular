@@ -5,11 +5,11 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav mode="over" class="w-300 bg-white p-4" closed>
         <mat-list>
-            <mat-list-item *ngFor="let item of sideNavItems | keyvalue"
+            <mat-list-item *ngFor="let item of sideNavItems"
                             class="cursor-pointer"
                             (click)="sidenav.close()"
                             [disableRipple]="false"
-                            [routerLink]="item.value"> {{item.key}} </mat-list-item>
+                            [routerLink]="item.path"> {{item.name}} </mat-list-item>
         </mat-list>
     </mat-sidenav>
     <mat-sidenav-content>
