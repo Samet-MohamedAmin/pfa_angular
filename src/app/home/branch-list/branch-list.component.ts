@@ -34,7 +34,7 @@ export class BranchListComponent implements OnInit {
   {
     code:'RT',
     name: 'Réseaux Informatiques et Télécommunications (RT)',
-    image: 'assets/images/network_01.jpg',
+    image: 'assets/images/network_02.jpg',
     imageAlt: 'GL_IMAGE',
     description:"La filière Réseaux Informatiques et Télécommunications a pour objectif de former des ingénieurs dans les domaines de l’informatique intégrant les moyens de communication dans les différents aspects de transmission de données et les organisations en réseau."
   },
