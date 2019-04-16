@@ -1,6 +1,7 @@
 export interface TrainingRequestStudentInterface {
     requestId: number;
     courseTitle: string;
+    courseImage: string;
     courseDescriptionShort: string;
     studentBranch: string;
     studentFirstName: string;

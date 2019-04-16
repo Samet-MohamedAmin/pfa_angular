@@ -22,6 +22,7 @@ export class TrainingRequestsComponent implements OnInit {
       requestId: 0,
       courseTitle: 'Introduction To Computer Science',
       courseDescriptionShort: this.dummyText,
+      courseImage: '/assets/images/computer_01.jpg',
       studentBranch: 'GL',
       studentFirstName: 'Amin',
       studentLastName: 'Samet',

@@ -1,6 +1,8 @@
 <mat-card [ngClass]="{'training-request': true, 'pop-out-animation': trainingRequest.hide}">
   <mat-card-header>
-    <div mat-card-avatar class="header-image"></div>
+    <div mat-card-avatar
+        class="header-image"
+        style.backgroundImage="{{trainingRequest.courseImage | bgImage}}"></div>
     <mat-card-title>{{trainingRequest.courseTitle}}</mat-card-title>
     <mat-card-subtitle>{{trainingRequest.courseDescriptionShort}}</mat-card-subtitle>
   </mat-card-header>

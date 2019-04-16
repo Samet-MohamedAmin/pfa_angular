@@ -4,3 +4,4 @@
 (B) 2019-04-09 body margin fix @style
 (D) 2019-04-15 text capitalize @optional
 (B) 2019-04-15 add animations +fadeIn +fadeOut @style
+(B) 2019-04-16 use interfaces instead of classes in SignUp +CredentialsSignUp +Student +Teacher +Partner @optimisation 

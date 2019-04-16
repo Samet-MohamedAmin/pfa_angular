@@ -36,6 +36,7 @@ import { TrainingRecommandationsComponent } from './training/training-recommanda
 import { TrainingRequestsComponent } from './admin/training-requests/training-requests.component';
 import { AdminGuardService } from './auth/admin-guard.service';
 import { TrainingRequestStudentComponent } from './admin/training-requests/training-request-student/training-request-student.component';
+import { BackgroundImagePipe } from './pipes/background-image.pipe';
 
 
 @NgModule({
@@ -61,6 +62,7 @@ import { TrainingRequestStudentComponent } from './admin/training-requests/train
       TrainingRecommandationsComponent,
       TrainingRequestsComponent,
       TrainingRequestStudentComponent,
+      BackgroundImagePipe,
       ErrorComponent,
    ],
    imports: [
