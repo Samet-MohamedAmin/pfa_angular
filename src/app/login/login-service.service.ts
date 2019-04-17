@@ -12,6 +12,7 @@ export class LoginService {
 }
 
 // TODO: fix this poor design. role admin must not be here
+// TODO: use an array of objects of type `{RoleType: String}`
 /**
  * contains roles identification
  */
@@ -21,4 +22,4 @@ export const ROLES = {student:'étudiant', professional: 'professionel', admin: 
  * role list from ROLES object.
  * contains ROLES keys.
  */
-export const ROLE_LIST = Object.keys(ROLES);
+export const ROLE_LIST: string[] = Object.keys(ROLES);

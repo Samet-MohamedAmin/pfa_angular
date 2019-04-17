@@ -1,4 +1,4 @@
-import { BranchType } from '../shared/shared.service';
+import { BranchType, StudentPathType, STUDENT_PATH_LIST } from '@4c-shared/shared.service';
 
 /**
  * training interface defining all training properties
@@ -34,11 +34,11 @@ export interface TrainingItemInterface {
 /**
  * new type defines training type.
  */
-export declare type TrainingType = 'soft-skills' | 'technique' | 'entrepreneurial';
+export declare type TrainingType = StudentPathType;
 /**
  * list of all training types.
  */
-export const TRAINING_TYPE_LIST: TrainingType[] = ['soft-skills', 'technique', 'entrepreneurial'];
+export const TRAINING_TYPE_LIST: TrainingType[] = STUDENT_PATH_LIST;
 
 /**
  * list of training levels

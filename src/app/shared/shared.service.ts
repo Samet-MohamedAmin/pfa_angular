@@ -80,4 +80,14 @@ export type TrainingRequestState = 'PENDING' | 'ACCEPTED' | 'REJECTED';
 /**
  * list of different training request states presented in `TrainingRequestState`
  */
-export const TRAINING_REQUEST_STATE_LIST: TrainingRequestState[] = ['PENDING', 'ACCEPTED', 'REJECTED']
+export const TRAINING_REQUEST_STATE_LIST: TrainingRequestState[] = ['PENDING', 'ACCEPTED', 'REJECTED'];
+
+
+/**
+ * new type student path.
+ */
+export declare type StudentPathType = 'soft-skills' | 'technique' | 'entrepreneurial';
+/**
+ * list of all student prefered path.
+ */
+export const STUDENT_PATH_LIST: StudentPathType[] = ['soft-skills', 'technique', 'entrepreneurial'];

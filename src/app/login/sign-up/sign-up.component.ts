@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MatSelectChange } from '@angular/material';
 import { AuthenticationService } from '@4c-auth/authentication.service';
 import { Student,Teacher,Partner } from './credentials-sign-up';
-import { BRANCHES, BRANCH_LIST } from '@4c-shared/shared.service';
+import { BRANCHES, STUDENT_PATH_LIST, StudentPathType } from '@4c-shared/shared.service';
 
 /**
  * sign-up component
@@ -15,15 +15,15 @@ import { BRANCHES, BRANCH_LIST } from '@4c-shared/shared.service';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent implements OnInit {
-  roles = ROLES;
-  roleList = ROLE_LIST;
+  roles: {} = ROLES;
+  roleList: string[] = ROLE_LIST;
   role: string;
-  credentials:any={} ;
+  credentials:any={};
+  branches: {} = BRANCHES;
+  yearOfStudy: number[] = [1, 2, 3, 4, 5];
+  pathList: StudentPathType[] = STUDENT_PATH_LIST;
+  
   formFieldAppearance = "outline";
-  branches = BRANCHES;
-  yearOfStudy = [1, 2, 3, 4, 5];
-  pathList = BRANCH_LIST;
-
 
   constructor(private router: Router,
               private route: ActivatedRoute,
