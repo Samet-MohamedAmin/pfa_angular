@@ -146,25 +146,32 @@ export class TrainingSearchComponent implements OnInit {
    * returns true when `this.searchValue` is in `training.title` or `training.instructor`
    * or `training.descriptionShort`.
    * I've added this method because the search may concern information other 
-   * than title like __description__ or __instructor__
-   * @param training training item in filterT training callback
+   * than title like __description__ or __instructor__.
+   * You can specify training concerned attributes in `list`
+   * @param training training item in filter training callback
    */
-  filterSearch(training:TrainingItemInterface, searchValue):boolean{
-    if(!searchValue.length) return true;
-    if(training.title.toLowerCase().includes(searchValue)) return true;
-    if(training.instructor.toLowerCase().includes(searchValue)) return true
-    // if(training.descriptionShort.toLowerCase().includes(searchValue)) return true;
+  filterSearch(training:TrainingItemInterface):boolean {
+    const list: string[] = ['title', 'instructor']
+    
+    if(!this.searchValue.length) return true;
+    
+    for(let i in list)
+      if(training[list[i]].toLowerCase().includes(this.searchValue.toLowerCase()))
+        return true;
+
     return false;
   }
 
+  /**
+   * filter trainig list result when any filter attributes changes
+   */
   filterTrainings() {
-    console.log("--------> filter trainings");
-    console.log(this.searchValue);
+    console.log('--------> filter trainings');
     this.filteredTrainings=this.trainingList.filter((training:TrainingItemInterface)=>{
-      if(!this.trainingType || (this.trainingType == training.type) || (this.trainingType=="all"))
+      if(!this.trainingType || (this.trainingType == training.type) || (this.trainingType=='all'))
         if(!this.activeBranch || training.concernedBranches.includes(this.activeBranch))
           if(!this.levels.length || this.levels.includes(training.level))
-            if(this.filterSearch(training, this.searchValue.toLowerCase()))
+            if(this.filterSearch(training))
               return true
       return false;
     })
