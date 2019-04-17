@@ -1,0 +1,19 @@
+<mat-card [ngClass]="{'training-item h-100 level-border cursor-pointer': true,
+                        'level-color-0': trainingRequest.state == trainingRequestStateList[0],
+                        'level-color-1': trainingRequest.state == trainingRequestStateList[1],
+                        'level-color-2': trainingRequest.state == trainingRequestStateList[2]}">
+    <img class="card-image d-block"
+          mat-card-image
+          [alt]="trainingRequest.courseImageSrc"
+          [src]="trainingRequest.courseImageSrc">
+    <mat-card-content>
+        <mat-card-header>
+          <mat-card-subtitle>{{ trainingRequest.courseInstructor }}</mat-card-subtitle>
+          <mat-card-title>{{ trainingRequest.courseTitle }}</mat-card-title>
+        </mat-card-header>
+    </mat-card-content>
+    <div class="info-bottom py-3 px-3 position-absolute d-flex justify-content-between">
+        <span class="training-state">{{ trainingRequest.state }}</span>
+        <span class="training-date">{{ trainingRequest.courseStartDate | date: 'dd/MM/yy' }}</span>
+    </div>
+</mat-card>

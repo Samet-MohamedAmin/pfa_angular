@@ -1,0 +1,5 @@
+/* TODO: change this ugly css fix */
+app-profile-training-request-item {
+    /* align-self: flex-start; */
+    height: calc(100% - 80px)
+}

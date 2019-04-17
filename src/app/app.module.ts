@@ -37,20 +37,27 @@ import { TrainingRequestsComponent } from './admin/training-requests/training-re
 import { AdminGuardService } from './auth/admin-guard.service';
 import { TrainingRequestStudentComponent } from './admin/training-requests/training-request-student/training-request-student.component';
 import { BackgroundImagePipe } from './pipes/background-image.pipe';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileTrainingRequestsComponent } from './profile/profile-training-requests/profile-training-requests.component';
+import { ProfileTrainingRequestItemComponent } from './profile/profile-training-requests/profile-training-request-item/profile-training-request-item.component';
 
 
 @NgModule({
    declarations: [
       AppComponent,
+      
       NavbarComponent,
       FooterComponent,
+      
       HomeComponent,
       BranchListComponent,
       BranchItemComponent,
+      
       SignInComponent,
       SignInSelectionComponent,
       SignUpComponent,
       SignUpSelectionComponent,
+      
       TrainingSearchComponent,
       TrainingListComponent,
       TrainingItemComponent,
@@ -60,10 +67,17 @@ import { BackgroundImagePipe } from './pipes/background-image.pipe';
       TrainingCreateSpecificationsComponent,
       TrainingCreateDescriptionComponent,
       TrainingRecommandationsComponent,
+      
       TrainingRequestsComponent,
       TrainingRequestStudentComponent,
-      BackgroundImagePipe,
+      
+      ProfileComponent,
+      ProfileTrainingRequestsComponent,
+      ProfileTrainingRequestItemComponent,
+
       ErrorComponent,
+
+      BackgroundImagePipe,
    ],
    imports: [
       BrowserModule,

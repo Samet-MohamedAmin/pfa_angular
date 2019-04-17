@@ -13,9 +13,11 @@ import { TrainingRecommandationsComponent } from './training/training-recommanda
 import { TrainingRequestsComponent } from './admin/training-requests/training-requests.component';
 import { AuthGuardService } from './auth/auth-guard.service';
 import { AdminGuardService } from './auth/admin-guard.service';
+import { ProfileTrainingRequestsComponent } from './profile/profile-training-requests/profile-training-requests.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'admin', pathMatch: 'full'},
+  {path: '', redirectTo: 'profile', pathMatch: 'full'},
   {path: 'home', component: HomeComponent},
   {path: 'sign-up', component: SignUpSelectionComponent},
   {path: 'sign-up/:role', component: SignUpComponent},
@@ -32,6 +34,10 @@ const routes: Routes = [
     {path: '', redirectTo: 'training-requests', pathMatch: 'full'},
     {path: 'training-requests', component: TrainingRequestsComponent} //,canActivate:[AdminGuardService]}
   ]},
+  {path: 'profile', component: ProfileComponent, children: [
+    {path: '', redirectTo: 'training-requests', pathMatch: 'full'},
+    {path: 'training-requests', component: ProfileTrainingRequestsComponent}
+  ]}, 
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: 'error'},
 ];

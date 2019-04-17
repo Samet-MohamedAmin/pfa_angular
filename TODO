@@ -1,7 +1,8 @@
 
 (A) 2019-04-14 forms validation @forms
 (E) 2019-04-14 make private fields name like '_fieldName' @optional
-(B) 2019-04-09 body margin fix @style
+(B) 2019-04-09 body margin fix (scroll problem) @style
 (D) 2019-04-15 text capitalize @optional
 (B) 2019-04-15 add animations +fadeIn +fadeOut @style
-(B) 2019-04-16 use interfaces instead of classes in SignUp +CredentialsSignUp +Student +Teacher +Partner @optimisation 
+(B) 2019-04-16 use interfaces instead of classes in SignUp +CredentialsSignUp  @orgonisation
+(S) 2019-04-17 unifiy training request interface +profile +admin @orgonisation 

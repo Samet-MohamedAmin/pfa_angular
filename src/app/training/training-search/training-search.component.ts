@@ -55,13 +55,13 @@ export class TrainingSearchComponent implements OnInit {
     branches: BRANCHES,
     branchList: BRANCH_LIST,
   }
-//binded properties
- activeBranch;
- levels:Array<any>=[];
- trainingType;
-  
- allTrainings;
- filteredTrainings:Array<any>=[];
+  //binded properties
+  activeBranch:any;
+  levels:Array<any>=[];
+  trainingType:any;
+    
+  allTrainings:any;
+  filteredTrainings:Array<any>=[];
 
   constructor(private route :ActivatedRoute, private trainingService:TrainingService) { 
     this.createDummyData()
@@ -88,12 +88,12 @@ export class TrainingSearchComponent implements OnInit {
   }
 
   createDummyData(){
-    let dateNow:Date = new Date(Date.now());
+    const dateNow:Date = new Date(Date.now());
     for(let i=0; i<20; i++){
-      let branch_1 = SharedService.getRandomObject(BRANCH_LIST);
-      let branch_2 = SharedService.getRandomObject(BRANCH_LIST.filter((v) => v!=branch_2));
+      const branch_1 = SharedService.getRandomObject(BRANCH_LIST);
+      const branch_2 = SharedService.getRandomObject(BRANCH_LIST.filter((v) => v!=branch_2));
       
-      let trainingDate: Date = new Date();
+      const trainingDate: Date = new Date();
       trainingDate.setMonth(dateNow.getMonth() + SharedService.getRandomNumber(-6, 6));
       trainingDate.setDate(dateNow.getDate() + SharedService.getRandomNumber(-15, 15));
 
@@ -125,27 +125,27 @@ export class TrainingSearchComponent implements OnInit {
   }
 
 
-levelChange(event){
-console.log(event)
-if (event.checked){
-  this.levels.push(event.source.value)
-}else if(!event.checked) {
-  let index=this.levels.indexOf(event.source.value)
-  if (index >-1) this.levels.splice(index,1)
-}
-console.log(this.levels)
-this.filterTrainings()
+  levelChange(eventData:any){
+    console.log(eventData);
+    if (eventData.checked){
+      this.levels.push(eventData.source.value);
+    }else if(!eventData.checked) {
+      let index=this.levels.indexOf(eventData.source.value);
+      if (index >-1) this.levels.splice(index,1);
+    }
+    console.log(this.levels);
+    this.filterTrainings();
   }
 
-typeChanged($event){
-this.trainingType=$event.value
-this.filterTrainings()
-}
+  typeChanged(eventData:any){
+    this.trainingType=eventData.value;
+    this.filterTrainings();
+  }
 
  
   filterTrainings() {
-    console.log("--------> filter trainings")
-    console.log(this.searchValue)
+    console.log("--------> filter trainings");
+    console.log(this.searchValue);
     this.filteredTrainings=this.trainingList.filter((training:any)=>{
       return ((!this.activeBranch) || (training.concernedBranches.includes(this.activeBranch))) 
       &&((!this.trainingType) || (this.trainingType ==training.type) || (this.trainingType=="allTypes"))

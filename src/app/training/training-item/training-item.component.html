@@ -3,7 +3,9 @@
                         'level-color-1': training.level == 1,
                         'level-color-2': training.level == 2}">
     <img class="card-image d-block"
-            mat-card-image  [alt]="training.imageAlt" [src]="training.imageSrc">
+            mat-card-image 
+            [alt]="training.imageAlt"
+            [src]="training.imageSrc">
     <mat-card-content>
         <mat-card-header>
             <mat-card-subtitle>{{ training.instructor }}</mat-card-subtitle>

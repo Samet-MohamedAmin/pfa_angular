@@ -45,22 +45,33 @@ after adding margin-top to main content, the main content height is over 100%*/
     --main-color-2: #C5CAE9;
     --main-color-3: #757de8;
     --main-color-4: #002984;
+
     --grey-0: #fafafa;
     --grey-1: #EEE;
     --grey-2: #DDD;
     --grey-3: #AAA;
+
+    --level-0: #60CC5A;
+    --level-1: #C2BB3A;
+    --level-2: #CC2A17;
     --nav-bar-h: 64px;
     --footer-h: 200px;
 }
 
 .bg-white { background-color: white }
 .bg-main { background-color: var(--main-color) }
+
 .bg-main-2 { background-color: var(--main-color-2) }
 .bg-main-3 { background-color: var(--main-color-3) }
 .bg-main-4 { background-color: var(--main-color-4) }
+
 .bg-grey-1 { background-color: var(--grey-1) }
 .bg-grey-2 { background-color: var(--grey-2) }
 .bg-grey-3 { background-color: var(--grey-3) }
+
+.bg-level-0 { background-color: var(--level-0) }
+.bg-level-1 { background-color: var(--level-1) }
+.bg-level-2 { background-color: var(--level-2) }
 
 
 /*------------------general-classes--------------*/

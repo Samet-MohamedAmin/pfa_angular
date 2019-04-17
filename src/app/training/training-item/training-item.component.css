@@ -14,11 +14,11 @@
 .level-border .training-date { border-bottom-width: 4px }
 
 .level-color-0 .card-image,
-.level-color-0 .training-date { border-bottom-color: #60CC5A }
+.level-color-0 .training-date { border-bottom-color: var(--level-0) }
 .level-color-1 .card-image,
-.level-color-1 .training-date{ border-bottom-color: #C2BB3A }
+.level-color-1 .training-date{ border-bottom-color: var(--level-1) }
 .level-color-2 .card-image,
-.level-color-2 .training-date { border-bottom-color: #CC2A17 }
+.level-color-2 .training-date { border-bottom-color: var(--level-2) }
 
 
 .training-date {

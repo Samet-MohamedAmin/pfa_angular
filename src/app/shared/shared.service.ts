@@ -55,5 +55,7 @@ export const BRANCHES = {GL: 'Génie Logiciel',
                           IMI: 'Instrumentation et Maintenance Industriel',
                           CH: 'Chimie',
                           BIO: 'Biologie'}
-
 export const BRANCH_LIST: BranchType[] = ['GL', 'RT', 'IIA', 'IMI', 'CH', 'BIO'];
+
+export type TrainingRequestState = 'ACCEPTED' | 'PENDING' | 'REJECTED';
+export const TRAINING_REQUEST_STATE_LIST: TrainingRequestState[] = ['ACCEPTED', 'PENDING', 'REJECTED']

@@ -1,0 +1,33 @@
+.training-item {
+    width: 210px;
+    /* overflow: hidden; */
+}
+.card-image {
+    height: 220px;
+    object-fit: cover;
+}
+
+.info-bottom {
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.training-date { font-size: 14px;}
+.training-state {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+.level-border .card-image {
+    border-bottom-style: solid;
+    border-bottom-width: 10px;
+}
+
+.level-color-0 .card-image{ border-bottom-color: var(--level-0) }
+.level-color-1 .card-image{ border-bottom-color: var(--level-1) }
+.level-color-2 .card-image{ border-bottom-color: var(--level-2) }
+
+.level-color-0 .info-bottom { background-color: var(--level-0) }
+.level-color-1 .info-bottom { background-color: var(--level-1) }
+.level-color-2 .info-bottom { background-color: var(--level-2) }
