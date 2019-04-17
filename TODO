@@ -4,8 +4,10 @@
 (B) 2019-04-09 body margin fix (scroll problem) @style
 (D) 2019-04-15 text capitalize @optional
 (B) 2019-04-15 add animations +fadeIn +fadeOut @ux
-(B) 2019-04-16 use interfaces instead of classes in SignUp +signup  @orgonisation
-(S) 2019-04-17 unifiy training request interface +profile +admin @orgonisation 
-(A) 2019-04-17 get rid of unessary components +list @orgonisation 
-(B) 2019-04-17 fix long names problem @orgonisation 
+(B) 2019-04-16 use interfaces instead of classes in SignUp +signup  @organisation
+(S) 2019-04-17 unifiy training request interface +profile +admin @organisation 
+(A) 2019-04-17 get rid of unessary components +list @organisation 
+(B) 2019-04-17 fix long names problem @organisation 
 (C) 2019-04-17 add loading animation @ui @ux
+x (C) 2019-04-17 2019-04-16 organize filter code @organisation 
+x (B) 2019-04-17 2019-04-16 search filter in list of attributes @feature
