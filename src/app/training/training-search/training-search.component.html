@@ -13,7 +13,7 @@
         <section class="">
           <label class="d-block mb-2">Sélectionner le type</label>
           <mat-radio-group [value]="trainingType" (change)="typeChanged($event)">
-            <mat-radio-button class="mr-3" checked="true">all types</mat-radio-button>
+            <mat-radio-button class="mr-3" checked>all types</mat-radio-button>
             <mat-radio-button *ngFor="let type of parameters.types"
                               class="mr-3"
                               [value]="type">{{type}}</mat-radio-button>
