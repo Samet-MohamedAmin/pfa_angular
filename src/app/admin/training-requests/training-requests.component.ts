@@ -16,7 +16,9 @@ export class TrainingRequestsComponent implements OnInit {
   ngOnInit() {
     this.createDummyRequestStudent();
   }
-
+  /**
+   * creates trainingrequestStudentItem containing random properties
+   */
   createDummyRequestStudent():void{
     let trainingRequestStudentItem: TrainingRequestStudentInterface = {
       requestId: 0,
@@ -38,6 +40,10 @@ export class TrainingRequestsComponent implements OnInit {
     }
   }
 
+  /**
+   * removes selected request from request list
+   * @param requestId id of the request to remove
+   */
   removeRequest(requestId: number){
     console.log(`remove request ${requestId}`);
 
@@ -46,11 +52,19 @@ export class TrainingRequestsComponent implements OnInit {
     setTimeout(()=> this.trainingRequestStudentList.splice(index, 1), 300);
   }
 
-  onRequestAccept(eventData){
+  /**
+   * triggered when accepting a request.
+   * @param eventData id of the selected request
+   */
+  onRequestAccept(eventData:number){
     this.removeRequest(eventData);
   }
 
-  onRequestReject(eventData){
+  /**
+   * triggered when rejecting a request
+   * @param eventData id of the selected request
+   */
+  onRequestReject(eventData:number){
     this.removeRequest(eventData);
   }
 

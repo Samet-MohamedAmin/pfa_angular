@@ -12,10 +12,11 @@ userDetails:any;
 recommandedTrainings
   constructor(private authService :AuthenticationService,
               private trainingService:TrainingService) { 
-  this.userDetails=this.authService.getUserDetails()
-  this.trainingService.getRecommendations(this.userDetails.role,this.userDetails._id)
-  .subscribe(recommandedTrainings=>this.recommandedTrainings=recommandedTrainings)
-              }
+    this.userDetails=this.authService.getUserDetails();
+    this.trainingService
+          .getRecommendations(this.userDetails.role,this.userDetails._id)
+          .subscribe(recommandedTrainings=>this.recommandedTrainings=recommandedTrainings)
+  }
 
   ngOnInit() {
   }

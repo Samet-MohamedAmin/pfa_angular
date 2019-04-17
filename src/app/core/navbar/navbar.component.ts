@@ -8,9 +8,9 @@ import { AuthenticationService } from 'src/app/auth/authentication.service';
 })
 export class NavbarComponent implements OnInit {
   isLoggedIn: boolean;
-  userDetails;
+  userDetails:any;
   @Output() menuClicked = new EventEmitter();
-
+  
   constructor(private auth: AuthenticationService) {
     this.auth.userEmitter
       .subscribe((userDetails) => {
@@ -23,6 +23,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * user logout.
+   * trigger authentication service logout and reloads the page.
+   */
   logout(){
     this.auth.logout();
     location.reload();

@@ -38,7 +38,13 @@ export class SharedService {
 
 }
 
+/**
+ * base path for `images`
+ */
 export const IMAGE_SRC_BASE = 'assets/images/'
+/**
+ * set of images in `IMAGE_SRC_BASE`
+ */
 export const IMAGES = {
   chemistry: 'chemistry_01.jpg',
   circuit: 'circuit_01.jpg',
@@ -48,14 +54,30 @@ export const IMAGES = {
   network: 'network_01.jpg'
 };
 
+/**
+ * new type defines branch type.
+ */
 export type BranchType = 'GL' | 'RT' | 'IIA' | 'IMI' | 'CH' | 'BIO';
+// TODO: use {BranchType: String}[] instead of the following format
+/**
+ * list of branches with full name
+ */
 export const BRANCHES = {GL: 'Génie Logiciel',
                           RT: 'Réseau et Télécommunication',
                           IIA: 'Informatique Industriel et Automatique',
                           IMI: 'Instrumentation et Maintenance Industriel',
                           CH: 'Chimie',
                           BIO: 'Biologie'}
+/**
+ * list of different branch types presented in `BranchType`
+ */
 export const BRANCH_LIST: BranchType[] = ['GL', 'RT', 'IIA', 'IMI', 'CH', 'BIO'];
 
-export type TrainingRequestState = 'ACCEPTED' | 'PENDING' | 'REJECTED';
-export const TRAINING_REQUEST_STATE_LIST: TrainingRequestState[] = ['ACCEPTED', 'PENDING', 'REJECTED']
+/**
+ * new type defines training request state type.
+ */
+export type TrainingRequestState = 'PENDING' | 'ACCEPTED' | 'REJECTED';
+/**
+ * list of different training request states presented in `TrainingRequestState`
+ */
+export const TRAINING_REQUEST_STATE_LIST: TrainingRequestState[] = ['PENDING', 'ACCEPTED', 'REJECTED']

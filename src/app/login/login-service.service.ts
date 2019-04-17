@@ -9,13 +9,16 @@ export class LoginService {
   constructor(private router: Router,
               private route:ActivatedRoute) { }
 
-  verifyRoute(){
-    // verify that role is ROLE_LIST when accessing /sign-in/:role or /sign-up/:role
-    // returning an observable containing role value
-  }
-
 }
 
 // TODO: fix this poor design. role admin must not be here
+/**
+ * contains roles identification
+ */
 export const ROLES = {student:'étudiant', professional: 'professionel', admin: 'admin'};
+
+/**
+ * role list from ROLES object.
+ * contains ROLES keys.
+ */
 export const ROLE_LIST = Object.keys(ROLES);

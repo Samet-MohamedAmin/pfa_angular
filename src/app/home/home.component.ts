@@ -11,10 +11,6 @@ export class HomeComponent {
   cum ut in duis magna fames habitasse congue senectus.';
   searchValue = '';
 
-
-
-
-
 }
 
 

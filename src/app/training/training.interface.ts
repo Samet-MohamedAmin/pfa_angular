@@ -27,8 +27,16 @@ export interface TrainingItemInterface {
     rating: number;
 }
 
-
+/**
+ * new type defines training type.
+ */
 export declare type TrainingType = 'soft-skills' | 'technique' | 'entrepreneurial';
+/**
+ * list of all training types.
+ */
 export const TRAINING_TYPE_LIST: TrainingType[] = ['soft-skills', 'technique', 'entrepreneurial'];
 
+/**
+ * list of training levels
+ */
 export const TRAINING_LEVEL = ['debutant', 'intermediare', 'avancé'];

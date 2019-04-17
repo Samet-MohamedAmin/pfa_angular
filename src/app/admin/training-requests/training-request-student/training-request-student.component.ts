@@ -16,14 +16,22 @@ export class TrainingRequestStudentComponent implements OnInit {
   ngOnInit() {
   }
 
+  /**
+   * triggered when after clicking on the reject button.
+   * trigger the requestRejected event
+   */
   rejectRequest(){
     console.log(`reject request [${this.trainingRequest.requestId}]`);
     this.requestRejected.emit(this.trainingRequest.requestId);
   }
 
+  /**
+   * triggered when after clicking on the accept button.
+   * trigger the requestAccepted event
+   */
   acceptRequest(){
     console.log(`accept request [${this.trainingRequest.requestId}]`);
-    this.requestRejected.emit(this.trainingRequest.requestId);
+    this.requestAccepted.emit(this.trainingRequest.requestId);
   }
 
 }

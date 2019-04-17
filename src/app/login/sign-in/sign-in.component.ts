@@ -43,8 +43,11 @@ export class SignInComponent implements OnInit {
     // window.scroll(0, 0);
   }
 
-
-  partenaireRoleSelectionChanged(eventData: MatSelectChange) {
+  /**
+   * triggered when professional role changed
+   * @param eventData contains the selected professional role value
+   */
+  professionalRoleSelectionChanged(eventData: MatSelectChange) {
     console.log(eventData.value);
     this.credentials.type = eventData.value
   }

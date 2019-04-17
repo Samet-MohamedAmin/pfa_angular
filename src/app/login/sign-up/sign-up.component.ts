@@ -48,6 +48,10 @@ export class SignUpComponent implements OnInit {
     // window.scroll(0, 0);
   }
 
+  /**
+   * triggered when professional role changed
+   * @param eventData contains the selected professional role value
+   */
   professionalRoleSelectionChanged(eventData: MatSelectChange){
     // TODO: credentials constructor problem
     console.log(eventData.value);
@@ -60,6 +64,7 @@ export class SignUpComponent implements OnInit {
       this.credentials.type = eventData.value
     }
   }
+
   branchSelected(eventData: MatSelectChange){
     console.log(eventData.value);
     this.credentials.branch = eventData.value;
@@ -69,6 +74,7 @@ export class SignUpComponent implements OnInit {
     console.log(eventData.value);
     this.credentials.yearOfStudy = eventData.value;
   }
+
   departmentSelected(eventData: MatSelectChange){
     console.log(eventData.value);
     this.credentials.department = eventData.value;
@@ -79,6 +85,9 @@ export class SignUpComponent implements OnInit {
     this.credentials.requestedPath = eventData.value;
   }
   
+  /**
+   * register a user with credentials given in the form
+   */
   register() {
      this.auth.register(this.credentials).subscribe((data) => {
       this.auth.updateUserState()

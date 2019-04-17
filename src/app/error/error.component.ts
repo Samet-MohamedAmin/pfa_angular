@@ -5,12 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './error.component.html',
   styleUrls: ['./error.component.css']
 })
-export class ErrorComponent implements OnInit {
+export class ErrorComponent{
+  /**
+   * main displayed error message
+   */
   errorMessage = 'page NOT FOUND';
   
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

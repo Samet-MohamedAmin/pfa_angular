@@ -6,9 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  /**
+   * state of the sidebar
+   */
   sideBarOpened = false;
 
-  sideNavItems = [
+  /**
+   * side nav menu routing items
+   */
+  sideNavItems:{name:string, path: string}[] = [
     {name: 'home', path: '/home'},
     {name: 'profile', path: 'profile'},
     {name: 'recommandation', path: 'training/recommandations'},
@@ -16,6 +22,4 @@ export class AppComponent {
     {name: 'create', path: '/training/create'},
     {name: 'inscription', path: 'inscription'},
   ]
-
-
 }

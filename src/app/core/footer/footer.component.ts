@@ -5,9 +5,11 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent implements OnInit {
-
-  linkList = [
+export class FooterComponent {
+  /**
+   * list of t
+   */
+  linkList: string[] = [
     'www.4c.tn',
     'www.mes.tn',
     'www.insat.rnu.tn'
@@ -17,8 +19,4 @@ export class FooterComponent implements OnInit {
                 curabitur arcu duis quis purus, vel velit nunc aptent lobortis accumsan.`;
 
   constructor() { }
-
-  ngOnInit() {
-  }
-
 }

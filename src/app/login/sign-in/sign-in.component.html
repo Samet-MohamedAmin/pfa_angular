@@ -17,7 +17,7 @@
         </mat-form-field>
         <mat-form-field  *ngIf="role == roleList[1]" [appearance]="formFieldAppearance" class="w-75">
           <mat-label>Vous êtes:</mat-label>
-          <mat-select (selectionChange)="partenaireRoleSelectionChanged($event)">
+          <mat-select (selectionChange)="professionalRoleSelectionChanged($event)">
             <mat-option value="teacher">Enseignant</mat-option>
             <mat-option value="partner">Parteniare Socio-Professionel</mat-option>
           </mat-select>

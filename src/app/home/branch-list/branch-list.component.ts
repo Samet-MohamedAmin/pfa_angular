@@ -59,7 +59,12 @@ export class BranchListComponent implements OnInit {
     this.branchList = SharedService.shuffleObject(this.branchList);
   }
 
-  goToBranchTrainings(branchCode){
+  /**
+   * triggered when selecting a branch in the list.
+   * navigates to the selected branch page
+   * @param branchCode branch selected
+   */
+  goToBranchTrainings(branchCode: BranchType){
     this.router.navigate(['training/search'], {queryParams: {branchCode:branchCode}});
   }
 
