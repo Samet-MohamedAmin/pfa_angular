@@ -12,16 +12,18 @@
         </section>
         <section class="">
           <label class="d-block mb-2">Sélectionner le type</label>
-          <mat-radio-group [value]="trainingType">
+          <mat-radio-group [value]="trainingType" (change)="typeChanged($event)">
+            <mat-radio-button class="mr-3"
+                              [value]="all">all types</mat-radio-button>
             <mat-radio-button *ngFor="let type of parameters.types"
-                              class="radio-type-selction mr-3"
-                              [value]="type"
-                              (change)="typeChanged($event)">{{type}}</mat-radio-button>
+                              class="mr-3"
+                              [value]="type">{{type}}</mat-radio-button>
           </mat-radio-group>
         </section>
         <mat-form-field class="w-25" appearance="outline">
           <mat-label>Sélectionner la branche</mat-label>
           <mat-select [(value)]="activeBranch" (selectionChange)='filterTrainings()'>
+            <mat-option>-- Toutes les branches --</mat-option>
             <mat-option *ngFor="let branch of parameters.branches | keyvalue"
                         [value]="branch.key">{{branch.value}}</mat-option>
           </mat-select>

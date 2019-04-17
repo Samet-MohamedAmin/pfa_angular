@@ -142,15 +142,31 @@ export class TrainingSearchComponent implements OnInit {
     this.filterTrainings();
   }
 
- 
+  /**
+   * returns true when `this.searchValue` is in `training.title` or `training.instructor`
+   * or `training.descriptionShort`.
+   * I've added this method because the search may concern information other 
+   * than title like __description__ or __instructor__
+   * @param training training item in filterT training callback
+   */
+  filterSearch(training:TrainingItemInterface, searchValue):boolean{
+    if(!searchValue.length) return true;
+    if(training.title.toLowerCase().includes(searchValue)) return true;
+    if(training.instructor.toLowerCase().includes(searchValue)) return true
+    // if(training.descriptionShort.toLowerCase().includes(searchValue)) return true;
+    return false;
+  }
+
   filterTrainings() {
     console.log("--------> filter trainings");
     console.log(this.searchValue);
-    this.filteredTrainings=this.trainingList.filter((training:any)=>{
-      return ((!this.activeBranch) || (training.concernedBranches.includes(this.activeBranch))) 
-      &&((!this.trainingType) || (this.trainingType ==training.type) || (this.trainingType=="allTypes"))
-      &&((this.levels.length==0)|| (this.levels.includes(training.level)))
-      && ((this.searchValue.length==0) || (training.title.toLowerCase().includes(this.searchValue.toLowerCase())))
+    this.filteredTrainings=this.trainingList.filter((training:TrainingItemInterface)=>{
+      if(!this.trainingType || (this.trainingType == training.type) || (this.trainingType=="all"))
+        if(!this.activeBranch || training.concernedBranches.includes(this.activeBranch))
+          if(!this.levels.length || this.levels.includes(training.level))
+            if(this.filterSearch(training, this.searchValue.toLowerCase()))
+              return true
+      return false;
     })
     
   }
