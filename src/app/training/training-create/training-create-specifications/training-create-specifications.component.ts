@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { MatFormFieldAppearance } from '@angular/material';
 import { TRAINING_TYPE_LIST, TRAINING_LEVEL } from '../../training.interface';
-import { BRANCHES } from 'src/app/shared/shared.service';
+import { BRANCHES } from '@4c-shared/shared.service';
 
 @Component({
   selector: 'app-training-create-specifications',

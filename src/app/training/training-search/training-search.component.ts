@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BRANCHES, BRANCH_LIST, IMAGES, SharedService, IMAGE_SRC_BASE } from 'src/app/shared/shared.service';
+import { BRANCHES, BRANCH_LIST, IMAGES, SharedService, IMAGE_SRC_BASE } from '@4c-shared/shared.service';
 import { TRAINING_TYPE_LIST, TRAINING_LEVEL, TrainingItemInterface } from '../training.interface';
 import { ActivatedRoute } from '@angular/router';
 import { TrainingService } from '../training.service';

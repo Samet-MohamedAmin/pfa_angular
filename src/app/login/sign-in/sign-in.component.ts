@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewChecked } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { ROLES, ROLE_LIST } from '../login-service.service';
 import { MatSelectChange } from '@angular/material';
-import { AuthenticationService } from 'src/app/auth/authentication.service';
+import { AuthenticationService } from '@4c-auth/authentication.service';
 import { CredentialsSignInInterface } from './credentials-sign-in';
 
 /**

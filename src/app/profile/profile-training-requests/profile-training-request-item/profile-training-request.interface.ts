@@ -1,4 +1,4 @@
-import { TrainingRequestState } from 'src/app/shared/shared.service';
+import { TrainingRequestState } from '@4c-shared/shared.service';
 
 export interface ProfileTrainingRequestInterface {
     requestId: number;

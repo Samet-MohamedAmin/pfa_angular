@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges, SimpleChange } from '@angular/core';
-import { IMAGE_SRC_BASE, IMAGES, SharedService } from 'src/app/shared/shared.service';
+import { IMAGE_SRC_BASE, IMAGES, SharedService } from '@4c-shared/shared.service';
 import { TrainingItemInterface, TRAINING_TYPE_LIST } from '../training.interface';
 
 @Component({

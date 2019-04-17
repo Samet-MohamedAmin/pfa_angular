@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ProfileTrainingRequestInterface } from './profile-training-request.interface';
-import { TRAINING_REQUEST_STATE_LIST, TrainingRequestState } from 'src/app/shared/shared.service';
+import { TRAINING_REQUEST_STATE_LIST, TrainingRequestState } from '@4c-shared/shared.service';
 
 @Component({
   selector: 'app-profile-training-request-item',

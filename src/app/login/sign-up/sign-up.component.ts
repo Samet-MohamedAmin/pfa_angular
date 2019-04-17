@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ROLES, ROLE_LIST } from '../login-service.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { MatSelectChange } from '@angular/material';
-import { AuthenticationService } from 'src/app/auth/authentication.service';
+import { AuthenticationService } from '@4c-auth/authentication.service';
 import { Student,Teacher,Partner } from './credentials-sign-up';
-import { BRANCHES, BRANCH_LIST } from 'src/app/shared/shared.service';
+import { BRANCHES, BRANCH_LIST } from '@4c-shared/shared.service';
 
 /**
  * sign-up component
