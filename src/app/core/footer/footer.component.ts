@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
+/**
+ * page static footer
+ */
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -7,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent {
   /**
-   * list of t
+   * list of footer links
    */
   linkList: string[] = [
     'www.4c.tn',
@@ -15,6 +18,9 @@ export class FooterComponent {
     'www.insat.rnu.tn'
   ];
 
+  /**
+   * dummy text for developping only
+   */
   dummyText = `Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia 
                 curabitur arcu duis quis purus, vel velit nunc aptent lobortis accumsan.`;
 

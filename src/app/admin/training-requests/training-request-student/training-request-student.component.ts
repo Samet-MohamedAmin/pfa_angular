@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
-import { TrainingRequestStudentInterface } from './training-request-student.interfce';
+import { TrainingRequestStudentInterface } from './training-request-student.interface';
 
 @Component({
   selector: 'app-training-request-student',

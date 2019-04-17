@@ -1,15 +1,18 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
 
+/**
+ * page static top nav
+ */
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   isLoggedIn: boolean;
   userDetails:any;
-  @Output() menuClicked = new EventEmitter();
+  @Output() menuClicked = new EventEmitter<void>();
   
   constructor(private auth: AuthenticationService) {
     this.auth.userEmitter
@@ -18,9 +21,6 @@ export class NavbarComponent implements OnInit {
         this.userDetails = userDetails;
       })
     this.auth.updateUserState();
-  }
-
-  ngOnInit() {
   }
 
   /**

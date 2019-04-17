@@ -62,7 +62,7 @@ export type BranchType = 'GL' | 'RT' | 'IIA' | 'IMI' | 'CH' | 'BIO';
 /**
  * list of branches with full name
  */
-export const BRANCHES = {GL: 'Génie Logiciel',
+export const BRANCHES: {} = {GL: 'Génie Logiciel',
                           RT: 'Réseau et Télécommunication',
                           IIA: 'Informatique Industriel et Automatique',
                           IMI: 'Instrumentation et Maintenance Industriel',

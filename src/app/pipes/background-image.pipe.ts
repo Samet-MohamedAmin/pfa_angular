@@ -1,11 +1,11 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
-  name: 'bgImage'
-})
 /**
  * transfroms an image source value to correct backgroundImage property.
  */
+@Pipe({
+  name: 'bgImage'
+})
 export class BackgroundImagePipe implements PipeTransform {
   
   /**

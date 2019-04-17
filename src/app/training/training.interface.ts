@@ -1,5 +1,9 @@
 import { BranchType } from '../shared/shared.service';
 
+/**
+ * training interface defining all training properties
+ * as they are described in the backend
+ */
 export interface TrainingItemInterface {
     /* general informations */
     title: string;

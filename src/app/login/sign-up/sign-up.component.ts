@@ -6,6 +6,9 @@ import { AuthenticationService } from 'src/app/auth/authentication.service';
 import { Student,Teacher,Partner } from './credentials-sign-up';
 import { BRANCHES, BRANCH_LIST } from 'src/app/shared/shared.service';
 
+/**
+ * sign-up component
+ */
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',

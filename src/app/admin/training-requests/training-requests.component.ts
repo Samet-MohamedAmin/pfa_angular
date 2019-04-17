@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TrainingRequestStudentInterface } from './training-request-student/training-request-student.interfce';
+import { TrainingRequestStudentInterface } from './training-request-student/training-request-student.interface';
 import { trigger, state, transition, animate, style } from '@angular/animations';
 
 @Component({
@@ -8,7 +8,14 @@ import { trigger, state, transition, animate, style } from '@angular/animations'
   styleUrls: ['./training-requests.component.css'],
 })
 export class TrainingRequestsComponent implements OnInit {
+  /**
+   * contains random text.
+   * used for developement purpose only
+   */
   dummyText = 'Lorem ipsum dolor sit amet consectetur adipiscing elit.'
+  /**
+   * holds list of student requests
+   */
   trainingRequestStudentList:TrainingRequestStudentInterface[] = [];
 
   constructor() { }

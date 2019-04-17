@@ -3,13 +3,20 @@ import { BranchItemInterface } from '../branch-item/branch-item.interface';
 import {BranchType, SharedService} from '../../shared/shared.service'
 import { Router } from '@angular/router';
 
+/**
+ * presents branch list to show
+ */
 @Component({
   selector: 'app-branch-list',
   templateUrl: './branch-list.component.html',
   styleUrls: ['./branch-list.component.css']
 })
+
 export class BranchListComponent implements OnInit {
 
+  /**
+   * contains list of branche items to show
+   */
   branchList: BranchItemInterface[] = [{
     code:'GL',
     name: 'Génie Logiciel (GL)',
@@ -53,8 +60,15 @@ export class BranchListComponent implements OnInit {
     description:"La filière Biologie industrielle a pour objectif de former des ingénieurs aptes à maîtriser les méthodes d’analyses chimiques et biologiques, dans un secteur industriel, agroalimentaire ou pharmaceutique."
   }];
 
+  /**
+   * 
+   * @param router injected router service
+   */
   constructor(private router:Router) { }
   
+  /**
+   * generates random branch list in random order
+   */
   ngOnInit(){
     this.branchList = SharedService.shuffleObject(this.branchList);
   }

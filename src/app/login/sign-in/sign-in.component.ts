@@ -5,6 +5,9 @@ import { MatSelectChange } from '@angular/material';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
 import { CredentialsSignInInterface } from './credentials-sign-in';
 
+/**
+ * sign-in component
+ */
 @Component({
   selector: 'app-sign-in',
   templateUrl: './sign-in.component.html',
