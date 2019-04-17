@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 /**
- * page static footer
+ * page footer
  */
 @Component({
   selector: 'app-footer',

@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { AuthenticationService } from 'src/app/auth/authentication.service';
 
 /**
- * page static top nav
+ * page top nav
  */
 @Component({
   selector: 'app-navbar',

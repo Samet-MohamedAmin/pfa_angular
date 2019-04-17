@@ -1,5 +1,5 @@
 /**
- * contains local environment properties
+ * contains production environment properties
  */
 export const environment = {
   production: true,

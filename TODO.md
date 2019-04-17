@@ -4,13 +4,29 @@
 - [ ] dummy urgent task
 
 ## Important Task
-- [ ] dummy important task
+- [ ] forms validation
 
 ## To Fix
-- [ ] dummy fixing task
+- [ ] unify training request interface in profile and admin.
+- [ ] get rid of unnecessary component fractions (like list and item when it is not needed)
 
 ## Feature
-- [ ] dummy feature task
+- [ ] make page interactive. add animations:
+  - [ ] when delete / create (fade in / fade out)
+  - [ ] when hover an element
+  - [ ] loading animation
+  - [x] organize filter code
+  - [x] search filter in list of attributes
 
 ## Optional
-- [ ] dummy optional task
+- [ ] body margin fix (scroll issue)
+- [ ] text capitalize when needed. use bootstrap classes
+- [ ] use interfaces instead of classes in `SignUp`
+- [ ] document project parts
+  - [x] 30% code coverage
+  - [x] 40% code coverage
+  - [ ] 50% code coverage
+  - [ ] 60% code coverage
+  - [ ] 70% code coverage
+- [ ] fix long names problem
+- [ ] change private attributes names to begin with `_`

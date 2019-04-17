@@ -5,8 +5,8 @@
 (D) 2019-04-15 text capitalize @optional
 (B) 2019-04-15 add animations +fadeIn +fadeOut @ux
 (B) 2019-04-16 use interfaces instead of classes in SignUp +signup  @organisation
-(S) 2019-04-17 unifiy training request interface +profile +admin @organisation 
-(A) 2019-04-17 get rid of unessary components +list @organisation 
+(S) 2019-04-17 unify training request interface +profile +admin @organisation 
+(A) 2019-04-17 get rid of unnecessary components +list @organisation 
 (B) 2019-04-17 fix long names problem @organisation 
 (C) 2019-04-17 add loading animation @ui @ux
 x (C) 2019-04-17 2019-04-16 organize filter code @organisation 

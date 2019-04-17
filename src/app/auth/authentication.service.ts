@@ -6,9 +6,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
 
-/* NOTE: if you will send request that requires authentication:
-add this  { headers: { authorization: `Bearer ${this.getToken()}` }}*/
-
+/**
+ * authentication service
+ * NOTE: if you will send request that requires authentication:
+ * add this  { headers: { authorization: `Bearer ${this.getToken()}` }}
+ */
 @Injectable()
 export class AuthenticationService {
   private token: string;
@@ -22,7 +24,7 @@ export class AuthenticationService {
     this.token = token;
   }
 
-   getToken(): string {
+  getToken(): string {
     if (!this.token) {
       this.token = localStorage.getItem('mean-token');
     }
@@ -51,10 +53,9 @@ export class AuthenticationService {
   }
 
   private request(type: 'login' | 'register', credentials): Observable<any> {
-     let headers =new HttpHeaders
-     headers.set('Content-Type', 'application/json')
-     let base = this.http.post(`${this.url}/${type}`, credentials,
-     {headers:headers});
+    let headers = new HttpHeaders
+    headers.set('Content-Type', 'application/json')
+    let base = this.http.post(`${this.url}/${type}`, credentials, { headers: headers });
 
 
     const request = base.pipe(

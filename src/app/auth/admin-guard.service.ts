@@ -5,14 +5,14 @@ import { AuthenticationService } from './authentication.service';
 @Injectable()
 export class AdminGuardService implements CanActivate {
 
-  constructor(private auth: AuthenticationService, private router: Router) {}
+  constructor(private auth: AuthenticationService, private router: Router) { }
 
   canActivate() {
     if (!this.auth.isLoggedIn()) {
       this.router.navigateByUrl('/home');
       return false;
     }
-return this.auth.getUserDetails().role == "personal"  
+    return this.auth.getUserDetails().role == "personal"
 
-}
+  }
 }
