@@ -18,6 +18,9 @@
   - [x] organize filter code
   - [x] search filter in list of attributes
 
+## Optimisation
+- [x] use short imports like `@4c-shared`. full list in `tsconfig.json`
+
 ## Optional
 - [ ] body margin fix (scroll issue)
 - [ ] text capitalize when needed. use bootstrap classes
@@ -28,5 +31,5 @@
   - [ ] 50% code coverage
   - [ ] 60% code coverage
   - [ ] 70% code coverage
-- [ ] fix long names problem
+- [ ] make names shorter
 - [ ] change private attributes names to begin with `_`

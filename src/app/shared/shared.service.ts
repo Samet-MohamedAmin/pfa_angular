@@ -76,11 +76,11 @@ export const BRANCH_LIST: BranchType[] = ['GL', 'RT', 'IIA', 'IMI', 'CH', 'BIO']
 /**
  * new type defines training request state type.
  */
-export type TrainingRequestState = 'PENDING' | 'ACCEPTED' | 'REJECTED';
+export type TrainingRequestState = 'ACCEPTED' | 'PENDING' | 'REJECTED';
 /**
  * list of different training request states presented in `TrainingRequestState`
  */
-export const TRAINING_REQUEST_STATE_LIST: TrainingRequestState[] = ['PENDING', 'ACCEPTED', 'REJECTED'];
+export const TRAINING_REQUEST_STATE_LIST: TrainingRequestState[] = ['ACCEPTED', 'PENDING', 'REJECTED'];
 
 
 /**
