@@ -40,6 +40,7 @@ import { BackgroundImagePipe } from './pipes/background-image.pipe';
 import { ProfileComponent } from './profile/profile.component';
 import { ProfileTrainingRequestsComponent } from './profile/profile-training-requests/profile-training-requests.component';
 import { ProfileTrainingRequestItemComponent } from './profile/profile-training-requests/profile-training-request-item/profile-training-request-item.component';
+import { AchievementsModule } from './achievements/achievements.module';
 
 
 @NgModule({
@@ -81,11 +82,14 @@ import { ProfileTrainingRequestItemComponent } from './profile/profile-training-
    ],
    imports: [
       BrowserModule,
-      AppRoutingModule,
       BrowserAnimationsModule,
       FormsModule,
       ReactiveFormsModule,
       HttpClientModule,
+      
+      AchievementsModule,
+      AppRoutingModule,
+
       MatToolbarModule,
       MatIconModule,
       MatGridListModule,

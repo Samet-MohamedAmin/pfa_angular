@@ -20,6 +20,9 @@
 
 ## Optimisation
 - [x] use short imports like `@4c-shared`. full list in `tsconfig.json`
+- [ ] use `mat-card-footer` when it is needed
+- [ ] aply `box-sizing: border-box property on all elments`
+- [ ] consider using light fonts
 
 ## Optional
 - [ ] body margin fix (scroll issue)

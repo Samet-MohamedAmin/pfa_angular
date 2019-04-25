@@ -1,0 +1,35 @@
+.indicator-card {
+    /* TODO: use exact values */
+    width: 280px;
+    height: 130px;
+    --icon-w: 80px;
+    box-sizing: border-box;
+}
+
+.indicator-card mat-card-title .indicator-value {font-size: 26px;}
+.indicator-card mat-card-title .indicator-dueto {font-size: 12px;}
+
+.indicator-card mat-card-title,
+.indicator-card mat-card-subtitle{margin-left: calc(var(--icon-w) + 16px)}
+
+.indicator-card-icon{
+    width: var(--icon-w);
+    height: var(--icon-w);
+    top: calc(-0.25 * var(--icon-w));
+}
+
+.indicator-card-icon mat-icon {
+    --icon-w-2: calc(0.5 * var(--icon-w));
+    font-size: var(--icon-w-2);
+    width: var(--icon-w-2);
+    height: var(--icon-w-2);
+}
+
+.indicator-card mat-card-footer {
+    left: 30px;
+    right: 30px;
+    bottom: 20px;
+    height: 35px;
+}
+
+.indicator-card mat-card-footer span {font-size: 14px}

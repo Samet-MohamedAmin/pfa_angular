@@ -1,0 +1,18 @@
+<mat-card class="indicator-card position-relative">
+  <mat-card class="indicator-card-icon position-absolute d-flex flex-center p-0 mat-elevation-z3"
+            [style.backgroundColor]="indicator.color">
+    <mat-icon class="text-white">{{indicator.icon}}</mat-icon>
+  </mat-card>
+  <mat-card-subtitle class="text-right font-weight-light mb-1">{{indicator.name}}</mat-card-subtitle>
+  <mat-card-title class="text-right font-weight-light">
+    <span class="indicator-value">
+      {{indicator.value}}<span class="text-grey">/{{indicator.goalCurrent.value}}</span>
+    </span>
+    <span class="text-grey indicator-dueto"> {{indicator.goalCurrent.dueTo}}</span>
+  </mat-card-title>
+  <!-- <mat-card-content>{{indicator.value}}</mat-card-content> -->
+  <mat-card-footer class="position-absolute text-grey">
+    <mat-divider class="position-static pb-2"></mat-divider>
+    <span class="pl-2 font-weight-light">{{indicator.goalNext}}</span>
+  </mat-card-footer>
+</mat-card>

@@ -17,6 +17,7 @@ export class AppComponent {
   sideNavItems:{name:string, path: string}[] = [
     {name: 'home', path: '/home'},
     {name: 'profile', path: 'profile'},
+    {name: 'achievements', path: '/achievements'},
     {name: 'recommandation', path: 'training/recommandations'},
     {name: 'formation', path: '/training'},
     {name: 'create', path: '/training/create'},

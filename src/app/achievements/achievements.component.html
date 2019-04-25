@@ -1,0 +1,13 @@
+<div class="main-content-h-fix">
+  <div class="bg-main h-200 text-white flex-column flex-center">
+    <h1 class="text-capitalize">Notre Avancement</h1>
+    <h3>Suivre notre avancement pas à pas</h3>
+  </div>
+  <div class="container p-5">
+    <mat-grid-list class="indicator-list" rowHeight="180px" cols="3">
+      <mat-grid-tile *ngFor="let indicator of indicatorList" [colspan]="1" [rowspan]="1">
+        <app-indicator [indicator]="indicator"></app-indicator>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
