@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedService } from '@4c-shared/shared.service';
+import { SharedService, TrainingRequestState } from '@4c-shared/shared.service';
 import { ActivatedRoute } from '@angular/router';
 import { TrainingService } from '../training.service';
+import { AuthenticationService } from '@4c-auth/authentication.service';
 
 @Component({
   selector: 'app-training-details',
@@ -11,7 +12,7 @@ import { TrainingService } from '../training.service';
 export class TrainingDetailsComponent implements OnInit {
 
   //this is the real training object to use after that
-  training;
+  training: any;
 
   dummyBranchTreeList = ['Informatique', 'DevOps', 'Test Logiciel'];
 
@@ -27,8 +28,12 @@ export class TrainingDetailsComponent implements OnInit {
 
   rating:number;
   starList = [];
+  
+  trainingRequestState: TrainingRequestState = null;
 
-  constructor(private route:ActivatedRoute , private trainingService:TrainingService) {
+  constructor(private route:ActivatedRoute,
+              private auth: AuthenticationService,
+              private trainingService:TrainingService) {
     this.route.params
     .subscribe(params=>{
       this.trainingService.getTrainingDetail(params.id)
@@ -41,6 +46,22 @@ export class TrainingDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.generateStars();
+
+    // get training request state
+    const user = this.auth.getUserDetails();
+
+    if(this.training.attendees.includes(user.id))
+      this.trainingRequestState = 'ACCEPTED';
+  
+    this.trainingService.getUserTrainingRequestList(user.id).subscribe(
+      (registrationRequestList: any[]) => {
+        const request: any = registrationRequestList
+                              .find(reg => reg.id == this.training.id)[0];
+        const state: string = request.state.toUpperCase();
+        if(state == 'PENDING') this.trainingRequestState = 'PENDING';
+        else if(state == 'REJECTED') this.trainingRequestState = 'REJECTED';
+      }
+    );
   }
 
   generateStars(){
@@ -61,6 +82,13 @@ export class TrainingDetailsComponent implements OnInit {
       this.starList.push(starEmpty);
     }
 
+  }
+
+  registerRequest(){
+    if(this.trainingRequestState === null){
+      const user = this.auth.getUserDetails();
+      this.trainingService.registerTrainingRequest(user, this.training.id);
+    }
   }
 
 }

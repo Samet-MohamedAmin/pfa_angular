@@ -8,7 +8,11 @@
       <p class="h5 font-weight-normal">{{dummyText|slice:0:198}}.</p>
       <button class="btn-start-training position-absolute"
               [routerLink]="['/training', 'search']"
-              mat-raised-button>Commencer</button>
+              (click)="registerRequest()"
+              *ngIf="trainingRequestState != 'REJECTED'"
+              mat-raised-button>
+        {{trainingRequestState ? trainingRequestState : 'enregistrer'}}
+      </button>
     </div>
   </div>
   <div class="h-150px bg-main-2">

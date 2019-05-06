@@ -21,7 +21,6 @@ export interface TrainingItemInterface {
 
     /* description */
     goals: string[];
-    // TODO: change briefDescription => descriptionBrief & detailedDescription => descriptionDetailed
     descriptionShort: string;
     descriptionDetailed: string;
 
