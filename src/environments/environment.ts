@@ -9,6 +9,7 @@ export const environment = {
   /**
    * backend local url
    */
+  // BACKEND_URL: 'https://backend-4c.herokuapp.com/api',
   BACKEND_URL: 'http://localhost:8000/api',
 };
 
