@@ -1,7 +1,7 @@
 import { TrainingRequestState } from '@4c-shared/shared.service';
 
 export interface ProfileTrainingRequestInterface {
-    requestId: number;
+    courseId: number;
 
     courseTitle: string;
     courseInstructor: string;
