@@ -5,7 +5,8 @@ export class CredentialsSignUp {
     password: String;
     cin:Number;
     birthday:Date;
-    type: String
+    type: String;
+    gender: String;
 }
 
 export class Student extends CredentialsSignUp {

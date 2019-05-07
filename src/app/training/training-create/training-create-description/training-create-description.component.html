@@ -1,5 +1,6 @@
 <form class="w-100" [formGroup]="formGroupDescription">
-  <mat-form-field class="w-100" [appearance]="formFieldAppearance">
+    <input type="file" accept="image/*" (change)="onFileSelected($event)"/>
+    <mat-form-field class="w-100" [appearance]="formFieldAppearance">
     <mat-label>Goals</mat-label>
     <textarea matInput formControlName="goals"></textarea>
   </mat-form-field>

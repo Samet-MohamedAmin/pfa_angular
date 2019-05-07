@@ -15,7 +15,7 @@ export class TrainingCreateComponent implements OnInit {
   formGroupGeneral: FormGroup;
   formGroupSpecifications: FormGroup;
   formGroupDescription: FormGroup;
-
+  trainingImage=null;
   isLinear = true;
 
   constructor(private _formBuilder: FormBuilder,private trainingService:TrainingService ,private router:Router) { }
@@ -44,6 +44,14 @@ export class TrainingCreateComponent implements OnInit {
       descriptionDetailed: ['', Validators.required],
     });
   }
+  updateImage(image){
+  this.trainingImage=image
+  }
+  getFormData(object) {
+    const formData = new FormData();
+    Object.keys(object).forEach(key => formData.append(key, object[key]));
+    return formData;
+  }
 
   prepareData(){
     this.training = {
@@ -52,12 +60,15 @@ export class TrainingCreateComponent implements OnInit {
       ...this.formGroupDescription.value
     }
 
+
   }
 
   submit(){
     this.prepareData();
     console.log(this.training);
-    this.trainingService.addTraining(this.training)
+    const formData=this.getFormData(this.training)
+    formData.append('courseImage',this.trainingImage)
+    this.trainingService.addTraining(formData)
     .subscribe((course:any)=>{
       console.log(course)
       if(course._id){

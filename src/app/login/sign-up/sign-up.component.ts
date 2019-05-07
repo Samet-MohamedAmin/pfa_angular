@@ -78,6 +78,12 @@ export class SignUpComponent implements OnInit {
     this.credentials.yearOfStudy = eventData.value;
   }
 
+  genderSelected(eventData: MatSelectChange){
+    console.log(eventData.value);
+    this.credentials.gender = eventData.value;
+
+  }
+
   departmentSelected(eventData: MatSelectChange){
     console.log(eventData.value);
     this.credentials.department = eventData.value;

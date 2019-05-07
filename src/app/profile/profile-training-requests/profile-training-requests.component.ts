@@ -21,7 +21,7 @@ export class ProfileTrainingRequestsComponent implements OnInit {
 
     const user = this.auth.getUserDetails();
 
-    this.trainingService.getUserTrainingRequestList(user.id).subscribe(
+    this.trainingService.getUserRequests(user._id).subscribe(
       (trainingRequestList: any[]) => {
         console.log(trainingRequestList);
         trainingRequestList.forEach((trainingRequest) => {

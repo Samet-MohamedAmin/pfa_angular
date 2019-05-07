@@ -39,7 +39,8 @@ export class TrainingDetailsComponent implements OnInit {
       this.trainingService.getTrainingDetail(params.id)
       .subscribe((training)=>{
         console.log(training)
-      this.training=training
+        this.training=training;
+        this.getTrainingRequestState()
       })
     })
    }
@@ -47,23 +48,30 @@ export class TrainingDetailsComponent implements OnInit {
   ngOnInit() {
     this.generateStars();
 
-    // get training request state
-    const user = this.auth.getUserDetails();
-
-    if(this.training.attendees.includes(user.id))
-      this.trainingRequestState = 'ACCEPTED';
-  
-    this.trainingService.getUserTrainingRequestList(user.id).subscribe(
-      (registrationRequestList: any[]) => {
-        const request: any = registrationRequestList
-                              .find(reg => reg.id == this.training.id)[0];
-        const state: string = request.state.toUpperCase();
-        if(state == 'PENDING') this.trainingRequestState = 'PENDING';
-        else if(state == 'REJECTED') this.trainingRequestState = 'REJECTED';
-      }
-    );
   }
 
+  getTrainingRequestState(){
+    const user = this.auth.getUserDetails();
+
+    if(this.training.attendees && this.training.attendees.includes(user._id)){
+      this.trainingRequestState = 'ACCEPTED';
+    }
+    else {
+      this.trainingService.getUserRequests(user._id).subscribe(
+        (registrationRequestList: any[]) => {
+          const request: any = registrationRequestList
+                                .find(reg => reg.courseId == this.training._id)
+          if(request){
+            const state: string = request.state.toUpperCase();
+            if(state == 'PENDING') this.trainingRequestState = 'PENDING';
+            else if(state == 'REJECTED') this.trainingRequestState = 'REJECTED';
+         }
+          
+        }
+      );
+    }
+   
+  }
   generateStars(){
     this.rating = SharedService.getRandomNumber(4, 11);
     console.log(`
@@ -87,7 +95,11 @@ export class TrainingDetailsComponent implements OnInit {
   registerRequest(){
     if(this.trainingRequestState === null){
       const user = this.auth.getUserDetails();
-      this.trainingService.registerTrainingRequest(user, this.training.id);
+      this.trainingService.requestRegistration(user.type,user._id, this.training._id).subscribe(
+        obj => console.log(obj)
+      );
+
+      this.trainingRequestState = 'PENDING';
     }
   }
 

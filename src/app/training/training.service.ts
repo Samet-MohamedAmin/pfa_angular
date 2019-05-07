@@ -41,7 +41,7 @@ export class TrainingService {
       userId,
       courseId
     }
-    return this.http.post(`${this.url}/course/request/all`,body,
+    return this.http.post(`${this.url}/course/registration/request`,body,
     { headers: new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)}) 
   }
 
@@ -91,7 +91,7 @@ export class TrainingService {
   addTraining(course){
   
     return this.http.post(`${this.url}/course`,course,
-    { headers :new HttpHeaders().set('Content-Type', 'application/json').set('authorization', `Bearer ${this.authService.getToken()}`)})
+    { headers :new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)})
 
     }
 
@@ -104,15 +104,6 @@ export class TrainingService {
   deleteTraining(courseId){ 
     return this.http.delete(`${this.url}/course/${courseId}`,
     { headers:new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)}) 
-  }
-
-  getUserTrainingRequestList(userId: any): Observable<any>{
-    return this.http.get<any>(`${this.baseUrl}/request/${userId}`);
-  }
-
-  registerTrainingRequest(user: any, trainingId: any){
-    const url = `${this.baseUrl}/registration/request`;
-    this.http.post(url, {userId: user.id, userType: user.type, courseId: trainingId});
   }
 
 

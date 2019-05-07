@@ -29,7 +29,9 @@
           <ng-template matStepLabel>Description de la formation</ng-template>
           <app-training-create-description
             [formGroupDescription]="formGroupDescription"
-            [formFieldAppearance]="formFieldAppearance"></app-training-create-description>
+            [formFieldAppearance]="formFieldAppearance"
+            (imageEmitter)="updateImage($event)"
+            ></app-training-create-description>
           <div class="mt-5 d-flex">
             <button mat-button matStepperPrevious>Back</button>
             <div class="spacer"></div>
