@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IndicatorInterface, IndicatorColor, COLOR_LIST } from './indicator/indicator.interface';
 import { SharedService } from '@4c-shared/shared.service';
+import { IndicatorService } from './indicator/indicator.service';
 
 /**
  * AchievementsComponent
@@ -24,11 +25,18 @@ export class AchievementsComponent implements OnInit {
                         'star',
                         'school',
                         'mood']
-                        
+     
+  constructor(private indicatorService:IndicatorService){
+  this.indicatorService.getAllIndicators()
+  .subscribe(indicators=>{
+    console.log(indicators)
+  })
+  }                      
   /**
    * initialize `indicatorList`
    */
   ngOnInit() {
+    
     for(let i=0; i<6; i++){
       const indicator: IndicatorInterface = {
         name: 'Dummy Indicator',

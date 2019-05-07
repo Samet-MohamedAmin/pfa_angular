@@ -4,6 +4,7 @@ import { AchievementsComponent } from './achievements.component';
 import { IndicatorComponent } from './indicator/indicator.component';
 import { AchievementsRoutingModule } from './achievements-routing.module';
 import { MatCardModule, MatIconModule, MatGridListModule, MatDividerModule, MatExpansionModule } from '@angular/material';
+import { IndicatorService } from './indicator/indicator.service';
 
 @NgModule({
   imports: [
@@ -18,6 +19,9 @@ import { MatCardModule, MatIconModule, MatGridListModule, MatDividerModule, MatE
   declarations: [
     AchievementsComponent,
     IndicatorComponent,
+  ],
+  providers:[
+    IndicatorService
   ]
 })
 export class AchievementsModule { }

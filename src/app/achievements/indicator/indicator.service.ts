@@ -3,9 +3,7 @@ import { environment } from '@4c-environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class IndicatorService {
 
   baseUrl = environment.BACKEND_URL + '/indicator';

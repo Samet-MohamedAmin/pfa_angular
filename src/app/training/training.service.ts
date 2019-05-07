@@ -11,7 +11,6 @@ import { Observable } from 'rxjs';
 })
 export class TrainingService {
   private url = environment.BACKEND_URL;
-  baseUrl = `${environment.BACKEND_URL}/course`;
 
   constructor(private http:HttpClient , private authService:AuthenticationService) { }
 
