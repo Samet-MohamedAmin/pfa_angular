@@ -1,14 +1,14 @@
 <div class="main-content-h-fix">
   <div class="h-300 bg-main text-white">
     <div class="container h-100 pt-5 position-relative">
-      <h3 class="mt-0">
+      <!-- <h3 class="mt-0">
         <span *ngFor="let branchTreeItem of dummyBranchTreeList">{{branchTreeItem}} > </span>
-      </h3>
-      <h1 class="mt-5">Formation Test Logiciel</h1>
-      <p class="h5 font-weight-normal">{{dummyText|slice:0:198}}.</p>
+      </h3> -->
+      <h1 class="mt-5">{{training?.title}}</h1>
+      <p class="h5 font-weight-normal">{{training?.descriptionShort}}</p>
       <button class="btn-start-training position-absolute"
               (click)="registerRequest()"
-              *ngIf="trainingRequestState != 'REJECTED'"
+              *ngIf="user && (trainingRequestState != 'REJECTED')"
               mat-raised-button>
         {{trainingRequestState ? trainingRequestState : 'enregistrer'}}
       </button>
@@ -19,15 +19,15 @@
       <div class="description-item d-flex mr-5">
         <mat-icon class="mr-2">sort</mat-icon>
         <div class="pt-2">
-          <h2 class="mt-0 mb-1">Intermidiare</h2>
+          <h2 *ngIf="training" class="mt-0 mb-1">{{levels[training.level]}}</h2>
           <p class="mt-0">niveau</p>
         </div>
       </div>
       <div class="description-item d-flex mr-5">
         <mat-icon class="mr-2">access_time</mat-icon>
         <div class="pt-2">
-          <h2 class="mt-0 mb-1">6-12h</h2>
-          <p class="mt-0">par semaine pour 6 semaines</p>
+          <h2 class="mt-0 mb-1">{{training?.totalHours}}</h2>
+          <p class="mt-0">nombre d'heures</p>
         </div>
       </div>
       <div class="description-item d-flex">
@@ -47,24 +47,24 @@
       <div class="pre">
         <h1>Avant de commencer</h1>
         <h3>prérequis</h3>
-        <ul>
-          <li *ngFor="let pre of preList">{{pre}}</li>
+        <ul *ngIf="training">
+          <li *ngFor="let req of training.requirements">{{req}}</li>
         </ul>
       </div>
       <div class="goals">
         <h1>Qu’est ce que vous allez obtenir</h1>
         <h3>buts</h3>
-        <ul>
-          <li *ngFor="let pre of preList">{{pre}}</li>
+        <ul *ngIf="training">
+          <li *ngFor="let goal of training.goals">{{goal}}</li>
         </ul>
       </div>
       <div class="overview">
         <h1>Description détaillé</h1>
-        <p class="text-justify">{{dummyText}}</p>
+        <p class="text-justify">{{training?.descriptionDetailed}}</p>
       </div>
       <div class="h-500 intructor">
         <h1>Instructeur</h1>
-        &lt;Instructor Information&gt;
+        {{training?.instructor}}
       </div>
     </div>
   </div>

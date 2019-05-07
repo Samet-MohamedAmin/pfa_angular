@@ -105,6 +105,34 @@ export class TrainingService {
     { headers:new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)}) 
   }
 
+  mapTraining(training:any): TrainingItemInterface{
+    const trainingItem: TrainingItemInterface = {
+      title: training.title,
+      instructor: training.instructor,
+      startDate: training.startDate,
+      endDate: training.endDate,
+      totalHours: training.totalHours,
+      totalPlaces: training.totalPlaces,
+
+      level: training.level,
+      requirements: training.requirements[0].split('\r\n'),
+      type: training.type,
+      concernedBranches: training.concernedBranches,
+
+      goals: training.goals[0].split('\r\n'),
+      descriptionShort: training.briefDescription,
+      descriptionDetailed: training.detailedDescription,
+
+      _id: training._id,
+      imageSrc: training.courseImage,
+      imageAlt: 'training image alt',
+      rating: training.globalRating,
+      attendees: []
+    };
+    
+    return trainingItem;
+  }
+
 
 }
 

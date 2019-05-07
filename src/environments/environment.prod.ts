@@ -6,5 +6,7 @@ export const environment = {
   /**
    * backend remote url
    */
-  BACKEND_URL: 'https://backend-4c.herokuapp.com/api'
+  BACKEND_URL: 'https://backend-4c.herokuapp.com/api',
+  BACKEND_IMAGE_URL: 'https://backend-4c.herokuapp.com'
+
 };

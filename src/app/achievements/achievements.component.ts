@@ -42,7 +42,7 @@ export class AchievementsComponent implements OnInit {
         name: 'Dummy Indicator',
         value: '20',
         goalCurrent: {value: '50', dueTo: '2019'},
-        goalNext: '80 par 2020',
+        goalNext: '80 pour 2020',
         color: SharedService.getRandomObject(COLOR_LIST),
         icon: SharedService.getRandomObject(this.iconList)
       }

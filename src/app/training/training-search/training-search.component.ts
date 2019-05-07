@@ -63,21 +63,23 @@ export class TrainingSearchComponent implements OnInit {
   allTrainings:any;
   filteredTrainings:Array<any>=[];
 
-  constructor(private route :ActivatedRoute, private trainingService:TrainingService) { 
-    this.createDummyData()
+  constructor(private route :ActivatedRoute,
+              private trainingService:TrainingService) { 
+    // this.createDummyData()
     this.trainingService.getAllTrainings()
-    .subscribe(trainings =>{
-     this.allTrainings=trainings
-     this.route.queryParams
-     .subscribe(params=>{
-       if(params.branchCode){
+    .subscribe((trainings:any[]) =>{
+      
+      this.trainingList=trainings
+      this.route.queryParams
+      .subscribe(params=>{
+        if(params.branchCode){
         this.activeBranch=params.branchCode
-       }
+      }
        if(params.searchValue){
         this.searchValue=params.searchValue
       }
-    this.filterTrainings()
-     })
+      this.filterTrainings()
+      })
     })
   
    
@@ -114,9 +116,11 @@ export class TrainingSearchComponent implements OnInit {
         descriptionShort: this.dummyText,
         descriptionDetailed: this.dummyText,
 
+        _id: 'bla',
         imageSrc: IMAGE_SRC_BASE + randomTraining.imageSrc,
         imageAlt: randomTraining.imageSrc,
         rating: SharedService.getRandomNumber(0, 10),
+        attendees: []
       };
 
       this.trainingList.push(trainingItem);

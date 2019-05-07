@@ -40,8 +40,8 @@ export class TrainingCreateComponent implements OnInit {
     });
     this.formGroupDescription = this._formBuilder.group({
       goals: ['', Validators.required],
-      descriptionShort: ['', Validators.required],
-      descriptionDetailed: ['', Validators.required],
+      briefDescription: ['', Validators.required],
+      detailedDescription: ['', Validators.required],
     });
   }
   updateImage(image){

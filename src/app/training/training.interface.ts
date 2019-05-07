@@ -25,9 +25,11 @@ export interface TrainingItemInterface {
     descriptionDetailed: string;
 
     /* other */
+    _id: string,
     imageSrc: string;
     imageAlt: string;
     rating: number;
+    attendees: any[];
 }
 
 /**
