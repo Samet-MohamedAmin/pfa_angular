@@ -35,7 +35,7 @@ export class TrainingCreateComponent implements OnInit {
     this.formGroupSpecifications = this._formBuilder.group({
       level: ['', Validators.required],
       requirements: ['', Validators.required],
-      branches: ['', Validators.required],
+      concernedBranches: ['', Validators.required],
       type: ['', Validators.required]
     });
     this.formGroupDescription = this._formBuilder.group({
