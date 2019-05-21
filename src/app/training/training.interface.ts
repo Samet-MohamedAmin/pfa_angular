@@ -21,14 +21,14 @@ export interface TrainingItemInterface {
 
     /* description */
     goals: string[];
-    descriptionShort: string;
-    descriptionDetailed: string;
+    briefDescription: string;
+    detailedDescription: string;
 
     /* other */
     _id: string,
-    imageSrc: string;
+    courseImage: string;
     imageAlt: string;
-    rating: number;
+    globalRating: number;
     attendees: any[];
 }
 

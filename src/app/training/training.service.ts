@@ -106,28 +106,35 @@ export class TrainingService {
   }
 
   mapTraining(training:any): TrainingItemInterface{
+    // const trainingItem: TrainingItemInterface = {
+    //   title: training.title,
+    //   instructor: training.instructor,
+    //   startDate: training.startDate,
+    //   endDate: training.endDate,
+    //   totalHours: training.totalHours,
+    //   totalPlaces: training.totalPlaces,
+
+    //   level: training.level,
+    //   requirements: training.requirements[0].split('\r\n'),
+    //   type: training.type,
+    //   concernedBranches: training.concernedBranches,
+
+    //   goals: training.goals[0].split('\r\n'),
+    //   briefDescription: training.briefDescription,
+    //   detailedDescription: training.detailedDescription,
+
+    //   _id: training._id,
+    //   courseImage: training.courseImage,
+    //   imageAlt: 'training image alt',
+    //   globalRating: training.globalRating,
+    //   attendees: []
+    // };
+
     const trainingItem: TrainingItemInterface = {
-      title: training.title,
-      instructor: training.instructor,
-      startDate: training.startDate,
-      endDate: training.endDate,
-      totalHours: training.totalHours,
-      totalPlaces: training.totalPlaces,
-
-      level: training.level,
-      requirements: training.requirements[0].split('\r\n'),
-      type: training.type,
-      concernedBranches: training.concernedBranches,
-
-      goals: training.goals[0].split('\r\n'),
-      descriptionShort: training.briefDescription,
-      descriptionDetailed: training.detailedDescription,
-
-      _id: training._id,
-      imageSrc: training.courseImage,
+      ...training,
       imageAlt: 'training image alt',
-      rating: training.globalRating,
-      attendees: []
+      goals: training.goals[0].split('\r\n'),
+      requirements: training.requirements[0].split('\r\n')
     };
     
     return trainingItem;

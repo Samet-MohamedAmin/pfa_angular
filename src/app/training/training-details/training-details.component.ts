@@ -42,7 +42,8 @@ export class TrainingDetailsComponent implements OnInit {
     .subscribe(params=>{
       this.trainingService.getTrainingDetail(params.id)
       .subscribe((training)=>{
-        console.log(training)
+        console.log(training);
+        
         this.training=this.trainingService.mapTraining(training);
         this.getTrainingRequestState()
       })
