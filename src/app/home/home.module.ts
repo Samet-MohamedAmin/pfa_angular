@@ -5,7 +5,7 @@ import { BranchListComponent } from './branch-list/branch-list.component';
 import { BranchItemComponent } from './branch-item/branch-item.component';
 import { MatFormFieldModule, MatButtonModule, MatIconModule, MatGridListModule, MatCardModule, MatInputModule } from '@angular/material';
 import { HomeComponent } from './home.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 
 
 

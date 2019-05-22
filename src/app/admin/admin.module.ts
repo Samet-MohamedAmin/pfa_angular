@@ -4,7 +4,6 @@ import { AdminRoutingModule } from './admin-routing.module';
 import { MatGridListModule, MatButtonModule, MatCardModule } from '@angular/material';
 import { TrainingRequestsComponent } from './training-requests/training-requests.component';
 import { TrainingRequestStudentComponent } from './training-requests/training-request-student/training-request-student.component';
-import { BackgroundImagePipe } from 'app/pipes/background-image.pipe';
 import { SharedModule } from '@4c-shared/shared.module';
 
 @NgModule({

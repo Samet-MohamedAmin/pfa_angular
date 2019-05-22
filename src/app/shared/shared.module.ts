@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BackgroundImagePipe } from 'app/pipes/background-image.pipe';
+import { BackgroundImagePipe } from '@4c-shared/pipes/background-image.pipe';
 
 @NgModule({
   imports: [
