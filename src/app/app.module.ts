@@ -45,22 +45,12 @@ import { SharedModule } from '@4c-shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { LoginModule } from './login/login.module';
+import { TrainingModule } from './training/training.module';
 
 
 @NgModule({
    declarations: [
       AppComponent,
-      
-      TrainingSearchComponent,
-      TrainingListComponent,
-      TrainingItemComponent,
-      TrainingDetailsComponent,
-      TrainingCreateComponent,
-      TrainingCreateGeneralComponent,
-      TrainingCreateSpecificationsComponent,
-      TrainingCreateDescriptionComponent,
-      TrainingRecommandationsComponent,
-      
    ],
    imports: [
       BrowserModule,
@@ -77,6 +67,7 @@ import { LoginModule } from './login/login.module';
       ProfileModule,
       AdminModule,
       LoginModule,
+      TrainingModule,
       AppRoutingModule,
 
       MatToolbarModule,

@@ -18,13 +18,6 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'achievements', pathMatch: 'full'},
-  {path: 'training' ,children: [
-    {path: '', redirectTo: 'search', pathMatch: 'full'},
-    {path: 'search', component: TrainingSearchComponent},
-    {path: 'details/:id', component: TrainingDetailsComponent},
-    {path: 'create', component: TrainingCreateComponent}, //canActivate:[AdminGuardService]},
-    {path:'recommendations' , component: TrainingRecommandationsComponent ,canActivate:[AuthGuardService]}
-  ]},
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: 'error'},
 ];
