@@ -42,14 +42,12 @@ import { AchievementsModule } from './achievements/achievements.module';
 import { ProfileModule } from './profile/profile.module';
 import { AdminModule } from './admin/admin.module';
 import { SharedModule } from '@4c-shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
    declarations: [
       AppComponent,
-      
-      NavbarComponent,
-      FooterComponent,
       
       HomeComponent,
       BranchListComponent,
@@ -83,6 +81,7 @@ import { SharedModule } from '@4c-shared/shared.module';
       HttpClientModule,
 
       SharedModule,
+      CoreModule,
       
       AchievementsModule,
       ProfileModule,
