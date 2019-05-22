@@ -18,10 +18,6 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'achievements', pathMatch: 'full'},
-  {path: 'sign-up', component: SignUpSelectionComponent},
-  {path: 'sign-up/:role', component: SignUpComponent},
-  {path: 'sign-in', component: SignInSelectionComponent},
-  {path: 'sign-in/:role', component: SignInComponent},
   {path: 'training' ,children: [
     {path: '', redirectTo: 'search', pathMatch: 'full'},
     {path: 'search', component: TrainingSearchComponent},

@@ -44,16 +44,12 @@ import { AdminModule } from './admin/admin.module';
 import { SharedModule } from '@4c-shared/shared.module';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
+import { LoginModule } from './login/login.module';
 
 
 @NgModule({
    declarations: [
       AppComponent,
-      
-      SignInComponent,
-      SignInSelectionComponent,
-      SignUpComponent,
-      SignUpSelectionComponent,
       
       TrainingSearchComponent,
       TrainingListComponent,
@@ -80,6 +76,7 @@ import { HomeModule } from './home/home.module';
       AchievementsModule,
       ProfileModule,
       AdminModule,
+      LoginModule,
       AppRoutingModule,
 
       MatToolbarModule,
