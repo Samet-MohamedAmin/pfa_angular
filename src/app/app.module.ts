@@ -43,15 +43,12 @@ import { ProfileModule } from './profile/profile.module';
 import { AdminModule } from './admin/admin.module';
 import { SharedModule } from '@4c-shared/shared.module';
 import { CoreModule } from './core/core.module';
+import { HomeModule } from './home/home.module';
 
 
 @NgModule({
    declarations: [
       AppComponent,
-      
-      HomeComponent,
-      BranchListComponent,
-      BranchItemComponent,
       
       SignInComponent,
       SignInSelectionComponent,
@@ -79,6 +76,7 @@ import { CoreModule } from './core/core.module';
       SharedModule,
       CoreModule,
       
+      HomeModule,
       AchievementsModule,
       ProfileModule,
       AdminModule,

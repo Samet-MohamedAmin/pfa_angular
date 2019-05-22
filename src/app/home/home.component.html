@@ -11,7 +11,10 @@
       </p>
 
       <mat-form-field class="w-25">
-          <input matInput type="text" placeholder="Explorer nos formations" [(ngModel)]="searchValue">
+          <input matInput
+                  type="text"
+                  placeholder="Explorer nos formations"
+                  [(ngModel)]="searchValue">
           <button mat-button matSuffix mat-icon-button aria-label="Search"
                   [routerLink]="['/training', 'search']" [queryParams]="{searchValue: searchValue}">
               <mat-icon>search</mat-icon>

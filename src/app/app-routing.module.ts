@@ -18,7 +18,6 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'achievements', pathMatch: 'full'},
-  {path: 'home', component: HomeComponent},
   {path: 'sign-up', component: SignUpSelectionComponent},
   {path: 'sign-up/:role', component: SignUpComponent},
   {path: 'sign-in', component: SignInSelectionComponent},
