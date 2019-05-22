@@ -5,7 +5,7 @@ import { SignInComponent } from './login/sign-in/sign-in.component';
 import { SignUpComponent } from './login/sign-up/sign-up.component';
 import { SignUpSelectionComponent } from './login/sign-up/sign-up-selection/sign-up-selection.component';
 import { SignInSelectionComponent } from './login/sign-in/sign-in-selection/sign-in-selection.component';
-import { ErrorComponent } from './error/error.component';
+import { ErrorComponent } from './core/error/error.component';
 import { TrainingSearchComponent } from './training/training-search/training-search.component';
 import { TrainingDetailsComponent } from './training/training-details/training-details.component';
 import { TrainingCreateComponent } from './training/training-create/training-create.component';
