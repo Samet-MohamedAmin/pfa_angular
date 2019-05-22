@@ -34,10 +34,6 @@ const routes: Routes = [
     {path: '', redirectTo: 'training-requests', pathMatch: 'full'},
     {path: 'training-requests', component: TrainingRequestsComponent} //,canActivate:[AdminGuardService]}
   ]},
-  {path: 'profile', component: ProfileComponent, children: [
-    {path: '', redirectTo: 'training-requests', pathMatch: 'full'},
-    {path: 'training-requests', component: ProfileTrainingRequestsComponent}
-  ]}, 
   {path: 'error', component: ErrorComponent},
   {path: '**', redirectTo: 'error'},
 ];
