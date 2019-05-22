@@ -40,6 +40,8 @@ import { BackgroundImagePipe } from './pipes/background-image.pipe';
 import { ProfileComponent } from './profile/profile.component';
 import { AchievementsModule } from './achievements/achievements.module';
 import { ProfileModule } from './profile/profile.module';
+import { AdminModule } from './admin/admin.module';
+import { SharedModule } from '@4c-shared/shared.module';
 
 
 @NgModule({
@@ -68,13 +70,10 @@ import { ProfileModule } from './profile/profile.module';
       TrainingCreateDescriptionComponent,
       TrainingRecommandationsComponent,
       
-      TrainingRequestsComponent,
-      TrainingRequestStudentComponent,
       
 
       ErrorComponent,
 
-      BackgroundImagePipe,
    ],
    imports: [
       BrowserModule,
@@ -82,9 +81,12 @@ import { ProfileModule } from './profile/profile.module';
       FormsModule,
       ReactiveFormsModule,
       HttpClientModule,
+
+      SharedModule,
       
       AchievementsModule,
       ProfileModule,
+      AdminModule,
       AppRoutingModule,
 
       MatToolbarModule,
