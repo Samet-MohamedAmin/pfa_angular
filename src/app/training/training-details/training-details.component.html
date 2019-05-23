@@ -5,10 +5,10 @@
         <span *ngFor="let branchTreeItem of dummyBranchTreeList">{{branchTreeItem}} > </span>
       </h3> -->
       <h1 class="mt-5">{{training?.title}}</h1>
-      <p class="h5 font-weight-normal">{{training?.descriptionShort}}</p>
+      <p class="h5 font-weight-normal">{{training?.briefDescription}}</p>
       <button class="btn-start-training position-absolute"
               (click)="registerRequest()"
-              *ngIf="user && (trainingRequestState != 'REJECTED')"
+              *ngIf="userDetails && (trainingRequestState != 'REJECTED')"
               mat-raised-button>
         {{trainingRequestState ? trainingRequestState : 'enregistrer'}}
       </button>
@@ -37,6 +37,7 @@
           <div>
             <mat-icon class="icon-star cursor-pointer"
                       *ngFor="let starType of starList">{{starType}}</mat-icon>
+            <!-- Math.round((e.pageX - parent.offsetLeft) * 10/parent.offsetWidth); -->
           </div>
         </div>
       </div>
@@ -60,7 +61,7 @@
       </div>
       <div class="overview">
         <h1>Description détaillé</h1>
-        <p class="text-justify">{{training?.descriptionDetailed}}</p>
+        <p class="text-justify">{{training?.detailedDescription}}</p>
       </div>
       <div class="h-500 intructor">
         <h1>Instructeur</h1>
