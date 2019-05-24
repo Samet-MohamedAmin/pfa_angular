@@ -22,8 +22,7 @@ export class TrainingDetailsComponent implements OnInit {
   Lorem ipsum dolor sit amet consectetur adipiscing elit imperdiet pretium congue egestas, enim convallis libero montes senectus vestibulum nisl dis habitant. Conubia nibh vestibulum id sagittis augue felis dictum rhoncus, condimentum eros eget sem ut lobortis enim, est porttitor porta himenaeos rutrum cum neque. Per sociosqu maecenas orci rutrum velit molestie aenean, quam interdum magnis aliquet senectus leo nibh sed, pellentesque scelerisque fermentum cursus netus magna. Eget primis neque euismod est molestie rutrum blandit venenatis rhoncus, aptent volutpat elementum lacus cum facilisis platea cubilia, consequat sapien egestas ante risus imperdiet nec magna.
   Inceptos nisl viverra blandit volutpat sollicitudin nostra non condimentum sagittis, id vivamus vehicula hac eget turpis rhoncus aptent magnis in, morbi netus aliquet est quisque vestibulum feugiat penatibus. Convallis curae volutpat accumsan ut per imperdiet eu quis, odio libero lacus sagittis nec cras duis tristique iaculis, nunc massa tempus suscipit tempor parturient vehicula. Nisi diam sollicitudin ante parturient ultrices hendrerit in suscipit nostra felis rutrum, condimentum posuere egestas cursus nam magnis integer pellentesque morbi elementum. Nisi malesuada non vestibulum inceptos nam vel convallis ultrices hac, sollicitudin porttitor gravida tempus duis torquent nulla nascetur, odio litora orci fusce proin ut curabitur mus.`
 
-
-  // TODO: rating value must be binded directely with training object
+  rating: number;
   starList = [];
   levels = TRAINING_LEVEL;
   
@@ -37,16 +36,17 @@ export class TrainingDetailsComponent implements OnInit {
     this.userDetails = this.auth.getUserDetails();
     this.route.params
     .subscribe(params=>{
-      this.trainingService.getTrainingDetail(params.id)
-      .subscribe((training)=>{
-        console.log(training);
-        
-        this.training=this.trainingService.mapTraining(training);
-        this.getTrainingRequestState();
-        this.generateStars();
-      })
+      this.trainingService
+            .getTrainingDetail(params.id)
+            .subscribe((training)=>{
+              console.log(training);
+              
+              this.training=this.trainingService.mapTraining(training);
+              this.getTrainingRequestState();
+              this.generateStars(this.training.globalRating);
+            })
     })
-   }
+  }
 
   ngOnInit() {
     console.log(this.userDetails.role);
@@ -77,46 +77,40 @@ export class TrainingDetailsComponent implements OnInit {
     const offsetLeft = this.starsContainer.nativeElement.offsetLeft;
     const offsetWidth = this.starsContainer.nativeElement.offsetWidth;
     const pageX = eventData.pageX;
-    this.training.globalRating = Math.round((pageX - offsetLeft) * 10 / offsetWidth);
+    this.rating = Math.round((pageX - offsetLeft) * 10 / offsetWidth);
 
-    this.updateTraining();
+    this.trainingService
+          .rateCourse(this.userDetails.role,this.userDetails._id, this.training._id, this.rating)
+          .subscribe(obj => {console.log('rate training'); console.log(obj)});
 
-    this.generateStars();
+    this.generateStars(this.rating);
   }
   
-  generateStars(){
+  generateStars(rating: number){
     // this.rating = SharedService.getRandomNumber(4, 11);
     // TODO: starList elements must be removed to free memory
     this.starList = [];
 
-    console.log(`rating: ${this.training.globalRating}`);
+    console.log(`rating: ${rating}`);
     let starFull = 'star';
     let starHalf = 'star_half';
     let starEmpty = 'star_border';
 
-    for(let i=0; i<Math.floor(this.training.globalRating/2); i++){
-      this.starList.push(starFull);
-    }
-    if(this.training.globalRating%2) this.starList.push(starHalf);
+    for(let i=0; i<Math.floor(rating/2); i++) this.starList.push(starFull);
+    if(rating%2) this.starList.push(starHalf);
     let starEmptyNumber = 5 - this.starList.length;
-    for(let i=0; i<starEmptyNumber; i++){
-      this.starList.push(starEmpty);
-    }
+    for(let i=0; i<starEmptyNumber; i++) this.starList.push(starEmpty);
 
   }
 
   registerRequest(){
     if(this.trainingRequestState === null){
-      this.updateTraining();
+      this.trainingService
+          .requestRegistration(this.userDetails.role,this.userDetails._id, this.training._id)
+          .subscribe(obj => {console.log('update training'); console.log(obj)});
       
       this.trainingRequestState = 'PENDING';
     }
-  }
-
-  updateTraining(){
-    this.trainingService
-          .requestRegistration(this.userDetails.role,this.userDetails._id, this.training._id)
-          .subscribe(obj => {console.log('update training'); console.log(obj)});
   }
 
 }
