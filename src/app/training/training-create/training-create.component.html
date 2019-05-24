@@ -7,7 +7,7 @@
       </mat-card-header>
       <mat-horizontal-stepper [linear]="isLinear" #stepperTrainingCreate>
         <mat-step [stepControl]="formGroupGeneral">
-          <ng-template matStepLabel>Fill out your name</ng-template>
+          <ng-template matStepLabel>Données Générales</ng-template>
           <app-training-create-general
             [formGroupGeneral]="formGroupGeneral"
             [formFieldAppearance]="formFieldAppearance"></app-training-create-general>

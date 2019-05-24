@@ -61,8 +61,8 @@ export class TrainingService {
 
   //Admin endpoints
 
-  getAllUserRequests(){
-    return this.http.get(`${this.url}/course/request/all`,
+  getAllUserRequests(): Observable<any>{
+    return this.http.get<any>(`${this.url}/course/request/all`,
     { headers: new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)}) 
   }
 

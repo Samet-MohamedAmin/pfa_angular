@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainingRequestStudentInterface } from './training-request-student/training-request-student.interface';
-import { trigger, state, transition, animate, style } from '@angular/animations';
+import { TrainingService } from 'app/training/training.service';
 
 @Component({
   selector: 'app-training-requests',
@@ -18,11 +18,37 @@ export class TrainingRequestsComponent implements OnInit {
    */
   trainingRequestStudentList:TrainingRequestStudentInterface[] = [];
 
-  constructor() { }
+  constructor(private trainingService: TrainingService) { }
 
   ngOnInit() {
+    this.trainingService.getAllUserRequests().subscribe(
+      (requestList: any[]) => {
+        requestList.forEach((requestItem: any) => {
+          this.trainingRequestStudentList.push(this.mapRequest(requestItem));
+        })
+      }
+    );
     this.createDummyRequestStudent();
   }
+
+  mapRequest(request: any): TrainingRequestStudentInterface { 
+    const studentOverview = `requested path: ${request.user.requestedPath},
+                              attended courses: ${request.user.coursesAttended.length}`;
+    const trainingRequestStudentItem: TrainingRequestStudentInterface = {
+      requestId: request._id,
+      courseTitle: request.course.title,
+      courseDescriptionShort: request.course.briefDescription,
+      courseImage: request.course.courseImage,
+      studentBranch: request.user.branch,
+      studentFirstName: request.user.firstName,
+      studentLastName: request.user.lastName,
+      studentOverview: studentOverview,
+      studentStudyYear: request.user.yearOfStudy,
+      hide: false,
+    }
+    return trainingRequestStudentItem;
+  }
+
   /**
    * creates trainingrequestStudentItem containing random properties
    */

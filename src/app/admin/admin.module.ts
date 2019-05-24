@@ -5,6 +5,7 @@ import { MatGridListModule, MatButtonModule, MatCardModule } from '@angular/mate
 import { TrainingRequestsComponent } from './training-requests/training-requests.component';
 import { TrainingRequestStudentComponent } from './training-requests/training-request-student/training-request-student.component';
 import { SharedModule } from '@4c-shared/shared.module';
+import { TrainingService } from 'app/training/training.service';
 
 @NgModule({
   imports: [
@@ -21,6 +22,9 @@ import { SharedModule } from '@4c-shared/shared.module';
     TrainingRequestStudentComponent,
 
     // BackgroundImagePipe,
+  ],
+  providers: [
+    TrainingService,
   ]
 })
 export class AdminModule { }
