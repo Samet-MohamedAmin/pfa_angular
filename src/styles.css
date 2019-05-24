@@ -41,13 +41,13 @@ after adding margin-top to main content, the main content height is over 100%*/
 
 /*------------------css-variables----------------*/
 :root {
-    --main-color: #3f51b5;
-    --main-color-2: #C5CAE9;
-    --main-color-3: #757de8;
-    --main-color-4: #002984;
+    --main-color: #5D4037;
+    --main-color-2: #BCAAA4;
+    --main-color-3: #795548;
+    --main-color-4: #3E2723;
 
     --grey-0: #fafafa;
-    --grey-1: #EEE;
+    --grey-1: #EFEBE9;
     --grey-2: #DDD;
     --grey-3: #AAA;
 
