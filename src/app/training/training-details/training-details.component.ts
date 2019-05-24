@@ -49,7 +49,6 @@ export class TrainingDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.userDetails.role);
   }
 
   getTrainingRequestState(){
