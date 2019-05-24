@@ -66,7 +66,7 @@ export class TrainingService {
     { headers: new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)}) 
   }
 
-  validRegistration(userType,userId,courseId){
+  validRegistration(userType,userId,courseId): Observable<any>{
     let body={
       userType,
       userId,
@@ -77,7 +77,7 @@ export class TrainingService {
     { headers:new HttpHeaders().set('Content-Type', 'application/json').set('authorization', `Bearer ${this.authService.getToken()}`)})
   }
 
-  rejectRegistration(userId,courseId){
+  rejectRegistration(userId,courseId): Observable<any>{
     let body={
       userId,
       courseId

@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { TrainingRequestStudentInterface } from './training-request-student.interface';
+import { environment } from '@4c-environments/environment';
+import { TrainingService } from 'app/training/training.service';
+import { AuthenticationService } from '@4c-auth/authentication.service';
 
 @Component({
   selector: 'app-training-request-student',
@@ -11,7 +14,9 @@ export class TrainingRequestStudentComponent implements OnInit {
   @Output() requestAccepted = new EventEmitter<number>();
   @Output() requestRejected = new EventEmitter<number>();
 
-  constructor() { }
+  imageBaseUrl: string = environment.BACKEND_IMAGE_URL + '/';
+
+  constructor(private trainingService: TrainingService) { }
 
   ngOnInit() {
   }
@@ -23,6 +28,12 @@ export class TrainingRequestStudentComponent implements OnInit {
   rejectRequest(){
     console.log(`reject request [${this.trainingRequest.requestId}]`);
     this.requestRejected.emit(this.trainingRequest.requestId);
+
+    const userId = this.trainingRequest.studentId;
+    const courseId = this.trainingRequest.courseId;
+    this.trainingService.rejectRegistration(userId, courseId).subscribe(
+      obj => console.log(obj)
+    );
   }
 
   /**
@@ -32,6 +43,13 @@ export class TrainingRequestStudentComponent implements OnInit {
   acceptRequest(){
     console.log(`accept request [${this.trainingRequest.requestId}]`);
     this.requestAccepted.emit(this.trainingRequest.requestId);
+
+    const userId = this.trainingRequest.studentId;
+    const courseId = this.trainingRequest.courseId;
+    const role = 'student';
+    this.trainingService.validRegistration(role, userId, courseId).subscribe(
+      obj => console.log(obj)
+    );
   }
 
 }

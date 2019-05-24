@@ -1,8 +1,8 @@
 <mat-card [ngClass]="{'training-request': true, 'pop-out-animation': trainingRequest.hide}">
-  <mat-card-header>
+  <mat-card-header [routerLink]="['/training', 'details', trainingRequest.courseId]">
     <div mat-card-avatar
         class="header-image"
-        style.backgroundImage="{{trainingRequest.courseImage | bgImage}}"></div>
+        style.backgroundImage="{{ imageBaseUrl + trainingRequest.courseImage | bgImage}}"></div>
     <mat-card-title>{{trainingRequest.courseTitle}}</mat-card-title>
     <mat-card-subtitle>{{trainingRequest.courseDescriptionShort}}</mat-card-subtitle>
   </mat-card-header>
@@ -11,7 +11,7 @@
       [{{trainingRequest.studentBranch}}-{{trainingRequest.studentStudyYear}}]
       {{trainingRequest.studentFirstName}} {{trainingRequest.studentLastName}}
     </h3>
-    <p>[{{trainingRequest.requestId}}] {{trainingRequest.studentOverview}}</p>
+    <p>{{trainingRequest.studentOverview}}</p>
   </mat-card-content>
   <mat-card-actions class="position-absolute">
     <button mat-flat-button

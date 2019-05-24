@@ -1,5 +1,6 @@
 .training-request {
     height: calc(300px - 33px - 40px);
+    width: 420px;
 }
 
 .header-image {

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TrainingRequestStudentInterface } from './training-request-student/training-request-student.interface';
 import { TrainingService } from 'app/training/training.service';
+import { AuthenticationService } from '@4c-auth/authentication.service';
 
 @Component({
   selector: 'app-training-requests',
@@ -18,17 +19,18 @@ export class TrainingRequestsComponent implements OnInit {
    */
   trainingRequestStudentList:TrainingRequestStudentInterface[] = [];
 
-  constructor(private trainingService: TrainingService) { }
+  constructor(private trainingService: TrainingService, private auth: AuthenticationService) { }
 
   ngOnInit() {
     this.trainingService.getAllUserRequests().subscribe(
       (requestList: any[]) => {
         requestList.forEach((requestItem: any) => {
           this.trainingRequestStudentList.push(this.mapRequest(requestItem));
-        })
+        });
+        console.log(this.trainingRequestStudentList);
       }
     );
-    this.createDummyRequestStudent();
+    // this.createDummyRequestStudent();
   }
 
   mapRequest(request: any): TrainingRequestStudentInterface { 
@@ -36,9 +38,13 @@ export class TrainingRequestsComponent implements OnInit {
                               attended courses: ${request.user.coursesAttended.length}`;
     const trainingRequestStudentItem: TrainingRequestStudentInterface = {
       requestId: request._id,
+
+      courseId: request.course._id,
       courseTitle: request.course.title,
       courseDescriptionShort: request.course.briefDescription,
       courseImage: request.course.courseImage,
+
+      studentId: request.user._id,
       studentBranch: request.user.branch,
       studentFirstName: request.user.firstName,
       studentLastName: request.user.lastName,
@@ -55,9 +61,13 @@ export class TrainingRequestsComponent implements OnInit {
   createDummyRequestStudent():void{
     let trainingRequestStudentItem: TrainingRequestStudentInterface = {
       requestId: 0,
+      
+      courseId: '0',
       courseTitle: 'Introduction To Computer Science',
       courseDescriptionShort: this.dummyText,
       courseImage: '/assets/images/computer_01.jpg',
+
+      studentId: '0',
       studentBranch: 'GL',
       studentFirstName: 'Amin',
       studentLastName: 'Samet',
