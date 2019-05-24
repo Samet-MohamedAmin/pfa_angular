@@ -34,7 +34,7 @@
         <mat-icon class="mr-2">tag_faces</mat-icon>
         <div class="pt-2">
           <h2 class="mt-0 mb-1">Rating</h2>
-          <div>
+          <div (click)="rateTraining($event)" #starsContainer>
             <mat-icon class="icon-star cursor-pointer"
                       *ngFor="let starType of starList">{{starType}}</mat-icon>
             <!-- Math.round((e.pageX - parent.offsetLeft) * 10/parent.offsetWidth); -->
