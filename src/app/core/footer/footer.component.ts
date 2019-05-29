@@ -21,8 +21,7 @@ export class FooterComponent {
   /**
    * dummy text for developping only
    */
-  dummyText = `Lorem ipsum dolor sit amet consectetur adipiscing elit, conubia 
-                curabitur arcu duis quis purus, vel velit nunc aptent lobortis accumsan.`;
+  about = `Le centre 4C-Insat représente le maillon entre l'institut et l'entreprise. Il offre des formations en collaboration avec les acteurs socio-économiques`;
 
   constructor() { }
 }

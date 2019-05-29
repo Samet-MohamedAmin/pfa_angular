@@ -15,8 +15,8 @@ export class HomeComponent {
    * random text.
    * used for developement purpose only.
    */
-  dummyText = 'Lorem ipsum dolor sit amet consectetur adipiscing elit habitant vulputate ultrices,\
-  cum ut in duis magna fames habitasse congue senectus.';
+  text1 = 'Améliorez votre employabilité grâce un nos programmes de conseil, d’accompagnement, de formation, de certification et de réseautage ';
+  text2='Participez aux activités et séminaires d’ouverture sur l’environnement socio-économique  '
   /**
    * contains search value in the search input
    */
