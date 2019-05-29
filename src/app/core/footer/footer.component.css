@@ -1,4 +1,9 @@
-
 mat-divider {
     border-right-color: white;
+}
+
+
+.link-list mat-list mat-list-item a{
+    text-decoration: none;
+    color: white;
 }
