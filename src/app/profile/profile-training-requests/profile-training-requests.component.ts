@@ -39,40 +39,20 @@ export class ProfileTrainingRequestsComponent implements OnInit {
       courseTitle: trainingRequest.course.title,
       courseInstructor: trainingRequest.course.instructor, 
       courseDescriptionShort: trainingRequest.course.briefDescription,
-      courseImageSrc: IMAGE_SRC_BASE + SharedService.getRandomObject(Object.values(IMAGES)),
+      courseImageSrc: trainingRequest.course.courseImage,
       courseStartDate: trainingRequest.course.startDate,
 
       state: trainingRequest.state.toUpperCase(),
 
+      // hide parameter is used for the animation
       hide: false,
     };
-
 
     return trainingRequestItem;
   }
 
-  createDummyTrainingRequestList():void{
-    const trainingRequestItem: ProfileTrainingRequestInterface = {
-      courseId: 0,
-
-      courseTitle: 'Really Awesome Course',
-      courseInstructor: 'Linus Torvaldos', 
-      courseDescriptionShort: this.dummyText,
-      courseImageSrc: '',
-      courseStartDate: new Date(Date.now()),
-
-      state: TRAINING_REQUEST_STATE_LIST[0],
-
-      hide: false,
-    };
-
-    for(let i=0; i<15; i++){
-      const trainingRequest: ProfileTrainingRequestInterface = {...trainingRequestItem};
-      trainingRequest.courseId = i;
-      trainingRequest.courseImageSrc = IMAGE_SRC_BASE + SharedService.getRandomObject(Object.values(IMAGES));
-      trainingRequest.state = SharedService.getRandomObject(TRAINING_REQUEST_STATE_LIST);
-      this.trainingRequestList.push(trainingRequest);
-    }
-  }
+  // getCourseImageFromServer(courseImage: string){
+  //   const imageName = courseImage.s
+  // }
 
 }

@@ -4,8 +4,8 @@
                         'level-color-2': trainingRequest.state == trainingRequestStateList[2]}">
     <img class="card-image d-block"
           mat-card-image
-          [alt]="trainingRequest.courseImageSrc"
-          [src]="trainingRequest.courseImageSrc">
+          [alt]="imageBaseUrl + '/' + trainingRequest.courseImageSrc"
+          [src]="imageBaseUrl + '/' + trainingRequest.courseImageSrc">
     <mat-card-content>
         <mat-card-header>
           <mat-card-subtitle>{{ trainingRequest.courseInstructor }}</mat-card-subtitle>
