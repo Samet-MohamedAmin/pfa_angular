@@ -13,7 +13,7 @@
 
   <mat-form-field class="mt-4 w-75" [appearance]="formFieldAppearance">
     <mat-label class="d-block mb-2">Sélectionner les Branches Concernées</mat-label>
-    <mat-select multiple formControlName="branches">
+    <mat-select multiple formControlName="concernedBranches">
       <mat-option *ngFor="let branch of branches | keyvalue" [value]="branch.key">{{branch.value}}</mat-option>
     </mat-select>
   </mat-form-field>
