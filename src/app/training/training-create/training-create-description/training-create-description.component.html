@@ -1,5 +1,23 @@
 <form class="w-100" [formGroup]="formGroupDescription">
-    <input type="file" accept="image/*" (change)="onFileSelected($event)"/>
+    <div class="image-upload bg-grey-1 position-relative mx-auto"
+          [style.backgroundImage]="'url('+inputImage.value+')'">
+        <input type="file"
+          accept="image/*"
+          (change)="onFileSelected($event)"
+          hidden
+          #inputImage/>
+        <div class="container-icon
+                    cursor-pointer
+                    position-absolute
+                    w-100
+                    flex-center
+                    text-white">
+          <!-- <mat-icon class="text-white"
+                    (click)="inputImage.click()">add</mat-icon> -->
+                    image de la formation
+        </div>
+    </div>
+    
     <mat-form-field class="w-100" [appearance]="formFieldAppearance">
     <mat-label>Goals</mat-label>
     <textarea matInput formControlName="goals"></textarea>
