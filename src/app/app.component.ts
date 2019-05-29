@@ -9,11 +9,14 @@ import { AuthenticationService } from '@4c-auth/authentication.service';
 export class AppComponent {
 
   constructor(private auth: AuthenticationService) {
-    const role:string = auth.getUserDetails().role.toLowerCase();
+    let itemNameList = [...this.sideNavItemNameList.base];
 
-    let itemNameList = this.sideNavItemNameList.base;
-
-    itemNameList.push(...this.sideNavItemNameList[role]);
+    if(auth.isLoggedIn()) {
+      itemNameList.push(...this.sideNavItemNameList.loggedIn);
+      
+      const role:string = auth.getUserDetails().role.toLowerCase();
+      itemNameList.push(...this.sideNavItemNameList[role]);
+    }
 
     itemNameList.forEach(
       (itemName:string) => {
@@ -34,7 +37,7 @@ export class AppComponent {
     {name: 'home', path: '/home'},
     {name: 'profile', path: '/profile'},
     {name: 'achievements', path: '/achievements'},
-    {name: 'formation', path: '/training'},
+    {name: 'formations', path: '/training'},
     {name: 'recommandation', path: '/training/recommandations'},
     {name: 'create', path: '/training/create'},
   ];
@@ -43,7 +46,8 @@ export class AppComponent {
    * customize appearing elements to every profile role
    */
   sideNavItemNameList = {
-    base: ['home', 'profile', 'achievements', 'formation'],
+    base: ['home', 'achievements', 'formations'],
+    loggedIn: ['profile'],
     student: ['recommandation'],
     teacher: ['recommandation'],
     partner: [],
