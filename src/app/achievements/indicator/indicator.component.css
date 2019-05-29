@@ -18,9 +18,8 @@
     top: calc(-0.25 * var(--icon-w));
 }
 
-.indicator-card-icon mat-icon {
-    --icon-w-2: calc(0.5 * var(--icon-w));
-    font-size: var(--icon-w-2);
+.indicator-card-icon img {
+    --icon-w-2: calc(0.6 * var(--icon-w));
     width: var(--icon-w-2);
     height: var(--icon-w-2);
 }
@@ -33,3 +32,8 @@
 }
 
 .indicator-card mat-card-footer span {font-size: 14px}
+
+.bla {
+    color: #F44336, #E91E63, #E91E63, #9C27B0, #673AB7, #009688, #4CAF50, #E65100, #FFC107, #FF3D00, #FBC02D, #1E88E5, #01579B, #006064
+
+}

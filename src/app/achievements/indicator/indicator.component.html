@@ -1,7 +1,7 @@
 <mat-card class="indicator-card position-relative">
   <mat-card class="indicator-card-icon position-absolute d-flex flex-center p-0 mat-elevation-z3"
             [style.backgroundColor]="indicator.color">
-    <mat-icon class="text-white">{{indicator.icon}}</mat-icon>
+    <img [src]="indicator.icon">
   </mat-card>
   <mat-card-subtitle class="text-right font-weight-light mb-1">{{indicator.name}}</mat-card-subtitle>
   <mat-card-title class="text-right font-weight-light">
