@@ -133,8 +133,8 @@ export class TrainingService {
     const trainingItem: TrainingItemInterface = {
       ...training,
       imageAlt: 'training image alt',
-      goals: training.goals[0].split('\r\n'),
-      requirements: training.requirements[0].split('\r\n')
+      goals: training.goals[0].split('\n'),
+      requirements: training.requirements[0].split('\n')
     };
     
     return trainingItem;
