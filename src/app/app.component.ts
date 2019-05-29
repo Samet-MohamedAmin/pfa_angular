@@ -9,25 +9,34 @@ import { AuthenticationService } from '@4c-auth/authentication.service';
 export class AppComponent {
 
   constructor(private auth: AuthenticationService) {
+    this.initialiseSideNavitems();
+    this.auth.userEmitter.subscribe((userDetails)=>{
+      this.initialiseSideNavitems();
+    })
+  }
+
+  initialiseSideNavitems(){
     let itemNameList = [...this.sideNavItemNameList.base];
 
-    if(auth.isLoggedIn()) {
+    if(this.auth.isLoggedIn()) {
       itemNameList.push(...this.sideNavItemNameList.loggedIn);
       
-      const role:string = auth.getUserDetails().role.toLowerCase();
+      const role:string = this.auth.getUserDetails().role.toLowerCase();
+      console.log(role);
       itemNameList.push(...this.sideNavItemNameList[role]);
     }
 
+    let newSideNavItems=[];
     itemNameList.forEach(
       (itemName:string) => {
         const originalItem: {name:string, path: string} 
                 = this.sideNavOriginalItems
                         .find(item =>item.name == itemName );
-        this.sideNavItems.push(originalItem);
+        newSideNavItems.push(originalItem);
       }
     );
+    this.sideNavItems=newSideNavItems
   }
-
   /**
    * state of the sidebar
    */
