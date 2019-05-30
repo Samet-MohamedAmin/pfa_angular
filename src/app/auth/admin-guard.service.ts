@@ -9,7 +9,7 @@ export class AdminGuardService implements CanActivate {
 
   canActivate() {
     if (!this.auth.isLoggedIn()) {
-      this.router.navigateByUrl('/home');
+      this.router.navigate(['/home']);
       return false;
     }
     return this.auth.getUserDetails().role == "personal"
