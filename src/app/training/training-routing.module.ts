@@ -5,13 +5,14 @@ import { TrainingDetailsComponent } from './training-details/training-details.co
 import { TrainingCreateComponent } from './training-create/training-create.component';
 import { TrainingRecommandationsComponent } from './training-recommandations/training-recommandations.component';
 import { AuthGuardService } from '@4c-auth/auth-guard.service';
+import { AdminGuardService } from '@4c-auth/admin-guard.service';
 
 const routes: Routes = [
   {path: 'training' ,children: [
     {path: '', redirectTo: 'search', pathMatch: 'full'},
     {path: 'search', component: TrainingSearchComponent},
     {path: 'details/:id', component: TrainingDetailsComponent},
-    {path: 'create', component: TrainingCreateComponent}, //canActivate:[AdminGuardService]},
+    {path: 'create', component: TrainingCreateComponent, canActivate:[AdminGuardService]},
     {path:'recommendations' , component: TrainingRecommandationsComponent ,canActivate:[AuthGuardService]}
   ]},
 ];
