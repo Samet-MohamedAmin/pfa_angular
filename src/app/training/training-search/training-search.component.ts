@@ -96,7 +96,7 @@ export class TrainingSearchComponent implements OnInit {
     console.log('--------> filter trainings');
     this.filteredTrainings=this.trainingList.filter((training:TrainingItemInterface)=>{
       if(!this.trainingType || (this.trainingType == training.type) || (this.trainingType=='all'))
-        if(!this.activeBranch || training.concernedBranches.includes(this.activeBranch))
+        if(!this.activeBranch || training.concernedBranches[0].includes(this.activeBranch))
           // TODO: course model level attribute must be integer
           if(!this.levels.length || this.levels.includes(+training.level))
             if(this.filterSearch(training))
