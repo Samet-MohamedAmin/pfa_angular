@@ -1,17 +1,22 @@
 .image-upload {
-    width: 180px;
-    /* height: 230px;
-    height: 50px;*/
-    height: 36px;
-    background-color: #E0E0E0;
-    border-radius: 6px;
+    --w: 200px;
+    --h-1: 50px;
+    --b-r: 6px;
+    width: var(--w);
+    height: var(--w);
+    background-color: #EEE;
+    border-radius: var(--b-r) var(--b-r) 0 0;
+    margin-bottom: var(--h-1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('assets/standard/no-image.png')
 }
 
 .image-upload .container-icon{
-    /* height: 50px; */
-    height: 36px;
-    bottom: 0;
-    background-color: #949494;
-    /* border-radius: 0 0 6px 6px; */
-    border-radius: 6px;
+    height: var(--h-1);
+    bottom: calc(-1 * var(--h-1));
+    background-color: #ff6e40;
+    border-radius: 0 0 var(--b-r) var(--b-r);
+    font-size: 16px;
 }

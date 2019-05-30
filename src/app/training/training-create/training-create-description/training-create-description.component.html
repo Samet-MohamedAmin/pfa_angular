@@ -1,6 +1,6 @@
 <form class="w-100" [formGroup]="formGroupDescription">
     <div class="image-upload bg-grey-1 position-relative mx-auto"
-          [style.backgroundImage]="'url('+inputImage.value+')'">
+          #inputImageContainer>
         <input type="file"
           accept="image/*"
           (change)="onFileSelected($event)"
