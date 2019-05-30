@@ -3,7 +3,9 @@
             [style.backgroundColor]="indicator.color">
     <img [src]="indicator.icon">
   </mat-card>
-  <mat-card-subtitle class="text-right font-weight-light mb-1">{{indicator.name}}</mat-card-subtitle>
+  <mat-card-subtitle class="text-right font-weight-light mb-1 text-truncate">
+    {{indicator.name}}
+  </mat-card-subtitle>
   <mat-card-title class="text-right font-weight-light">
     <span class="indicator-value">
       {{indicator.value}}<span class="text-grey">/{{indicator.goalCurrent.value}}</span>
