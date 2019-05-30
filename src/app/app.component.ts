@@ -49,6 +49,7 @@ export class AppComponent {
     {name: 'formations', path: '/training'},
     {name: 'recommandation', path: '/training/recommandations'},
     {name: 'create', path: '/training/create'},
+    {name: 'demandes de formations', path: '/admin/training-requests'}
   ];
 
   /**
@@ -60,7 +61,7 @@ export class AppComponent {
     student: ['recommandation'],
     teacher: ['recommandation'],
     partner: [],
-    personal: ['create']
+    personal: ['create', 'demandes de formations']
   };
 
   /**
