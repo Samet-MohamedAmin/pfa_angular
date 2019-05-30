@@ -24,9 +24,9 @@ export class TrainingService {
   }
 
   getRecommendations(userType,userId){
-    return this.http.get(`${this.url}/course/recommandations/${userType}/${userId}`,
+    return this.http.get(`${this.url}/course/recommendations/${userType}/${userId}`,
       { headers: new HttpHeaders().set('authorization', `Bearer ${this.authService.getToken()}`)})
-    }
+  }
 
   getUserRequests(userId){
     return this.http.get(`${this.url}/course/request/${userId}`,

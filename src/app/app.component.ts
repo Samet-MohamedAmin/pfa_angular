@@ -47,7 +47,7 @@ export class AppComponent {
     {name: 'profile', path: '/profile'},
     {name: 'achievements', path: '/achievements'},
     {name: 'formations', path: '/training'},
-    {name: 'recommandation', path: '/training/recommandations'},
+    {name: 'recommandation', path: '/training/recommendations'},
     {name: 'create', path: '/training/create'},
     {name: 'demandes de formations', path: '/admin/training-requests'}
   ];

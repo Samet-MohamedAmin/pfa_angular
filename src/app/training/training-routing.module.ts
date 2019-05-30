@@ -13,7 +13,7 @@ const routes: Routes = [
     {path: 'search', component: TrainingSearchComponent},
     {path: 'details/:id', component: TrainingDetailsComponent},
     {path: 'create', component: TrainingCreateComponent, canActivate:[AdminGuardService]},
-    {path:'recommendations' , component: TrainingRecommandationsComponent ,canActivate:[AuthGuardService]}
+    {path: 'recommendations' , component: TrainingRecommandationsComponent, canActivate:[AuthGuardService]}
   ]},
 ];
 
