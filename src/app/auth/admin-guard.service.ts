@@ -8,12 +8,10 @@ export class AdminGuardService implements CanActivate {
   constructor(private auth: AuthenticationService, private router: Router) { }
 
   canActivate() {
-    if(!this.auth.isLoggedIn() && this.auth.getUserDetails().role == "personal")
+    if(this.auth.isLoggedIn() && this.auth.getUserDetails().role == "personal")
       return true;
 
     this.router.navigate(['/home']);
     return false;
-
-
   }
 }
