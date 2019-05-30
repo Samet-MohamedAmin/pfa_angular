@@ -8,7 +8,9 @@
       <p class="h5 font-weight-normal">{{training?.briefDescription}}</p>
       <button class="btn-start-training position-absolute"
               (click)="registerRequest()"
-              *ngIf="userDetails && (trainingRequestState != 'REJECTED')"
+              *ngIf="userDetails
+                      && (userDetails.role == 'student' || userDetails.role == 'teacher')
+                      && (trainingRequestState != 'REJECTED')"
               mat-raised-button>
         {{trainingRequestState ? trainingRequestState : 'enregistrer'}}
       </button>
