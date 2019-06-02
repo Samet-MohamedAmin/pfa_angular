@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ProfileTrainingRequestInterface } from './profile-training-request-item/profile-training-request.interface';
-import { TRAINING_REQUEST_STATE_LIST, IMAGES, SharedService, IMAGE_SRC_BASE } from '@4c-shared/shared.service';
 import { TrainingService } from 'app/training/training.service';
 import { AuthenticationService } from '@4c-auth/authentication.service';
 

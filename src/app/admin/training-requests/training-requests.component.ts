@@ -25,7 +25,9 @@ export class TrainingRequestsComponent implements OnInit {
     this.trainingService.getAllUserRequests().subscribe(
       (requestList: any[]) => {
         requestList.forEach((requestItem: any) => {
-          this.trainingRequestStudentList.push(this.mapRequest(requestItem));
+          // TODO: accepted/rejected requests must be deleted from the database
+          if(requestItem.state.toUpperCase() == 'PENDING')
+            this.trainingRequestStudentList.push(this.mapRequest(requestItem));
         });
         console.log(this.trainingRequestStudentList);
       }

@@ -3,7 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '@4c-environments/environment';
 import { AuthenticationService } from '../auth/authentication.service';
 import { TrainingItemInterface } from './training.interface';
-import { TrainingRequestState } from '@4c-shared/shared.service';
 import { Observable } from 'rxjs';
 
 @Injectable({
