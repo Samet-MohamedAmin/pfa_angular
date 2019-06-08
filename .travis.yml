@@ -7,7 +7,6 @@ env:
 before_install:
   - echo "[BEFORE INSTALL]"
   - npm install compodoc -g
-  - npm install netlify-cli -g
 
 script:
   - echo "[SCRIPT]" 
