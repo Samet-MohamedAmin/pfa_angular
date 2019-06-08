@@ -10,8 +10,7 @@ before_install:
 
 script:
   - echo "[SCRIPT]" 
-  - npm install -g @compodoc/compodoc
-  - npx compodoc -p src/tsconfig.app.json
+  - npm install -g @compodoc/compodoc && npx compodoc -p src/tsconfig.app.json
   - zip $UPLOAD_FILE documentation -r
 
 after_success:
