@@ -15,5 +15,5 @@ script:
 
 after_success:
   - echo "[AFTER INSTALL]"
-  - curl -X POST -H "Content-Type: application/zip" -H "Authorization: Bearer $NETLIFY_TOKEN" --data-binary @$UPLOAD_FILE https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys
+  - 'curl -X POST -H "Content-Type: application/zip" -H "Authorization: Bearer $NETLIFY_TOKEN" --data-binary @$UPLOAD_FILE https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys'
 
