@@ -11,14 +11,14 @@ env:
 
 before_install:
   - echo "[BEFORE INSTALL]"
+  - npm install -g @compodoc/compodoc
 
 script:
   - echo "[SCRIPT]" 
-  - npm install -g @compodoc/compodoc
   - compodoc -p src/tsconfig.app.json
   - zip $UPLOAD_FILE documentation -r
+  - 'curl -X POST -H "Content-Type: application/zip" -H "Authorization: Bearer $NETLIFY_TOKEN" --data-binary @$UPLOAD_FILE https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys'
 
 after_success:
   - echo "[AFTER INSTALL]"
-  - 'curl -X POST -H "Content-Type: application/zip" -H "Authorization: Bearer $NETLIFY_TOKEN" --data-binary @$UPLOAD_FILE https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys'
 
