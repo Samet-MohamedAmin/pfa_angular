@@ -1,4 +1,5 @@
 language: node_js
+install: true
 env:
   global:
     - OWNER=SAMET
@@ -6,7 +7,7 @@ env:
 
 before_install:
   - echo "[BEFORE INSTALL]"
-  - npm install compodoc -g
+  - npm install @compodoc/compodoc -g
 
 script:
   - echo "[SCRIPT]" 
