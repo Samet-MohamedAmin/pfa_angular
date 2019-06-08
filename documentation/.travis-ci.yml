@@ -1,0 +1,23 @@
+language: node_js
+services:
+  - npm
+env:
+  global:
+    - OWNER=SAMET
+    - UPLOAD_FILE=website.zip
+
+before_install:
+  - echo "[BEFORE INSTALL]"
+  - npm install compodoc -g
+  - npm install netlify-cli -g
+
+script:
+  - echo "[SCRIPT]" 
+  - npx compodoc -p src/tsconfig.app.json
+  - zip $UPLOAD_FILE documentation -r
+
+after_success:
+  - echo "[AFTER INSTALL]"
+  - cd ./documentation
+  - curl -X POST -H "Content-Type: application/zip" -H "Authorization: Bearer $NETLIFY_TOKEN" --data-binary @$UPLOAD_FILE https://api.netlify.com/api/v1/sites/$NETLIFY_SITE_ID/deploys
+
