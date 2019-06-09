@@ -49,14 +49,15 @@ export class AppComponent {
     {name: 'formations', path: '/training'},
     {name: 'recommandation', path: '/training/recommendations'},
     {name: 'create', path: '/training/create'},
-    {name: 'demandes de formations', path: '/admin/training-requests'}
+    {name: 'demandes de formations', path: '/admin/training-requests'},
+    {name: 'docs', path: 'https://4c-docs.netlify.com/'}
   ];
 
   /**
    * customize appearing elements to every profile role
    */
   sideNavItemNameList = {
-    base: ['home', 'achievements', 'formations'],
+    base: ['home', 'achievements', 'formations', 'docs'],
     loggedIn: ['profile'],
     student: ['recommandation'],
     teacher: ['recommandation'],
