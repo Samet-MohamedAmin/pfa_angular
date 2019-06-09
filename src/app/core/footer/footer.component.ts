@@ -14,8 +14,9 @@ export class FooterComponent {
    */
   linkList: string[] = [
     'www.4c.tn',
-    'www.mes.tn',
-    'www.insat.rnu.tn'
+    // 'www.mes.tn',
+    'www.insat.rnu.tn',
+    '4c-docs.netlify.com'
   ];
 
   /**

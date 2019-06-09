@@ -50,7 +50,7 @@ export class AppComponent {
     {name: 'recommandation', path: '/training/recommendations'},
     {name: 'create', path: '/training/create'},
     {name: 'demandes de formations', path: '/admin/training-requests'},
-    {name: 'docs', path: 'https://4c-docs.netlify.com/'}
+    {name: 'docs', path: '/docs'}
   ];
 
   /**
