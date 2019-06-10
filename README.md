@@ -1,7 +1,7 @@
 # Pfa
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.1.
 
-![documentation_coverage](https://4c-docs-compodoc.netlify.com/images/coverage-badge-documentation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/Samet-MohamedAmin/pfa_angular/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Samet-MohamedAmin/pfa_angular?targetFile=package.json)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c4bc3399-76d1-46db-826b-1365c0d54644/deploy-status)](https://app.netlify.com/sites/4c/deploys) ![documentation_coverage](https://4c-docs-compodoc.netlify.com/images/coverage-badge-documentation.svg) [![Known Vulnerabilities](https://snyk.io/test/github/Samet-MohamedAmin/pfa_angular/badge.svg?targetFile=package.json)](https://snyk.io/test/github/Samet-MohamedAmin/pfa_angular?targetFile=package.json)
 
 ## Development server
 
