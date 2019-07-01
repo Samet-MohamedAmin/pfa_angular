@@ -1,14 +1,18 @@
 # TODO list
 
-## Urgent Tasks
-- [ ] dummy urgent task
+## Current Tasks
+- [ ] training badge: current / done / future
+- [ ] search training,  3 tabs
+- [ ] remove english words
+- [ ] create training: tags separated with ","
+- [ ] training request link error
+- [ ] profile: edit profile
 
-## Important Task
-- [ ] forms validation
 
 ## To Fix
 - [ ] unify training request interface in profile and admin.
 - [ ] get rid of unnecessary component fractions (like list and item when it is not needed)
+- [ ] forms validation
 
 ## Feature
 - [ ] make page interactive. add animations:
