@@ -15,7 +15,7 @@
                           [colspan]="1"
                           [rowspan]="1">
             <app-profile-training-request-item class="cursor-pointer"
-                                                [routerLink]="['/training', 'details']"
+                                                [routerLink]="['/training', 'details', trainingRequestItem.courseId]"
                                                 [trainingRequest]="trainingRequestItem">
               </app-profile-training-request-item>
           </mat-grid-tile>

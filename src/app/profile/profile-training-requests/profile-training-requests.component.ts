@@ -33,7 +33,7 @@ export class ProfileTrainingRequestsComponent implements OnInit {
 
   createTrainingRequestItem(trainingRequest: any):ProfileTrainingRequestInterface {
     const trainingRequestItem: ProfileTrainingRequestInterface = {
-      courseId: 0,
+      courseId: trainingRequest.course._id,
 
       courseTitle: trainingRequest.course.title,
       courseInstructor: trainingRequest.course.instructor, 
