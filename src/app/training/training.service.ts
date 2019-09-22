@@ -139,6 +139,21 @@ export class TrainingService {
     return trainingItem;
   }
 
+  getTrainingStatus(training: any): number {
+
+    let startDate: number = Date.parse(training.startDate);
+    let endDate: number = Date.parse(training.endDate);
+    let currentDate: number = Date.now();
+
+    if(currentDate > startDate) {
+      if(currentDate < endDate) {
+        return 0;
+      }
+      return -1;
+    }
+    return 1;
+  }
+
 
 }
 

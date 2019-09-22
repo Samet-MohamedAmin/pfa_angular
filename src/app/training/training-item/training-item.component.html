@@ -2,6 +2,7 @@
                         'level-color-0': training.level == 0,
                         'level-color-1': training.level == 1,
                         'level-color-2': training.level == 2}">
+    <span class="training-status">{{getTrainingStatus()}}</span>
     <img class="card-image d-block"
             mat-card-image 
             [alt]="training.courseImage"

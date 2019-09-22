@@ -11,11 +11,25 @@ import { environment } from '@4c-environments/environment';
   styleUrls: ['./training-item.component.css']
 })
 export class TrainingItemComponent implements OnInit {
-  @Input() training : any;
+  @Input() training: any;
 
   imageBaseUrl: string = environment.BACKEND_IMAGE_URL + '/';
 
+  constructor(private trainingService: TrainingService) {
+
+  }
+
   ngOnInit(){
     console.log(this.training);
+  }
+
+  getTrainingStatus(): string {
+
+    const status: number = this.trainingService.getTrainingStatus(this.training);
+    switch (status) {
+      case  0: return 'current';
+      case -1: return 'done';
+      case  1: return 'future';
+    }
   }
 }

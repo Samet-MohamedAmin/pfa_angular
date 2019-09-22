@@ -25,7 +25,7 @@ export interface TrainingItemInterface {
     detailedDescription: string;
 
     /* other */
-    _id: string,
+    _id: string;
     courseImage: string;
     imageAlt: string;
     globalRating: number;

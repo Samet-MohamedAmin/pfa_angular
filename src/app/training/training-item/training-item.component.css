@@ -26,3 +26,13 @@
     bottom: 0;
     font-size: 14px;
 }
+
+.training-status {
+    position: absolute;
+    padding: 30px 6px 10px;
+    background-color: #bcaaa4;
+    left: 30px;
+    top: 0;
+    color: white;
+    border-radius: 0 0 4px 4px;
+}
