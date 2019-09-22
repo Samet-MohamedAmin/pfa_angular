@@ -11,7 +11,8 @@ import { TrainingSearchComponent } from './training-search/training-search.compo
 import { TrainingRecommandationsComponent } from './training-recommandations/training-recommandations.component';
 import { TrainingService } from './training.service';
 import { TrainingDetailsComponent } from './training-details/training-details.component';
-import { MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatButtonModule, MatIconModule, MatGridListModule, MatCardModule, MatDatepickerModule, MatStepperModule, MatCheckboxModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatButtonModule,
+  MatIconModule, MatGridListModule, MatCardModule, MatDatepickerModule, MatStepperModule, MatCheckboxModule, MatTabsModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -34,7 +35,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatStepperModule,
     MatButtonModule,
     MatIconModule,
-    
+    MatTabsModule
   ],
   declarations: [
     TrainingCreateComponent,

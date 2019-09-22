@@ -3,6 +3,7 @@ import { BRANCHES, BRANCH_LIST, IMAGES, SharedService, IMAGE_SRC_BASE } from '@4
 import { TRAINING_TYPE_LIST, TRAINING_LEVEL, TrainingItemInterface } from '../training.interface';
 import { ActivatedRoute } from '@angular/router';
 import { TrainingService } from '../training.service';
+
 @Component({
   selector: 'app-training-search',
   templateUrl: './training-search.component.html',
@@ -10,8 +11,8 @@ import { TrainingService } from '../training.service';
 })
 export class TrainingSearchComponent implements OnInit {
 
-  trainingList:Array<any>=[];  
-  
+  trainingList: Array<any> = [];
+
   //for real work
   searchValue = '';
   parameters = {
@@ -21,51 +22,49 @@ export class TrainingSearchComponent implements OnInit {
     branchList: BRANCH_LIST,
   }
   //binded properties
-  activeBranch:any;
-  levels:Array<any>=[];
-  trainingType:any;
-    
-  allTrainings:any;
-  filteredTrainings:Array<any>=[];
+  activeBranch: any;
+  levels: any[] = [];
+  trainingType: any;
 
-  constructor(private route :ActivatedRoute,
-              private trainingService:TrainingService) { 
+  allTrainings: any;
+  filteredTrainings: any[] = [];
+
+  constructor(private route: ActivatedRoute,
+              private trainingService: TrainingService) { 
     this.trainingService.getAllTrainings()
-    .subscribe((trainings:any[]) =>{
-      
-      this.trainingList=trainings
+    .subscribe((trainings: any[]) => {
+
+      this.trainingList = trainings;
       this.route.queryParams
-      .subscribe(params=>{
-        if(params.branchCode){
-        this.activeBranch=params.branchCode
+      .subscribe(params => {
+        if (params.branchCode) {
+        this.activeBranch = params.branchCode;
       }
-       if(params.searchValue){
-        this.searchValue=params.searchValue
+       if (params.searchValue) {
+        this.searchValue = params.searchValue;
       }
-      this.filterTrainings()
-      })
-    })
-  
-   
+      this.filterTrainings();
+      });
+    });
   }
 
   ngOnInit() {
   }
 
-  levelChange(eventData:any){
+  levelChange(eventData: any) {
     console.log(eventData);
-    if (eventData.checked){
+    if (eventData.checked) {
       this.levels.push(eventData.source.value);
-    }else if(!eventData.checked) {
-      let index=this.levels.indexOf(eventData.source.value);
-      if (index >-1) this.levels.splice(index,1);
+    } else if (!eventData.checked) {
+      const index = this.levels.indexOf(eventData.source.value);
+      if (index > -1) { this.levels.splice(index, 1); }
     }
     console.log(this.levels);
     this.filterTrainings();
   }
 
-  typeChanged(eventData:any){
-    this.trainingType=eventData.value;
+  typeChanged(eventData: any) {
+    this.trainingType = eventData.value;
     this.filterTrainings();
   }
 
@@ -77,14 +76,16 @@ export class TrainingSearchComponent implements OnInit {
    * You can specify training concerned attributes in `list`
    * @param training training item in filter training callback
    */
-  filterSearch(training:TrainingItemInterface):boolean {
+  filterSearch(training: TrainingItemInterface): boolean {
     const list: string[] = ['title', 'instructor']
-    
-    if(!this.searchValue.length) return true;
-    
-    for(let i in list)
-      if(training[list[i]].toLowerCase().includes(this.searchValue.toLowerCase()))
+
+    if (!this.searchValue.length) { return true; }
+
+    for (let i in list) {
+      if (training[list[i]].toLowerCase().includes(this.searchValue.toLowerCase())) {
         return true;
+      }
+    }
 
     return false;
   }
@@ -94,16 +95,40 @@ export class TrainingSearchComponent implements OnInit {
    */
   filterTrainings() {
     console.log('--------> filter trainings');
-    this.filteredTrainings=this.trainingList.filter((training:TrainingItemInterface)=>{
-      if(!this.trainingType || (this.trainingType == training.type) || (this.trainingType=='all'))
-        if(!this.activeBranch || training.concernedBranches[0].includes(this.activeBranch))
+    this.filteredTrainings = this.trainingList.filter((training: TrainingItemInterface) => {
+      if (!this.trainingType || (this.trainingType === training.type) || (this.trainingType === 'all')) {
+        if (!this.activeBranch || training.concernedBranches[0].includes(this.activeBranch)) {
           // TODO: course model level attribute must be integer
-          if(!this.levels.length || this.levels.includes(+training.level))
-            if(this.filterSearch(training))
-              return true
+          if (!this.levels.length || this.levels.includes(+training.level)) {
+            if (this.filterSearch(training)) {
+              return true;
+            }
+          }
+        }
+      }
       return false;
-    })
-    
+    });
+  }
+
+  getDoneTrainings() {
+
+    return this.filteredTrainings.filter((training: TrainingItemInterface) => {
+      return this.trainingService.getTrainingStatus(training) < 0;
+    });
+  }
+
+  getFutureTrainings() {
+
+    return this.filteredTrainings.filter((training: TrainingItemInterface) => {
+      return this.trainingService.getTrainingStatus(training) > 0;
+    });
+  }
+
+  getCurrentTrainings() {
+
+    return this.filteredTrainings.filter((training: TrainingItemInterface) => {
+      return this.trainingService.getTrainingStatus(training) === 0;
+    });
   }
 
 

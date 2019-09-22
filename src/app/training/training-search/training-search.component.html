@@ -46,6 +46,22 @@
     </div>
   </div>
 
-  <app-training-list [trainingList]="filteredTrainings"></app-training-list>
+  <div class="container">
+    <mat-tab-group mat-stretch-tabs>
+      <mat-tab label="All">
+        <app-training-list [trainingList]="filteredTrainings"></app-training-list>
+      </mat-tab>
+      <mat-tab label="Future">
+        <app-training-list [trainingList]="getFutureTrainings()"></app-training-list>
+      </mat-tab>
+      <mat-tab label="Current">
+        <app-training-list [trainingList]="getCurrentTrainings()"></app-training-list>
+      </mat-tab>
+      <mat-tab label="Done">
+        <app-training-list [trainingList]="getDoneTrainings()"></app-training-list>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  
 
 </div>
