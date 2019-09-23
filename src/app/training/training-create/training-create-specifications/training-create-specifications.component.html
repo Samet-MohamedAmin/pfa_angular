@@ -6,6 +6,21 @@
     </mat-select>
   </mat-form-field>
 
+  <mat-form-field class="tags w-75" [appearance]="formFieldAppearance">
+    <mat-chip-list #chipList aria-label="tags selection">
+      <mat-chip *ngFor="let tag of tags" [selectable]="true"
+               [removable]="true" (removed)="removeTag(tag)">
+        {{tag}}
+        <mat-icon matChipRemove *ngIf="true">cancel</mat-icon>
+      </mat-chip>
+      <input placeholder="Add tags..."
+             [matChipInputFor]="chipList"
+             [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+             [matChipInputAddOnBlur]="true"
+             (matChipInputTokenEnd)="addTag($event)">
+    </mat-chip-list>
+  </mat-form-field>
+
   <mat-form-field class="w-75" [appearance]="formFieldAppearance">
     <mat-label>Requirements</mat-label>
     <textarea matInput formControlName="requirements"></textarea>
@@ -17,6 +32,7 @@
       <mat-option *ngFor="let branch of branches | keyvalue" [value]="branch.key">{{branch.value}}</mat-option>
     </mat-select>
   </mat-form-field>
+
   <div class="mt-4">
     <mat-label class="d-block mb-2">Sélectionner le Type de la Formation</mat-label>
     <mat-radio-group [value]="trainingTypeList[0]" (change)="onChangeType($event)">

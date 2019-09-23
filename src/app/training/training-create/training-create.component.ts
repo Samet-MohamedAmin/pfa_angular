@@ -15,10 +15,10 @@ export class TrainingCreateComponent implements OnInit {
   formGroupGeneral: FormGroup;
   formGroupSpecifications: FormGroup;
   formGroupDescription: FormGroup;
-  trainingImage=null;
-  isLinear = true;
+  trainingImage = null;
+  isLinear = false;
 
-  constructor(private _formBuilder: FormBuilder,private trainingService:TrainingService ,private router:Router) { }
+  constructor(private _formBuilder: FormBuilder, private trainingService: TrainingService , private router: Router) { }
 
   training: TrainingItemInterface;
 
@@ -34,6 +34,7 @@ export class TrainingCreateComponent implements OnInit {
     });
     this.formGroupSpecifications = this._formBuilder.group({
       level: ['', Validators.required],
+      tags: [[], Validators.required],
       requirements: ['', Validators.required],
       concernedBranches: ['', Validators.required],
       type: ['', Validators.required]
@@ -44,8 +45,8 @@ export class TrainingCreateComponent implements OnInit {
       detailedDescription: ['', Validators.required],
     });
   }
-  updateImage(image){
-  this.trainingImage=image
+  updateImage(image) {
+  this.trainingImage = image;
   }
   getFormData(object) {
     const formData = new FormData();
@@ -53,31 +54,32 @@ export class TrainingCreateComponent implements OnInit {
     return formData;
   }
 
-  prepareData(){
+  prepareData() {
     this.training = {
       ...this.formGroupGeneral.value,
       ...this.formGroupSpecifications.value,
       ...this.formGroupDescription.value
-    }
+    };
 
 
   }
 
-  submit(){
-    this.prepareData();
-    console.log(this.training);
-    const formData=this.getFormData(this.training)
-    formData.append('courseImage',this.trainingImage)
-    this.trainingService.addTraining(formData)
-    .subscribe((course:any)=>{
-      console.log(course)
-      if(course._id){
-        this.router.navigate(['training/details/',course._id])
-      }
-    })
+  submit() {
+    console.log(this.formGroupSpecifications.value);
+    // this.prepareData();
+    // console.log(this.training);
+    // const formData = this.getFormData(this.training);
+    // formData.append('courseImage', this.trainingImage);
+    // this.trainingService.addTraining(formData)
+    // .subscribe((course: any) => {
+    //   console.log(course);
+    //   if (course._id) {
+    //     this.router.navigate(['training/details/', course._id]);
+    //   }
+    // });
   }
 
-  testFirstStep(){
+  testFirstStep() {
     // console.log(this.formGroupGeneral.controls.title.errors.length > 0);
   }
 

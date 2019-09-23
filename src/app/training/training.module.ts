@@ -4,6 +4,7 @@ import { TrainingRoutingModule } from './training-routing.module';
 import { TrainingCreateComponent } from './training-create/training-create.component';
 import { TrainingCreateDescriptionComponent } from './training-create/training-create-description/training-create-description.component';
 import { TrainingCreateGeneralComponent } from './training-create/training-create-general/training-create-general.component';
+// tslint:disable-next-line: max-line-length
 import { TrainingCreateSpecificationsComponent } from './training-create/training-create-specifications/training-create-specifications.component';
 import { TrainingItemComponent } from './training-item/training-item.component';
 import { TrainingListComponent } from './training-list/training-list.component';
@@ -12,7 +13,8 @@ import { TrainingRecommandationsComponent } from './training-recommandations/tra
 import { TrainingService } from './training.service';
 import { TrainingDetailsComponent } from './training-details/training-details.component';
 import { MatFormFieldModule, MatInputModule, MatRadioModule, MatSelectModule, MatButtonModule,
-  MatIconModule, MatGridListModule, MatCardModule, MatDatepickerModule, MatStepperModule, MatCheckboxModule, MatTabsModule } from '@angular/material';
+  MatIconModule, MatGridListModule, MatCardModule, MatDatepickerModule, MatStepperModule,
+  MatCheckboxModule, MatTabsModule, MatChipsModule } from '@angular/material';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
@@ -35,7 +37,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatStepperModule,
     MatButtonModule,
     MatIconModule,
-    MatTabsModule
+    MatTabsModule,
+    MatChipsModule
   ],
   declarations: [
     TrainingCreateComponent,
