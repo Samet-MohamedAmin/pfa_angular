@@ -4,7 +4,7 @@
 - [x] training badge: current / done / future
 - [x] search training, 3 tabs
 - [ ] remove english words
-- [ ] create training: tags separated with ","
+- [x] create training: tags separated with ","
 - [x] training request link error
 - [ ] profile: edit profile
 

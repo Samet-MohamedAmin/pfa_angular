@@ -60,23 +60,21 @@ export class TrainingCreateComponent implements OnInit {
       ...this.formGroupSpecifications.value,
       ...this.formGroupDescription.value
     };
-
-
+    console.log(this.training);
   }
 
   submit() {
-    console.log(this.formGroupSpecifications.value);
-    // this.prepareData();
-    // console.log(this.training);
-    // const formData = this.getFormData(this.training);
-    // formData.append('courseImage', this.trainingImage);
-    // this.trainingService.addTraining(formData)
-    // .subscribe((course: any) => {
-    //   console.log(course);
-    //   if (course._id) {
-    //     this.router.navigate(['training/details/', course._id]);
-    //   }
-    // });
+    this.prepareData();
+    console.log(this.training);
+    const formData = this.getFormData(this.training);
+    formData.append('courseImage', this.trainingImage);
+    this.trainingService.addTraining(formData)
+    .subscribe((course: any) => {
+      console.log(course);
+      if (course._id) {
+        this.router.navigate(['training/details/', course._id]);
+      }
+    });
   }
 
   testFirstStep() {
