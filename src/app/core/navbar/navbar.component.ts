@@ -11,15 +11,15 @@ import { AuthenticationService } from '@4c-auth/authentication.service';
 })
 export class NavbarComponent {
   isLoggedIn: boolean;
-  userDetails:any;
+  userDetails: any;
   @Output() menuClicked = new EventEmitter<void>();
-  
+
   constructor(private auth: AuthenticationService) {
     this.auth.userEmitter
       .subscribe((userDetails) => {
         this.isLoggedIn = userDetails != null ? true : false;
         this.userDetails = userDetails;
-      })
+      });
     this.auth.updateUserState();
   }
 
@@ -27,7 +27,7 @@ export class NavbarComponent {
    * user logout.
    * trigger authentication service logout and reloads the page.
    */
-  logout(){
+  logout() {
     this.auth.logout();
     location.reload();
   }

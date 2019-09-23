@@ -15,7 +15,7 @@ import { environment } from '@4c-environments/environment';
 export class AuthenticationService {
   private token: string;
   private url = environment.BACKEND_URL;
-  userEmitter = new EventEmitter<any>()
+  userEmitter = new EventEmitter<any>();
   constructor(private http: HttpClient, private router: Router) {
   }
 
@@ -53,9 +53,9 @@ export class AuthenticationService {
   }
 
   private request(type: 'login' | 'register', credentials): Observable<any> {
-    let headers = new HttpHeaders
-    headers.set('Content-Type', 'application/json')
-    let base = this.http.post(`${this.url}/${type}`, credentials, { headers: headers });
+    const headers = new HttpHeaders;
+    headers.set('Content-Type', 'application/json');
+    const base = this.http.post(`${this.url}/${type}`, credentials, { headers: headers });
 
 
     const request = base.pipe(
@@ -86,6 +86,6 @@ export class AuthenticationService {
   }
 
   updateUserState() {
-    this.userEmitter.emit(this.getUserDetails())
+    this.userEmitter.emit(this.getUserDetails());
   }
 }
